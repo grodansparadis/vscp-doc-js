@@ -1,13 +1,4 @@
-## Objects
-<dl>
-<dt><a href="#vscp">vscp</a> : <code>object</code></dt>
-<dd><p>Namespace for all functionality of the VSCP provided libraries.</p>
-</dd>
-<dt><a href="#vscp">vscp</a> : <code>object</code></dt>
-<dd><p>Namespace for all functionality of the VSCP provided libraries.</p>
-</dd>
-</dl>
-<a name="vscp"></a>
+<a id="vscp"></a>
 ## vscp : <code>object</code>
 Namespace for all functionality of the VSCP provided libraries.
 
@@ -147,7 +138,7 @@ Namespace for all functionality of the VSCP provided libraries.
   * [.decodeValueIfBase64(type, value)](#vscp.decodeValueIfBase64) ⇒ <code>string</code>
   * [.encodeValueIfBase64(type, value)](#vscp.encodeValueIfBase64) ⇒ <code>string</code>
 
-<a name="vscp.Event"></a>
+<a id="vscp.Event"></a>
 ### vscp.Event
 **Kind**: static class of <code>[vscp](#vscp)</code>  
 
@@ -173,7 +164,7 @@ Namespace for all functionality of the VSCP provided libraries.
   * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
   * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
 
-<a name="new_vscp.Event_new"></a>
+<a id="new_vscp.Event_new"></a>
 #### new vscp.Event(options)
 VSCP event.
 
@@ -194,70 +185,70 @@ VSCP event.
 | options.vscpGuid | <code>string</code> | GUID string |
 | options.vscpData | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | Event data |
 
-<a name="vscp.Event+vscpHead"></a>
+<a id="vscp.Event+vscpHead"></a>
 #### event.vscpHead : <code>number</code>
 VSCP event head
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpClass"></a>
+<a id="vscp.Event+vscpClass"></a>
 #### event.vscpClass : <code>number</code>
 VSCP class
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpType"></a>
+<a id="vscp.Event+vscpType"></a>
 #### event.vscpType : <code>number</code>
 VSCP type
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpObId"></a>
+<a id="vscp.Event+vscpObId"></a>
 #### event.vscpObId : <code>number</code>
 VSCP object id used by driver for channel info and etc.
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpTimeStamp"></a>
+<a id="vscp.Event+vscpTimeStamp"></a>
 #### event.vscpTimeStamp : <code>number</code>
 Relative timestamp for package in us
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpDateTime"></a>
+<a id="vscp.Event+vscpDateTime"></a>
 #### event.vscpDateTime : <code>date</code>
 Date/Time for package
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpGuid"></a>
+<a id="vscp.Event+vscpGuid"></a>
 #### event.vscpGuid : <code>string</code>
 Node global unique id LSB(15) -> MSB(0)
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpData"></a>
+<a id="vscp.Event+vscpData"></a>
 #### event.vscpData : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
 Data array or string
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+setIPV6Addr"></a>
+<a id="vscp.Event+setIPV6Addr"></a>
 #### event.setIPV6Addr()
 Set GUID as IP v6 address
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isIPV6Addr"></a>
+<a id="vscp.Event+isIPV6Addr"></a>
 #### event.isIPV6Addr() ⇒ <code>boolean</code>
 Is GUID a IP v6 address or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the GUID is a IP v6 address, it will return true, otherwise false.  
-<a name="vscp.Event+setDumbNode"></a>
+<a id="vscp.Event+setDumbNode"></a>
 #### event.setDumbNode()
 Set dumb node. No MDF, registers, nothing.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isDumbNode"></a>
+<a id="vscp.Event+isDumbNode"></a>
 #### event.isDumbNode() ⇒ <code>boolean</code>
 Is node a dump node or not?
 Dumb node means no MDF, registers, nothing.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the node is a dumb node, it will return true, otherwise false.  
-<a name="vscp.Event+setPriority"></a>
+<a id="vscp.Event+setPriority"></a>
 #### event.setPriority(priority)
 Set the VSCP event priority.
 
@@ -267,41 +258,41 @@ Set the VSCP event priority.
 | --- | --- | --- |
 | priority | <code>number</code> | Priority |
 
-<a name="vscp.Event+getPriority"></a>
+<a id="vscp.Event+getPriority"></a>
 #### event.getPriority() ⇒ <code>number</code>
 Get the VSCP event priority.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>number</code> - Priority of the event.  
-<a name="vscp.Event+setHardCodedAddr"></a>
+<a id="vscp.Event+setHardCodedAddr"></a>
 #### event.setHardCodedAddr()
 Set the node id of the event sender as hard coded?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isHardCodedAddr"></a>
+<a id="vscp.Event+isHardCodedAddr"></a>
 #### event.isHardCodedAddr() ⇒ <code>boolean</code>
 Is the node id of the event sender hard coded or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the node id is hard coded, it will return true, otherwise false.  
-<a name="vscp.Event+setDoNotCalcCRC"></a>
+<a id="vscp.Event+setDoNotCalcCRC"></a>
 #### event.setDoNotCalcCRC()
 Set flag for no CRC calculation?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isDoNotCalcCRC"></a>
+<a id="vscp.Event+isDoNotCalcCRC"></a>
 #### event.isDoNotCalcCRC() ⇒ <code>boolean</code>
 Is CRC calculated or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If nor CRC should be calculated true is returned.  
-<a name="vscp.Event+getText"></a>
+<a id="vscp.Event+getText"></a>
 #### event.getText() ⇒ <code>string</code>
 Get event as string.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>string</code> - Event as string  
-<a name="vscp.version"></a>
+<a id="vscp.version"></a>
 ### vscp.version
 VSCP websocket library version
 
@@ -314,7 +305,7 @@ VSCP websocket library version
 | minor | <code>number</code> | Minor version number |
 | patch | <code>number</code> | Sub-minor version number |
 
-<a name="vscp.constants"></a>
+<a id="vscp.constants"></a>
 ### vscp.constants : <code>object</code>
 VSCP constants
 
@@ -327,7 +318,7 @@ VSCP constants
   * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
   * [.varTypeNames](#vscp.constants.varTypeNames)
 
-<a name="vscp.constants.classes"></a>
+<a id="vscp.constants.classes"></a>
 #### constants.classes : <code>enum</code>
 VSCP classes
 
@@ -395,7 +386,7 @@ VSCP classes
 | VSCP_CLASS2_MEASUREMENT_FLOAT | <code>number</code> | <code>1060</code> | 
 | VSCP_CLASS2_VSCPD | <code>number</code> | <code>65535</code> | 
 
-<a name="vscp.constants.types"></a>
+<a id="vscp.constants.types"></a>
 #### constants.types : <code>enum</code>
 VSCP class types
 
@@ -1375,7 +1366,7 @@ VSCP class types
 | VSCP2_TYPE_VSCPD_TIMER_ELLAPSED | <code>number</code> | <code>29</code> | 
 | VSCP2_TYPE_VSCPD_NEW_CALCULATION | <code>number</code> | <code>30</code> | 
 
-<a name="vscp.constants.priorities"></a>
+<a id="vscp.constants.priorities"></a>
 #### constants.priorities : <code>enum</code>
 VSCP class priorities
 
@@ -1393,7 +1384,7 @@ VSCP class priorities
 | PRIORITY_6 | <code>number</code> | <code>6</code> | 
 | PRIORITY_7_LOW | <code>number</code> | <code>7</code> | 
 
-<a name="vscp.constants.varTypes"></a>
+<a id="vscp.constants.varTypes"></a>
 #### constants.varTypes : <code>enum</code>
 VSCP variable types
 
@@ -1433,12 +1424,12 @@ VSCP variable types
 | USER | <code>number</code> | <code>502</code> | 
 | FILTER | <code>number</code> | <code>503</code> | 
 
-<a name="vscp.constants.varTypeNames"></a>
+<a id="vscp.constants.varTypeNames"></a>
 #### constants.varTypeNames
 VSCP variable type names as string. Use to fill drop down boxes and similar.
 
 **Kind**: static constant of <code>[constants](#vscp.constants)</code>  
-<a name="vscp.utility"></a>
+<a id="vscp.utility"></a>
 ### vscp.utility : <code>object</code>
 Utility functions
 
@@ -1451,7 +1442,7 @@ Utility functions
   * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
   * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
 
-<a name="vscp.utility.readValue"></a>
+<a id="vscp.utility.readValue"></a>
 #### utility.readValue(input) ⇒ <code>number</code>
 Read a hex or decimal value and return as an integer.
 
@@ -1462,13 +1453,13 @@ Read a hex or decimal value and return as an integer.
 | --- | --- | --- |
 | input | <code>string</code> | Hex or decimal value as string |
 
-<a name="vscp.utility.getTime"></a>
+<a id="vscp.utility.getTime"></a>
 #### utility.getTime() ⇒ <code>string</code>
 Utility function which returns the current time in the following format: hh:mm:ss.us
 
 **Kind**: static method of <code>[utility](#vscp.utility)</code>  
 **Returns**: <code>string</code> - Current time in the format hh:mm:ss.us  
-<a name="vscp.utility.guidToStr"></a>
+<a id="vscp.utility.guidToStr"></a>
 #### utility.guidToStr(guid) ⇒ <code>string</code>
 Converts a GUID number array to a GUID string.
 
@@ -1479,7 +1470,7 @@ Converts a GUID number array to a GUID string.
 | --- | --- | --- |
 | guid | <code>Array.&lt;number&gt;</code> | GUID number array |
 
-<a name="vscp.utility.strToGuid"></a>
+<a id="vscp.utility.strToGuid"></a>
 #### utility.strToGuid(guid) ⇒ <code>Array.&lt;number&gt;</code>
 Converts a GUID string to a GUID number array.
 
@@ -1490,7 +1481,7 @@ Converts a GUID string to a GUID number array.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a name="vscp.utility.getNodeId"></a>
+<a id="vscp.utility.getNodeId"></a>
 #### utility.getNodeId(guid) ⇒ <code>number</code>
 Get node id from a node GUID string.
 
@@ -1501,7 +1492,7 @@ Get node id from a node GUID string.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a name="vscp.rest"></a>
+<a id="vscp.rest"></a>
 ### vscp.rest : <code>object</code>
 VSCP REST api functions
 
@@ -1530,7 +1521,7 @@ VSCP REST api functions
     * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
     * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
 
-<a name="vscp.rest.Client"></a>
+<a id="vscp.rest.Client"></a>
 #### rest.Client
 **Kind**: static class of <code>[rest](#vscp.rest)</code>  
 
@@ -1556,7 +1547,7 @@ VSCP REST api functions
   * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
   * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
 
-<a name="new_vscp.rest.Client_new"></a>
+<a id="new_vscp.rest.Client_new"></a>
 ##### new vscp.rest.Client(config)
 The VSCP client class handles the basic REST api of the VSCP daemon.
 The function interface uses jquery ajax call in the background and will
@@ -1570,27 +1561,27 @@ return object with the jquery promise interface.
 | [options.pathPrefix] | <code>string</code> | Path prefix (default: '/vscp'), which comes right after the base url. |
 | [options.apiVersion] | <code>string</code> | API version (for future use) |
 
-<a name="vscp.rest.Client+baseUrl"></a>
+<a id="vscp.rest.Client+baseUrl"></a>
 ##### client.baseUrl : <code>string</code>
 Base URL
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+pathPrefix"></a>
+<a id="vscp.rest.Client+pathPrefix"></a>
 ##### client.pathPrefix : <code>string</code>
 Path prefix
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+apiVersion"></a>
+<a id="vscp.rest.Client+apiVersion"></a>
 ##### client.apiVersion : <code>string</code>
 REST API version (future use)
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+sessionKey"></a>
+<a id="vscp.rest.Client+sessionKey"></a>
 ##### client.sessionKey : <code>string</code>
 Session key
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+_buildUrl"></a>
+<a id="vscp.rest.Client+_buildUrl"></a>
 ##### client._buildUrl(path) ⇒
 Build complete URL, including command path.
 
@@ -1601,7 +1592,7 @@ Build complete URL, including command path.
 | --- | --- | --- |
 | path | <code>string</code> | Relative command path, after REST API version. |
 
-<a name="vscp.rest.Client+_makeRequest"></a>
+<a id="vscp.rest.Client+_makeRequest"></a>
 ##### client._makeRequest(options) ⇒ <code>object</code>
 Make a request to VSCP daemon via REST api.
 The onSuccess and onError function parameter are harmonized here.
@@ -1619,7 +1610,7 @@ This makes it easier to process them further.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+_abort"></a>
+<a id="vscp.rest.Client+_abort"></a>
 ##### client._abort(error, [onError]) ⇒ <code>object</code>
 Prepare error object, call error callback and return rejected promise.
 
@@ -1631,7 +1622,7 @@ Prepare error object, call error callback and return rejected promise.
 | error | <code>string</code> | Error description |
 | [onError] | <code>function</code> | Callback |
 
-<a name="vscp.rest.Client+openSession"></a>
+<a id="vscp.rest.Client+openSession"></a>
 ##### client.openSession(options) ⇒ <code>object</code>
 Open a session.
 
@@ -1646,7 +1637,7 @@ Open a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+closeSession"></a>
+<a id="vscp.rest.Client+closeSession"></a>
 ##### client.closeSession([options]) ⇒ <code>object</code>
 Close a session.
 
@@ -1659,7 +1650,7 @@ Close a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+getStatus"></a>
+<a id="vscp.rest.Client+getStatus"></a>
 ##### client.getStatus([options]) ⇒ <code>object</code>
 Get status and how many events are in the queue.
 
@@ -1672,7 +1663,7 @@ Get status and how many events are in the queue.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+sendEvent"></a>
+<a id="vscp.rest.Client+sendEvent"></a>
 ##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event.
 
@@ -1686,7 +1677,7 @@ Send a VSCP event.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+readEvent"></a>
+<a id="vscp.rest.Client+readEvent"></a>
 ##### client.readEvent([options]) ⇒ <code>object</code>
 Read one or more VSCP events.
 
@@ -1700,7 +1691,7 @@ Read one or more VSCP events.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+setFilter"></a>
+<a id="vscp.rest.Client+setFilter"></a>
 ##### client.setFilter(options) ⇒ <code>object</code>
 Set filter.
 
@@ -1721,7 +1712,7 @@ Set filter.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+clearQueue"></a>
+<a id="vscp.rest.Client+clearQueue"></a>
 ##### client.clearQueue([options]) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
@@ -1734,7 +1725,7 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+createVar"></a>
+<a id="vscp.rest.Client+createVar"></a>
 ##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
@@ -1753,7 +1744,7 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+readVar"></a>
+<a id="vscp.rest.Client+readVar"></a>
 ##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
@@ -1767,7 +1758,7 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+writeVar"></a>
+<a id="vscp.rest.Client+writeVar"></a>
 ##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
@@ -1783,7 +1774,7 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+removeVar"></a>
+<a id="vscp.rest.Client+removeVar"></a>
 ##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
@@ -1797,7 +1788,7 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+listVar"></a>
+<a id="vscp.rest.Client+listVar"></a>
 ##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
@@ -1812,7 +1803,7 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws"></a>
+<a id="vscp.ws"></a>
 ### vscp.ws : <code>object</code>
 VSCP websocket api functions
 
@@ -1886,7 +1877,7 @@ VSCP websocket api functions
       * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
       * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
 
-<a name="vscp.ws.Client"></a>
+<a id="vscp.ws.Client"></a>
 #### ws.Client
 **Kind**: static class of <code>[ws](#vscp.ws)</code>  
 
@@ -1957,11 +1948,11 @@ VSCP websocket api functions
     * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
     * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
 
-<a name="new_vscp.ws.Client_new"></a>
+<a id="new_vscp.ws.Client_new"></a>
 ##### new vscp.ws.Client()
 VSCP websocket client, used for connection establishment to a VSCP server.
 
-<a name="vscp.ws.Client+states"></a>
+<a id="vscp.ws.Client+states"></a>
 ##### client.states : <code>enum</code>
 States of the VSCP websocket
 
@@ -1974,7 +1965,7 @@ States of the VSCP websocket
 | CONNECTED | <code>number</code> | <code>1</code> | Standard websocket connection established |
 | AUTHENTICATED | <code>number</code> | <code>2</code> | Authentication with VSCP server successful |
 
-<a name="vscp.ws.Client+substates"></a>
+<a id="vscp.ws.Client+substates"></a>
 ##### client.substates : <code>enum</code>
 Substates of the VSCP websocket
 
@@ -1986,112 +1977,112 @@ Substates of the VSCP websocket
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
 
-<a name="vscp.ws.Client+socket"></a>
+<a id="vscp.ws.Client+socket"></a>
 ##### client.socket : <code>object</code>
 Websocket
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+url"></a>
+<a id="vscp.ws.Client+url"></a>
 ##### client.url : <code>string</code>
 url used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userName"></a>
+<a id="vscp.ws.Client+userName"></a>
 ##### client.userName : <code>string</code>
 User name used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userId"></a>
+<a id="vscp.ws.Client+userId"></a>
 ##### client.userId : <code>number</code>
 User id from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userFullname"></a>
+<a id="vscp.ws.Client+userFullname"></a>
 ##### client.userFullname : <code>string</code>
 User full name from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userRights"></a>
+<a id="vscp.ws.Client+userRights"></a>
 ##### client.userRights : <code>array</code>
 User rights from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userRemotes"></a>
+<a id="vscp.ws.Client+userRemotes"></a>
 ##### client.userRemotes : <code>array</code>
 User allowed remotes from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userEvents"></a>
+<a id="vscp.ws.Client+userEvents"></a>
 ##### client.userEvents : <code>array</code>
 User allowed events from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userNote"></a>
+<a id="vscp.ws.Client+userNote"></a>
 ##### client.userNote : <code>string</code>
 User note from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+password"></a>
+<a id="vscp.ws.Client+password"></a>
 ##### client.password : <code>string</code>
 Password used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+vscpkey"></a>
+<a id="vscp.ws.Client+vscpkey"></a>
 ##### client.vscpkey : <code>string</code>
 Secret key used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+authdomain"></a>
+<a id="vscp.ws.Client+authdomain"></a>
 ##### client.authdomain : <code>string</code>
 authdomain used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+passwordHash"></a>
+<a id="vscp.ws.Client+passwordHash"></a>
 ##### client.passwordHash : <code>string</code>
 Password hash used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onConnError"></a>
+<a id="vscp.ws.Client+onConnError"></a>
 ##### client.onConnError : <code>function</code>
 Callback called on any connection error
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onMessage"></a>
+<a id="vscp.ws.Client+onMessage"></a>
 ##### client.onMessage : <code>function</code>
 Callback called on any received VSCP response message
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onEvent"></a>
+<a id="vscp.ws.Client+onEvent"></a>
 ##### client.onEvent : <code>Array.&lt;function()&gt;</code>
 Callbacks called on any received VSCP event message
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onVariable"></a>
+<a id="vscp.ws.Client+onVariable"></a>
 ##### client.onVariable : <code>function</code>
 Callback called on any received variable (see LSTVAR command)
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onTableRow"></a>
+<a id="vscp.ws.Client+onTableRow"></a>
 ##### client.onTableRow : <code>function</code>
 Callback called on any received table row (see GT command)
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+state"></a>
+<a id="vscp.ws.Client+state"></a>
 ##### client.state : <code>number</code>
 VSCP websocket is not connected right now
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+substate"></a>
+<a id="vscp.ws.Client+substate"></a>
 ##### client.substate : <code>number</code>
 VSCP event traffic is closed
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+webSocketMessages"></a>
+<a id="vscp.ws.Client+webSocketMessages"></a>
 ##### client.webSocketMessages : <code>object</code>
 VSCP websocket command responses and unsolicited messages
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+getPendingCommand"></a>
+<a id="vscp.ws.Client+getPendingCommand"></a>
 ##### client.getPendingCommand(command) ⇒ <code>Command</code>
 Get command from queue with pending commands.
 
@@ -2102,7 +2093,7 @@ Get command from queue with pending commands.
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a name="vscp.ws.Client+_sendCommand"></a>
+<a id="vscp.ws.Client+_sendCommand"></a>
 ##### client._sendCommand(options)
 Send command to VSCP server.
 
@@ -2117,7 +2108,7 @@ Send command to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a name="vscp.ws.Client+_sendEvent"></a>
+<a id="vscp.ws.Client+_sendEvent"></a>
 ##### client._sendEvent(options)
 Send event to VSCP server.
 
@@ -2130,7 +2121,7 @@ Send event to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a name="vscp.ws.Client+signalSuccess"></a>
+<a id="vscp.ws.Client+signalSuccess"></a>
 ##### client.signalSuccess(command, [obj])
 Signal success of the current asynchronous operation.
 
@@ -2141,7 +2132,7 @@ Signal success of the current asynchronous operation.
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on success callback |
 
-<a name="vscp.ws.Client+signalError"></a>
+<a id="vscp.ws.Client+signalError"></a>
 ##### client.signalError(command, [obj])
 Signal failed of the current asynchronous operation.
 
@@ -2152,12 +2143,12 @@ Signal failed of the current asynchronous operation.
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on error callback |
 
-<a name="vscp.ws.Client+signalConnError"></a>
+<a id="vscp.ws.Client+signalConnError"></a>
 ##### client.signalConnError()
 Signal a connection error.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+signalMessage"></a>
+<a id="vscp.ws.Client+signalMessage"></a>
 ##### client.signalMessage(msg) ⇒ <code>boolean</code>
 Signal a received VSCP response message.
 If the message is handled by the application, the application will return
@@ -2171,7 +2162,7 @@ Otherwise the message is handled by the standard onMessage handler here.
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a name="vscp.ws.Client+signalEvent"></a>
+<a id="vscp.ws.Client+signalEvent"></a>
 ##### client.signalEvent(vscpEvent)
 Signal a received VSCP event.
 
@@ -2181,7 +2172,7 @@ Signal a received VSCP event.
 | --- | --- | --- |
 | vscpEvent | <code>[Event](#vscp.Event)</code> | VSCP event |
 
-<a name="vscp.ws.Client+signalVariable"></a>
+<a id="vscp.ws.Client+signalVariable"></a>
 ##### client.signalVariable(variable)
 Signal a received variable.
 
@@ -2196,7 +2187,7 @@ Signal a received variable.
 | variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
 | variable.value | <code>string</code> | Variable value |
 
-<a name="vscp.ws.Client+signalTableRow"></a>
+<a id="vscp.ws.Client+signalTableRow"></a>
 ##### client.signalTableRow(row)
 Signal a received table row.
 
@@ -2208,7 +2199,7 @@ Signal a received table row.
 | row.date | <code>string</code> | Date and time |
 | row.value | <code>string</code> | Value |
 
-<a name="vscp.ws.Client+addEventListener"></a>
+<a id="vscp.ws.Client+addEventListener"></a>
 ##### client.addEventListener(eventListener)
 Add a event listener.
 
@@ -2218,7 +2209,7 @@ Add a event listener.
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a name="vscp.ws.Client+removeEventListener"></a>
+<a id="vscp.ws.Client+removeEventListener"></a>
 ##### client.removeEventListener(eventListener)
 Remove a event listener.
 
@@ -2228,7 +2219,7 @@ Remove a event listener.
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a name="vscp.ws.Client+getAuthHash"></a>
+<a id="vscp.ws.Client+getAuthHash"></a>
 ##### client.getAuthHash(userName, password, str_iv) ⇒ <code>string</code>
 Calculates the VSCP server websocket authentication hash.
 
@@ -2241,18 +2232,18 @@ Calculates the VSCP server websocket authentication hash.
 | password | <code>string</code> | Password |
 | str_iv | <code>string</code> | 16 random byte iv in hex form |
 
-<a name="vscp.ws.Client+onWebSocketOpen"></a>
+<a id="vscp.ws.Client+onWebSocketOpen"></a>
 ##### client.onWebSocketOpen()
 This function is called by the websocket in case the connection is established.
 It will initiate the authentication with the VSCP server.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onWebSocketClose"></a>
+<a id="vscp.ws.Client+onWebSocketClose"></a>
 ##### client.onWebSocketClose()
 This function is called by the websocket in case that the connection is closed.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onWebSocketMessage"></a>
+<a id="vscp.ws.Client+onWebSocketMessage"></a>
 ##### client.onWebSocketMessage(msg)
 This function is called for any websocket message (VSCP server response message).
 
@@ -2262,7 +2253,7 @@ This function is called for any websocket message (VSCP server response message)
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a name="vscp.ws.Client+connect"></a>
+<a id="vscp.ws.Client+connect"></a>
 ##### client.connect(options)
 Connect to a VSCP server with the given URL.
 
@@ -2279,12 +2270,12 @@ Connect to a VSCP server with the given URL.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful connection establishment. |
 | [options.onError] | <code>function</code> | Function which is called on a failed connection establishment or in case the connection is lost during the session. |
 
-<a name="vscp.ws.Client+disconnect"></a>
+<a id="vscp.ws.Client+disconnect"></a>
 ##### client.disconnect()
 Disconnect from a VSCP server.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+start"></a>
+<a id="vscp.ws.Client+start"></a>
 ##### client.start(options)
 Start receiving events.
 
@@ -2296,7 +2287,7 @@ Start receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+stop"></a>
+<a id="vscp.ws.Client+stop"></a>
 ##### client.stop(options)
 Stop receiving events.
 
@@ -2308,7 +2299,7 @@ Stop receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+clearQueue"></a>
+<a id="vscp.ws.Client+clearQueue"></a>
 ##### client.clearQueue(options)
 Clear the VSCP event queue on the server side.
 
@@ -2320,7 +2311,7 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+sendEvent"></a>
+<a id="vscp.ws.Client+sendEvent"></a>
 ##### client.sendEvent(options)
 Send a VSCP event to the VSCP server.
 
@@ -2333,7 +2324,7 @@ Send a VSCP event to the VSCP server.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+setFilter"></a>
+<a id="vscp.ws.Client+setFilter"></a>
 ##### client.setFilter(options)
 Set a filter in the VSCP server for VSCP events.
 
@@ -2353,7 +2344,7 @@ Set a filter in the VSCP server for VSCP events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+createVar"></a>
+<a id="vscp.ws.Client+createVar"></a>
 ##### client.createVar(options)
 Create a a VSCP remote variable.
 
@@ -2371,7 +2362,7 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+readVar"></a>
+<a id="vscp.ws.Client+readVar"></a>
 ##### client.readVar(options)
 Read a value from a VSCP server variable.
 
@@ -2384,7 +2375,7 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+writeVar"></a>
+<a id="vscp.ws.Client+writeVar"></a>
 ##### client.writeVar(options)
 Write a value to a VSCP server variable.
 
@@ -2399,7 +2390,7 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+resetVar"></a>
+<a id="vscp.ws.Client+resetVar"></a>
 ##### client.resetVar(options)
 Reset a VSCP server variable.
 
@@ -2412,7 +2403,7 @@ Reset a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+removeVar"></a>
+<a id="vscp.ws.Client+removeVar"></a>
 ##### client.removeVar(options)
 Remove a VSCP server variable.
 
@@ -2425,7 +2416,7 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+lengthVar"></a>
+<a id="vscp.ws.Client+lengthVar"></a>
 ##### client.lengthVar(options)
 Get a VSCP server variable length.
 
@@ -2438,7 +2429,7 @@ Get a VSCP server variable length.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+lastChangeVar"></a>
+<a id="vscp.ws.Client+lastChangeVar"></a>
 ##### client.lastChangeVar(options)
 Get last change of a VSCP server variable.
 
@@ -2451,7 +2442,7 @@ Get last change of a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+listVar"></a>
+<a id="vscp.ws.Client+listVar"></a>
 ##### client.listVar(options)
 List all VSCP server variables.
 
@@ -2465,7 +2456,7 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+readTable"></a>
+<a id="vscp.ws.Client+readTable"></a>
 ##### client.readTable(options)
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
@@ -2482,7 +2473,7 @@ If "begin" and "end" are omitted, the whole table is returned.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client..Command"></a>
+<a id="vscp.ws.Client..Command"></a>
 ##### Client~Command
 **Kind**: inner class of <code>[Client](#vscp.ws.Client)</code>  
 
@@ -2492,7 +2483,7 @@ If "begin" and "end" are omitted, the whole table is returned.
     * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
     * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
 
-<a name="new_vscp.ws.Client..Command_new"></a>
+<a id="new_vscp.ws.Client..Command_new"></a>
 ###### new Command(command, onSuccess, onerror)
 VSCP server command
 
@@ -2503,27 +2494,27 @@ VSCP server command
 | onSuccess | <code>function</code> | Function which is called on successful operation |
 | onerror | <code>function</code> | Function which is called on failed operation |
 
-<a name="vscp.ws.Client..Command+command"></a>
+<a id="vscp.ws.Client..Command+command"></a>
 ###### command.command : <code>string</code>
 Server command string
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..Command+onSuccess"></a>
+<a id="vscp.ws.Client..Command+onSuccess"></a>
 ###### command.onSuccess : <code>function</code>
 Function which is called on successful operation
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..Command+onError"></a>
+<a id="vscp.ws.Client..Command+onError"></a>
 ###### command.onError : <code>function</code>
 Function which is called on failed operation
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..cmdQueue"></a>
+<a id="vscp.ws.Client..cmdQueue"></a>
 ##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
 Queue contains all pending VSCP server commands
 
 **Kind**: inner property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client..getPendingCommandIndex"></a>
+<a id="vscp.ws.Client..getPendingCommandIndex"></a>
 ##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
 Get the index of a command in the queue.
 
@@ -2534,7 +2525,7 @@ Get the index of a command in the queue.
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a name="vscp._createNS"></a>
+<a id="vscp._createNS"></a>
 ### vscp._createNS(namespace)
 Create a general purpose namespace method. This will allow us to create
 namespace a bit easier.
@@ -2545,7 +2536,7 @@ namespace a bit easier.
 | --- | --- | --- |
 | namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
-<a name="vscp.getVarTypeName"></a>
+<a id="vscp.getVarTypeName"></a>
 ### vscp.getVarTypeName(n) ⇒ <code>string</code>
 Get variable type name as string by numerical code.
 
@@ -2556,7 +2547,7 @@ Get variable type name as string by numerical code.
 | --- | --- | --- |
 | n | <code>number</code> | Numerical code |
 
-<a name="vscp.getVarTypeNumerical"></a>
+<a id="vscp.getVarTypeNumerical"></a>
 ### vscp.getVarTypeNumerical(str) ⇒ <code>number</code>
 Get numerical code of variable type from string.
 
@@ -2567,7 +2558,7 @@ Get numerical code of variable type from string.
 | --- | --- | --- |
 | str | <code>string</code> | Variable type name |
 
-<a name="vscp.getEditorModeFromType"></a>
+<a id="vscp.getEditorModeFromType"></a>
 ### vscp.getEditorModeFromType(n) ⇒ <code>string</code>
 Get ace editor formation mode string from numerical variable type code.
 
@@ -2578,7 +2569,7 @@ Get ace editor formation mode string from numerical variable type code.
 | --- | --- | --- |
 | n | <code>number</code> | Variable type numerical code |
 
-<a name="vscp.b64EncodeUnicode"></a>
+<a id="vscp.b64EncodeUnicode"></a>
 ### vscp.b64EncodeUnicode(str) ⇒ <code>string</code>
 Encode base64 unicode safe.
 
@@ -2589,7 +2580,7 @@ Encode base64 unicode safe.
 | --- | --- | --- |
 | str | <code>string</code> | Unicode string |
 
-<a name="vscp.b64DecodeUnicode"></a>
+<a id="vscp.b64DecodeUnicode"></a>
 ### vscp.b64DecodeUnicode(str) ⇒ <code>string</code>
 Decode base64 unicode safe.
 
@@ -2600,7 +2591,7 @@ Decode base64 unicode safe.
 | --- | --- | --- |
 | str | <code>string</code> | Base64 |
 
-<a name="vscp.isBase64Type"></a>
+<a id="vscp.isBase64Type"></a>
 ### vscp.isBase64Type(type) ⇒ <code>bool</code>
 Determine whether the given variable type is a type stored base64 encoded or not.
 
@@ -2611,7 +2602,7 @@ Determine whether the given variable type is a type stored base64 encoded or not
 | --- | --- | --- |
 | type | <code>number</code> | Variable type numerical code |
 
-<a name="vscp.decodeValueIfBase64"></a>
+<a id="vscp.decodeValueIfBase64"></a>
 ### vscp.decodeValueIfBase64(type, value) ⇒ <code>string</code>
 Decode the value if its base64 encoded.
 
@@ -2623,7 +2614,7 @@ Decode the value if its base64 encoded.
 | type | <code>number</code> | Variable type numerical code |
 | value | <code>string</code> | Value |
 
-<a name="vscp.encodeValueIfBase64"></a>
+<a id="vscp.encodeValueIfBase64"></a>
 ### vscp.encodeValueIfBase64(type, value) ⇒ <code>string</code>
 Encode the value if its stored in base64.
 
@@ -2635,7 +2626,7 @@ Encode the value if its stored in base64.
 | type | <code>number</code> | Variable type numerical code |
 | value | <code>string</code> | Value |
 
-<a name="vscp"></a>
+<a id="vscp"></a>
 ## vscp : <code>object</code>
 Namespace for all functionality of the VSCP provided libraries.
 
@@ -2775,7 +2766,7 @@ Namespace for all functionality of the VSCP provided libraries.
   * [.decodeValueIfBase64(type, value)](#vscp.decodeValueIfBase64) ⇒ <code>string</code>
   * [.encodeValueIfBase64(type, value)](#vscp.encodeValueIfBase64) ⇒ <code>string</code>
 
-<a name="vscp.Event"></a>
+<a id="vscp.Event"></a>
 ### vscp.Event
 **Kind**: static class of <code>[vscp](#vscp)</code>  
 
@@ -2801,7 +2792,7 @@ Namespace for all functionality of the VSCP provided libraries.
   * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
   * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
 
-<a name="new_vscp.Event_new"></a>
+<a id="new_vscp.Event_new"></a>
 #### new vscp.Event(options)
 VSCP event.
 
@@ -2822,70 +2813,70 @@ VSCP event.
 | options.vscpGuid | <code>string</code> | GUID string |
 | options.vscpData | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | Event data |
 
-<a name="vscp.Event+vscpHead"></a>
+<a id="vscp.Event+vscpHead"></a>
 #### event.vscpHead : <code>number</code>
 VSCP event head
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpClass"></a>
+<a id="vscp.Event+vscpClass"></a>
 #### event.vscpClass : <code>number</code>
 VSCP class
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpType"></a>
+<a id="vscp.Event+vscpType"></a>
 #### event.vscpType : <code>number</code>
 VSCP type
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpObId"></a>
+<a id="vscp.Event+vscpObId"></a>
 #### event.vscpObId : <code>number</code>
 VSCP object id used by driver for channel info and etc.
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpTimeStamp"></a>
+<a id="vscp.Event+vscpTimeStamp"></a>
 #### event.vscpTimeStamp : <code>number</code>
 Relative timestamp for package in us
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpDateTime"></a>
+<a id="vscp.Event+vscpDateTime"></a>
 #### event.vscpDateTime : <code>date</code>
 Date/Time for package
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpGuid"></a>
+<a id="vscp.Event+vscpGuid"></a>
 #### event.vscpGuid : <code>string</code>
 Node global unique id LSB(15) -> MSB(0)
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+vscpData"></a>
+<a id="vscp.Event+vscpData"></a>
 #### event.vscpData : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
 Data array or string
 
 **Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+setIPV6Addr"></a>
+<a id="vscp.Event+setIPV6Addr"></a>
 #### event.setIPV6Addr()
 Set GUID as IP v6 address
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isIPV6Addr"></a>
+<a id="vscp.Event+isIPV6Addr"></a>
 #### event.isIPV6Addr() ⇒ <code>boolean</code>
 Is GUID a IP v6 address or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the GUID is a IP v6 address, it will return true, otherwise false.  
-<a name="vscp.Event+setDumbNode"></a>
+<a id="vscp.Event+setDumbNode"></a>
 #### event.setDumbNode()
 Set dumb node. No MDF, registers, nothing.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isDumbNode"></a>
+<a id="vscp.Event+isDumbNode"></a>
 #### event.isDumbNode() ⇒ <code>boolean</code>
 Is node a dump node or not?
 Dumb node means no MDF, registers, nothing.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the node is a dumb node, it will return true, otherwise false.  
-<a name="vscp.Event+setPriority"></a>
+<a id="vscp.Event+setPriority"></a>
 #### event.setPriority(priority)
 Set the VSCP event priority.
 
@@ -2895,41 +2886,41 @@ Set the VSCP event priority.
 | --- | --- | --- |
 | priority | <code>number</code> | Priority |
 
-<a name="vscp.Event+getPriority"></a>
+<a id="vscp.Event+getPriority"></a>
 #### event.getPriority() ⇒ <code>number</code>
 Get the VSCP event priority.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>number</code> - Priority of the event.  
-<a name="vscp.Event+setHardCodedAddr"></a>
+<a id="vscp.Event+setHardCodedAddr"></a>
 #### event.setHardCodedAddr()
 Set the node id of the event sender as hard coded?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isHardCodedAddr"></a>
+<a id="vscp.Event+isHardCodedAddr"></a>
 #### event.isHardCodedAddr() ⇒ <code>boolean</code>
 Is the node id of the event sender hard coded or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If the node id is hard coded, it will return true, otherwise false.  
-<a name="vscp.Event+setDoNotCalcCRC"></a>
+<a id="vscp.Event+setDoNotCalcCRC"></a>
 #### event.setDoNotCalcCRC()
 Set flag for no CRC calculation?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a name="vscp.Event+isDoNotCalcCRC"></a>
+<a id="vscp.Event+isDoNotCalcCRC"></a>
 #### event.isDoNotCalcCRC() ⇒ <code>boolean</code>
 Is CRC calculated or not?
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>boolean</code> - If nor CRC should be calculated true is returned.  
-<a name="vscp.Event+getText"></a>
+<a id="vscp.Event+getText"></a>
 #### event.getText() ⇒ <code>string</code>
 Get event as string.
 
 **Kind**: instance method of <code>[Event](#vscp.Event)</code>  
 **Returns**: <code>string</code> - Event as string  
-<a name="vscp.version"></a>
+<a id="vscp.version"></a>
 ### vscp.version
 VSCP websocket library version
 
@@ -2942,7 +2933,7 @@ VSCP websocket library version
 | minor | <code>number</code> | Minor version number |
 | patch | <code>number</code> | Sub-minor version number |
 
-<a name="vscp.constants"></a>
+<a id="vscp.constants"></a>
 ### vscp.constants : <code>object</code>
 VSCP constants
 
@@ -2955,7 +2946,7 @@ VSCP constants
   * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
   * [.varTypeNames](#vscp.constants.varTypeNames)
 
-<a name="vscp.constants.classes"></a>
+<a id="vscp.constants.classes"></a>
 #### constants.classes : <code>enum</code>
 VSCP classes
 
@@ -3023,7 +3014,7 @@ VSCP classes
 | VSCP_CLASS2_MEASUREMENT_FLOAT | <code>number</code> | <code>1060</code> | 
 | VSCP_CLASS2_VSCPD | <code>number</code> | <code>65535</code> | 
 
-<a name="vscp.constants.types"></a>
+<a id="vscp.constants.types"></a>
 #### constants.types : <code>enum</code>
 VSCP class types
 
@@ -4003,7 +3994,7 @@ VSCP class types
 | VSCP2_TYPE_VSCPD_TIMER_ELLAPSED | <code>number</code> | <code>29</code> | 
 | VSCP2_TYPE_VSCPD_NEW_CALCULATION | <code>number</code> | <code>30</code> | 
 
-<a name="vscp.constants.priorities"></a>
+<a id="vscp.constants.priorities"></a>
 #### constants.priorities : <code>enum</code>
 VSCP class priorities
 
@@ -4021,7 +4012,7 @@ VSCP class priorities
 | PRIORITY_6 | <code>number</code> | <code>6</code> | 
 | PRIORITY_7_LOW | <code>number</code> | <code>7</code> | 
 
-<a name="vscp.constants.varTypes"></a>
+<a id="vscp.constants.varTypes"></a>
 #### constants.varTypes : <code>enum</code>
 VSCP variable types
 
@@ -4061,12 +4052,12 @@ VSCP variable types
 | USER | <code>number</code> | <code>502</code> | 
 | FILTER | <code>number</code> | <code>503</code> | 
 
-<a name="vscp.constants.varTypeNames"></a>
+<a id="vscp.constants.varTypeNames"></a>
 #### constants.varTypeNames
 VSCP variable type names as string. Use to fill drop down boxes and similar.
 
 **Kind**: static constant of <code>[constants](#vscp.constants)</code>  
-<a name="vscp.utility"></a>
+<a id="vscp.utility"></a>
 ### vscp.utility : <code>object</code>
 Utility functions
 
@@ -4079,7 +4070,7 @@ Utility functions
   * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
   * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
 
-<a name="vscp.utility.readValue"></a>
+<a id="vscp.utility.readValue"></a>
 #### utility.readValue(input) ⇒ <code>number</code>
 Read a hex or decimal value and return as an integer.
 
@@ -4090,13 +4081,13 @@ Read a hex or decimal value and return as an integer.
 | --- | --- | --- |
 | input | <code>string</code> | Hex or decimal value as string |
 
-<a name="vscp.utility.getTime"></a>
+<a id="vscp.utility.getTime"></a>
 #### utility.getTime() ⇒ <code>string</code>
 Utility function which returns the current time in the following format: hh:mm:ss.us
 
 **Kind**: static method of <code>[utility](#vscp.utility)</code>  
 **Returns**: <code>string</code> - Current time in the format hh:mm:ss.us  
-<a name="vscp.utility.guidToStr"></a>
+<a id="vscp.utility.guidToStr"></a>
 #### utility.guidToStr(guid) ⇒ <code>string</code>
 Converts a GUID number array to a GUID string.
 
@@ -4107,7 +4098,7 @@ Converts a GUID number array to a GUID string.
 | --- | --- | --- |
 | guid | <code>Array.&lt;number&gt;</code> | GUID number array |
 
-<a name="vscp.utility.strToGuid"></a>
+<a id="vscp.utility.strToGuid"></a>
 #### utility.strToGuid(guid) ⇒ <code>Array.&lt;number&gt;</code>
 Converts a GUID string to a GUID number array.
 
@@ -4118,7 +4109,7 @@ Converts a GUID string to a GUID number array.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a name="vscp.utility.getNodeId"></a>
+<a id="vscp.utility.getNodeId"></a>
 #### utility.getNodeId(guid) ⇒ <code>number</code>
 Get node id from a node GUID string.
 
@@ -4129,7 +4120,7 @@ Get node id from a node GUID string.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a name="vscp.rest"></a>
+<a id="vscp.rest"></a>
 ### vscp.rest : <code>object</code>
 VSCP REST api functions
 
@@ -4158,7 +4149,7 @@ VSCP REST api functions
     * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
     * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
 
-<a name="vscp.rest.Client"></a>
+<a id="vscp.rest.Client"></a>
 #### rest.Client
 **Kind**: static class of <code>[rest](#vscp.rest)</code>  
 
@@ -4184,7 +4175,7 @@ VSCP REST api functions
   * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
   * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
 
-<a name="new_vscp.rest.Client_new"></a>
+<a id="new_vscp.rest.Client_new"></a>
 ##### new vscp.rest.Client(config)
 The VSCP client class handles the basic REST api of the VSCP daemon.
 The function interface uses jquery ajax call in the background and will
@@ -4198,27 +4189,27 @@ return object with the jquery promise interface.
 | [options.pathPrefix] | <code>string</code> | Path prefix (default: '/vscp'), which comes right after the base url. |
 | [options.apiVersion] | <code>string</code> | API version (for future use) |
 
-<a name="vscp.rest.Client+baseUrl"></a>
+<a id="vscp.rest.Client+baseUrl"></a>
 ##### client.baseUrl : <code>string</code>
 Base URL
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+pathPrefix"></a>
+<a id="vscp.rest.Client+pathPrefix"></a>
 ##### client.pathPrefix : <code>string</code>
 Path prefix
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+apiVersion"></a>
+<a id="vscp.rest.Client+apiVersion"></a>
 ##### client.apiVersion : <code>string</code>
 REST API version (future use)
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+sessionKey"></a>
+<a id="vscp.rest.Client+sessionKey"></a>
 ##### client.sessionKey : <code>string</code>
 Session key
 
 **Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a name="vscp.rest.Client+_buildUrl"></a>
+<a id="vscp.rest.Client+_buildUrl"></a>
 ##### client._buildUrl(path) ⇒
 Build complete URL, including command path.
 
@@ -4229,7 +4220,7 @@ Build complete URL, including command path.
 | --- | --- | --- |
 | path | <code>string</code> | Relative command path, after REST API version. |
 
-<a name="vscp.rest.Client+_makeRequest"></a>
+<a id="vscp.rest.Client+_makeRequest"></a>
 ##### client._makeRequest(options) ⇒ <code>object</code>
 Make a request to VSCP daemon via REST api.
 The onSuccess and onError function parameter are harmonized here.
@@ -4247,7 +4238,7 @@ This makes it easier to process them further.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+_abort"></a>
+<a id="vscp.rest.Client+_abort"></a>
 ##### client._abort(error, [onError]) ⇒ <code>object</code>
 Prepare error object, call error callback and return rejected promise.
 
@@ -4259,7 +4250,7 @@ Prepare error object, call error callback and return rejected promise.
 | error | <code>string</code> | Error description |
 | [onError] | <code>function</code> | Callback |
 
-<a name="vscp.rest.Client+openSession"></a>
+<a id="vscp.rest.Client+openSession"></a>
 ##### client.openSession(options) ⇒ <code>object</code>
 Open a session.
 
@@ -4274,7 +4265,7 @@ Open a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+closeSession"></a>
+<a id="vscp.rest.Client+closeSession"></a>
 ##### client.closeSession([options]) ⇒ <code>object</code>
 Close a session.
 
@@ -4287,7 +4278,7 @@ Close a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+getStatus"></a>
+<a id="vscp.rest.Client+getStatus"></a>
 ##### client.getStatus([options]) ⇒ <code>object</code>
 Get status and how many events are in the queue.
 
@@ -4300,7 +4291,7 @@ Get status and how many events are in the queue.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+sendEvent"></a>
+<a id="vscp.rest.Client+sendEvent"></a>
 ##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event.
 
@@ -4314,7 +4305,7 @@ Send a VSCP event.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+readEvent"></a>
+<a id="vscp.rest.Client+readEvent"></a>
 ##### client.readEvent([options]) ⇒ <code>object</code>
 Read one or more VSCP events.
 
@@ -4328,7 +4319,7 @@ Read one or more VSCP events.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+setFilter"></a>
+<a id="vscp.rest.Client+setFilter"></a>
 ##### client.setFilter(options) ⇒ <code>object</code>
 Set filter.
 
@@ -4349,7 +4340,7 @@ Set filter.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+clearQueue"></a>
+<a id="vscp.rest.Client+clearQueue"></a>
 ##### client.clearQueue([options]) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
@@ -4362,7 +4353,7 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a name="vscp.rest.Client+createVar"></a>
+<a id="vscp.rest.Client+createVar"></a>
 ##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
@@ -4381,7 +4372,7 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+readVar"></a>
+<a id="vscp.rest.Client+readVar"></a>
 ##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
@@ -4395,7 +4386,7 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+writeVar"></a>
+<a id="vscp.rest.Client+writeVar"></a>
 ##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
@@ -4411,7 +4402,7 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+removeVar"></a>
+<a id="vscp.rest.Client+removeVar"></a>
 ##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
@@ -4425,7 +4416,7 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.rest.Client+listVar"></a>
+<a id="vscp.rest.Client+listVar"></a>
 ##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
@@ -4440,7 +4431,7 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws"></a>
+<a id="vscp.ws"></a>
 ### vscp.ws : <code>object</code>
 VSCP websocket api functions
 
@@ -4514,7 +4505,7 @@ VSCP websocket api functions
       * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
       * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
 
-<a name="vscp.ws.Client"></a>
+<a id="vscp.ws.Client"></a>
 #### ws.Client
 **Kind**: static class of <code>[ws](#vscp.ws)</code>  
 
@@ -4585,11 +4576,11 @@ VSCP websocket api functions
     * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
     * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
 
-<a name="new_vscp.ws.Client_new"></a>
+<a id="new_vscp.ws.Client_new"></a>
 ##### new vscp.ws.Client()
 VSCP websocket client, used for connection establishment to a VSCP server.
 
-<a name="vscp.ws.Client+states"></a>
+<a id="vscp.ws.Client+states"></a>
 ##### client.states : <code>enum</code>
 States of the VSCP websocket
 
@@ -4602,7 +4593,7 @@ States of the VSCP websocket
 | CONNECTED | <code>number</code> | <code>1</code> | Standard websocket connection established |
 | AUTHENTICATED | <code>number</code> | <code>2</code> | Authentication with VSCP server successful |
 
-<a name="vscp.ws.Client+substates"></a>
+<a id="vscp.ws.Client+substates"></a>
 ##### client.substates : <code>enum</code>
 Substates of the VSCP websocket
 
@@ -4614,112 +4605,112 @@ Substates of the VSCP websocket
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
 
-<a name="vscp.ws.Client+socket"></a>
+<a id="vscp.ws.Client+socket"></a>
 ##### client.socket : <code>object</code>
 Websocket
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+url"></a>
+<a id="vscp.ws.Client+url"></a>
 ##### client.url : <code>string</code>
 url used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userName"></a>
+<a id="vscp.ws.Client+userName"></a>
 ##### client.userName : <code>string</code>
 User name used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userId"></a>
+<a id="vscp.ws.Client+userId"></a>
 ##### client.userId : <code>number</code>
 User id from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userFullname"></a>
+<a id="vscp.ws.Client+userFullname"></a>
 ##### client.userFullname : <code>string</code>
 User full name from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userRights"></a>
+<a id="vscp.ws.Client+userRights"></a>
 ##### client.userRights : <code>array</code>
 User rights from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userRemotes"></a>
+<a id="vscp.ws.Client+userRemotes"></a>
 ##### client.userRemotes : <code>array</code>
 User allowed remotes from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userEvents"></a>
+<a id="vscp.ws.Client+userEvents"></a>
 ##### client.userEvents : <code>array</code>
 User allowed events from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+userNote"></a>
+<a id="vscp.ws.Client+userNote"></a>
 ##### client.userNote : <code>string</code>
 User note from authentication AUTH1
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+password"></a>
+<a id="vscp.ws.Client+password"></a>
 ##### client.password : <code>string</code>
 Password used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+vscpkey"></a>
+<a id="vscp.ws.Client+vscpkey"></a>
 ##### client.vscpkey : <code>string</code>
 Secret key used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+authdomain"></a>
+<a id="vscp.ws.Client+authdomain"></a>
 ##### client.authdomain : <code>string</code>
 authdomain used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+passwordHash"></a>
+<a id="vscp.ws.Client+passwordHash"></a>
 ##### client.passwordHash : <code>string</code>
 Password hash used for connection establishment
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onConnError"></a>
+<a id="vscp.ws.Client+onConnError"></a>
 ##### client.onConnError : <code>function</code>
 Callback called on any connection error
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onMessage"></a>
+<a id="vscp.ws.Client+onMessage"></a>
 ##### client.onMessage : <code>function</code>
 Callback called on any received VSCP response message
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onEvent"></a>
+<a id="vscp.ws.Client+onEvent"></a>
 ##### client.onEvent : <code>Array.&lt;function()&gt;</code>
 Callbacks called on any received VSCP event message
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onVariable"></a>
+<a id="vscp.ws.Client+onVariable"></a>
 ##### client.onVariable : <code>function</code>
 Callback called on any received variable (see LSTVAR command)
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onTableRow"></a>
+<a id="vscp.ws.Client+onTableRow"></a>
 ##### client.onTableRow : <code>function</code>
 Callback called on any received table row (see GT command)
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+state"></a>
+<a id="vscp.ws.Client+state"></a>
 ##### client.state : <code>number</code>
 VSCP websocket is not connected right now
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+substate"></a>
+<a id="vscp.ws.Client+substate"></a>
 ##### client.substate : <code>number</code>
 VSCP event traffic is closed
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+webSocketMessages"></a>
+<a id="vscp.ws.Client+webSocketMessages"></a>
 ##### client.webSocketMessages : <code>object</code>
 VSCP websocket command responses and unsolicited messages
 
 **Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+getPendingCommand"></a>
+<a id="vscp.ws.Client+getPendingCommand"></a>
 ##### client.getPendingCommand(command) ⇒ <code>Command</code>
 Get command from queue with pending commands.
 
@@ -4730,7 +4721,7 @@ Get command from queue with pending commands.
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a name="vscp.ws.Client+_sendCommand"></a>
+<a id="vscp.ws.Client+_sendCommand"></a>
 ##### client._sendCommand(options)
 Send command to VSCP server.
 
@@ -4745,7 +4736,7 @@ Send command to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a name="vscp.ws.Client+_sendEvent"></a>
+<a id="vscp.ws.Client+_sendEvent"></a>
 ##### client._sendEvent(options)
 Send event to VSCP server.
 
@@ -4758,7 +4749,7 @@ Send event to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a name="vscp.ws.Client+signalSuccess"></a>
+<a id="vscp.ws.Client+signalSuccess"></a>
 ##### client.signalSuccess(command, [obj])
 Signal success of the current asynchronous operation.
 
@@ -4769,7 +4760,7 @@ Signal success of the current asynchronous operation.
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on success callback |
 
-<a name="vscp.ws.Client+signalError"></a>
+<a id="vscp.ws.Client+signalError"></a>
 ##### client.signalError(command, [obj])
 Signal failed of the current asynchronous operation.
 
@@ -4780,12 +4771,12 @@ Signal failed of the current asynchronous operation.
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on error callback |
 
-<a name="vscp.ws.Client+signalConnError"></a>
+<a id="vscp.ws.Client+signalConnError"></a>
 ##### client.signalConnError()
 Signal a connection error.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+signalMessage"></a>
+<a id="vscp.ws.Client+signalMessage"></a>
 ##### client.signalMessage(msg) ⇒ <code>boolean</code>
 Signal a received VSCP response message.
 If the message is handled by the application, the application will return
@@ -4799,7 +4790,7 @@ Otherwise the message is handled by the standard onMessage handler here.
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a name="vscp.ws.Client+signalEvent"></a>
+<a id="vscp.ws.Client+signalEvent"></a>
 ##### client.signalEvent(vscpEvent)
 Signal a received VSCP event.
 
@@ -4809,7 +4800,7 @@ Signal a received VSCP event.
 | --- | --- | --- |
 | vscpEvent | <code>[Event](#vscp.Event)</code> | VSCP event |
 
-<a name="vscp.ws.Client+signalVariable"></a>
+<a id="vscp.ws.Client+signalVariable"></a>
 ##### client.signalVariable(variable)
 Signal a received variable.
 
@@ -4824,7 +4815,7 @@ Signal a received variable.
 | variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
 | variable.value | <code>string</code> | Variable value |
 
-<a name="vscp.ws.Client+signalTableRow"></a>
+<a id="vscp.ws.Client+signalTableRow"></a>
 ##### client.signalTableRow(row)
 Signal a received table row.
 
@@ -4836,7 +4827,7 @@ Signal a received table row.
 | row.date | <code>string</code> | Date and time |
 | row.value | <code>string</code> | Value |
 
-<a name="vscp.ws.Client+addEventListener"></a>
+<a id="vscp.ws.Client+addEventListener"></a>
 ##### client.addEventListener(eventListener)
 Add a event listener.
 
@@ -4846,7 +4837,7 @@ Add a event listener.
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a name="vscp.ws.Client+removeEventListener"></a>
+<a id="vscp.ws.Client+removeEventListener"></a>
 ##### client.removeEventListener(eventListener)
 Remove a event listener.
 
@@ -4856,7 +4847,7 @@ Remove a event listener.
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a name="vscp.ws.Client+getAuthHash"></a>
+<a id="vscp.ws.Client+getAuthHash"></a>
 ##### client.getAuthHash(userName, password, str_iv) ⇒ <code>string</code>
 Calculates the VSCP server websocket authentication hash.
 
@@ -4869,18 +4860,18 @@ Calculates the VSCP server websocket authentication hash.
 | password | <code>string</code> | Password |
 | str_iv | <code>string</code> | 16 random byte iv in hex form |
 
-<a name="vscp.ws.Client+onWebSocketOpen"></a>
+<a id="vscp.ws.Client+onWebSocketOpen"></a>
 ##### client.onWebSocketOpen()
 This function is called by the websocket in case the connection is established.
 It will initiate the authentication with the VSCP server.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onWebSocketClose"></a>
+<a id="vscp.ws.Client+onWebSocketClose"></a>
 ##### client.onWebSocketClose()
 This function is called by the websocket in case that the connection is closed.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+onWebSocketMessage"></a>
+<a id="vscp.ws.Client+onWebSocketMessage"></a>
 ##### client.onWebSocketMessage(msg)
 This function is called for any websocket message (VSCP server response message).
 
@@ -4890,7 +4881,7 @@ This function is called for any websocket message (VSCP server response message)
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a name="vscp.ws.Client+connect"></a>
+<a id="vscp.ws.Client+connect"></a>
 ##### client.connect(options)
 Connect to a VSCP server with the given URL.
 
@@ -4907,12 +4898,12 @@ Connect to a VSCP server with the given URL.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful connection establishment. |
 | [options.onError] | <code>function</code> | Function which is called on a failed connection establishment or in case the connection is lost during the session. |
 
-<a name="vscp.ws.Client+disconnect"></a>
+<a id="vscp.ws.Client+disconnect"></a>
 ##### client.disconnect()
 Disconnect from a VSCP server.
 
 **Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client+start"></a>
+<a id="vscp.ws.Client+start"></a>
 ##### client.start(options)
 Start receiving events.
 
@@ -4924,7 +4915,7 @@ Start receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+stop"></a>
+<a id="vscp.ws.Client+stop"></a>
 ##### client.stop(options)
 Stop receiving events.
 
@@ -4936,7 +4927,7 @@ Stop receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+clearQueue"></a>
+<a id="vscp.ws.Client+clearQueue"></a>
 ##### client.clearQueue(options)
 Clear the VSCP event queue on the server side.
 
@@ -4948,7 +4939,7 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+sendEvent"></a>
+<a id="vscp.ws.Client+sendEvent"></a>
 ##### client.sendEvent(options)
 Send a VSCP event to the VSCP server.
 
@@ -4961,7 +4952,7 @@ Send a VSCP event to the VSCP server.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+setFilter"></a>
+<a id="vscp.ws.Client+setFilter"></a>
 ##### client.setFilter(options)
 Set a filter in the VSCP server for VSCP events.
 
@@ -4981,7 +4972,7 @@ Set a filter in the VSCP server for VSCP events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+createVar"></a>
+<a id="vscp.ws.Client+createVar"></a>
 ##### client.createVar(options)
 Create a a VSCP remote variable.
 
@@ -4999,7 +4990,7 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+readVar"></a>
+<a id="vscp.ws.Client+readVar"></a>
 ##### client.readVar(options)
 Read a value from a VSCP server variable.
 
@@ -5012,7 +5003,7 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+writeVar"></a>
+<a id="vscp.ws.Client+writeVar"></a>
 ##### client.writeVar(options)
 Write a value to a VSCP server variable.
 
@@ -5027,7 +5018,7 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+resetVar"></a>
+<a id="vscp.ws.Client+resetVar"></a>
 ##### client.resetVar(options)
 Reset a VSCP server variable.
 
@@ -5040,7 +5031,7 @@ Reset a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+removeVar"></a>
+<a id="vscp.ws.Client+removeVar"></a>
 ##### client.removeVar(options)
 Remove a VSCP server variable.
 
@@ -5053,7 +5044,7 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+lengthVar"></a>
+<a id="vscp.ws.Client+lengthVar"></a>
 ##### client.lengthVar(options)
 Get a VSCP server variable length.
 
@@ -5066,7 +5057,7 @@ Get a VSCP server variable length.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+lastChangeVar"></a>
+<a id="vscp.ws.Client+lastChangeVar"></a>
 ##### client.lastChangeVar(options)
 Get last change of a VSCP server variable.
 
@@ -5079,7 +5070,7 @@ Get last change of a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+listVar"></a>
+<a id="vscp.ws.Client+listVar"></a>
 ##### client.listVar(options)
 List all VSCP server variables.
 
@@ -5093,7 +5084,7 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client+readTable"></a>
+<a id="vscp.ws.Client+readTable"></a>
 ##### client.readTable(options)
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
@@ -5110,7 +5101,7 @@ If "begin" and "end" are omitted, the whole table is returned.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a name="vscp.ws.Client..Command"></a>
+<a id="vscp.ws.Client..Command"></a>
 ##### Client~Command
 **Kind**: inner class of <code>[Client](#vscp.ws.Client)</code>  
 
@@ -5120,7 +5111,7 @@ If "begin" and "end" are omitted, the whole table is returned.
     * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
     * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
 
-<a name="new_vscp.ws.Client..Command_new"></a>
+<a id="new_vscp.ws.Client..Command_new"></a>
 ###### new Command(command, onSuccess, onerror)
 VSCP server command
 
@@ -5131,27 +5122,27 @@ VSCP server command
 | onSuccess | <code>function</code> | Function which is called on successful operation |
 | onerror | <code>function</code> | Function which is called on failed operation |
 
-<a name="vscp.ws.Client..Command+command"></a>
+<a id="vscp.ws.Client..Command+command"></a>
 ###### command.command : <code>string</code>
 Server command string
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..Command+onSuccess"></a>
+<a id="vscp.ws.Client..Command+onSuccess"></a>
 ###### command.onSuccess : <code>function</code>
 Function which is called on successful operation
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..Command+onError"></a>
+<a id="vscp.ws.Client..Command+onError"></a>
 ###### command.onError : <code>function</code>
 Function which is called on failed operation
 
 **Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a name="vscp.ws.Client..cmdQueue"></a>
+<a id="vscp.ws.Client..cmdQueue"></a>
 ##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
 Queue contains all pending VSCP server commands
 
 **Kind**: inner property of <code>[Client](#vscp.ws.Client)</code>  
-<a name="vscp.ws.Client..getPendingCommandIndex"></a>
+<a id="vscp.ws.Client..getPendingCommandIndex"></a>
 ##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
 Get the index of a command in the queue.
 
@@ -5162,7 +5153,7 @@ Get the index of a command in the queue.
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a name="vscp._createNS"></a>
+<a id="vscp._createNS"></a>
 ### vscp._createNS(namespace)
 Create a general purpose namespace method. This will allow us to create
 namespace a bit easier.
@@ -5173,7 +5164,7 @@ namespace a bit easier.
 | --- | --- | --- |
 | namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
-<a name="vscp.getVarTypeName"></a>
+<a id="vscp.getVarTypeName"></a>
 ### vscp.getVarTypeName(n) ⇒ <code>string</code>
 Get variable type name as string by numerical code.
 
@@ -5184,7 +5175,7 @@ Get variable type name as string by numerical code.
 | --- | --- | --- |
 | n | <code>number</code> | Numerical code |
 
-<a name="vscp.getVarTypeNumerical"></a>
+<a id="vscp.getVarTypeNumerical"></a>
 ### vscp.getVarTypeNumerical(str) ⇒ <code>number</code>
 Get numerical code of variable type from string.
 
@@ -5195,7 +5186,7 @@ Get numerical code of variable type from string.
 | --- | --- | --- |
 | str | <code>string</code> | Variable type name |
 
-<a name="vscp.getEditorModeFromType"></a>
+<a id="vscp.getEditorModeFromType"></a>
 ### vscp.getEditorModeFromType(n) ⇒ <code>string</code>
 Get ace editor formation mode string from numerical variable type code.
 
@@ -5206,7 +5197,7 @@ Get ace editor formation mode string from numerical variable type code.
 | --- | --- | --- |
 | n | <code>number</code> | Variable type numerical code |
 
-<a name="vscp.b64EncodeUnicode"></a>
+<a id="vscp.b64EncodeUnicode"></a>
 ### vscp.b64EncodeUnicode(str) ⇒ <code>string</code>
 Encode base64 unicode safe.
 
@@ -5217,7 +5208,7 @@ Encode base64 unicode safe.
 | --- | --- | --- |
 | str | <code>string</code> | Unicode string |
 
-<a name="vscp.b64DecodeUnicode"></a>
+<a id="vscp.b64DecodeUnicode"></a>
 ### vscp.b64DecodeUnicode(str) ⇒ <code>string</code>
 Decode base64 unicode safe.
 
@@ -5228,7 +5219,7 @@ Decode base64 unicode safe.
 | --- | --- | --- |
 | str | <code>string</code> | Base64 |
 
-<a name="vscp.isBase64Type"></a>
+<a id="vscp.isBase64Type"></a>
 ### vscp.isBase64Type(type) ⇒ <code>bool</code>
 Determine whether the given variable type is a type stored base64 encoded or not.
 
@@ -5239,7 +5230,7 @@ Determine whether the given variable type is a type stored base64 encoded or not
 | --- | --- | --- |
 | type | <code>number</code> | Variable type numerical code |
 
-<a name="vscp.decodeValueIfBase64"></a>
+<a id="vscp.decodeValueIfBase64"></a>
 ### vscp.decodeValueIfBase64(type, value) ⇒ <code>string</code>
 Decode the value if its base64 encoded.
 
@@ -5251,7 +5242,7 @@ Decode the value if its base64 encoded.
 | type | <code>number</code> | Variable type numerical code |
 | value | <code>string</code> | Value |
 
-<a name="vscp.encodeValueIfBase64"></a>
+<a id="vscp.encodeValueIfBase64"></a>
 ### vscp.encodeValueIfBase64(type, value) ⇒ <code>string</code>
 Encode the value if its stored in base64.
 

@@ -4,7 +4,7 @@ The core javascript libraries providing an abstract interface to access
 * the VSCP event communication bus (independent on physical layer),
 * and variables, stored in the VSCP daemon database.
 
-<img src="http://vscp.org/images/logo.png" width="200px" alt="VSCP logo">
+<img src="http://vscp.org/images/logo.png" width="200" alt="VSCP logo">
 
 <hr>
 Copyright &copy; 2015-2018 Andreas Merkle <vscp@blue-andi.de><br />

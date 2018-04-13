@@ -47,9 +47,6 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
             * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
             * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-            * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-            * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-            * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
             * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
             * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
             * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -65,71 +62,50 @@ Namespace for all functionality of the VSCP provided libraries.
     * [.ws](#vscp_dot_ws) : <code>object</code>
         * [.Client](#vscp_dot_ws_dot_Client)
             * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-            * _instance_
-                * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
-                * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
-                * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
-                * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
-                * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
-                * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
-                * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
-                * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
-                * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
-                * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
-                * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
-                * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
-                * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
-                * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
-                * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
-                * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
-                * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
-                * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
-                * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
-                * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-                * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
-                * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
-                * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-                * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-                * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-                * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-                * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-                * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-                * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-                * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-                * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-                * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-                * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
-                * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
-                * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
-                * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
-                * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
-                * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
-                * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-                * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-                * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-                * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-                * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-                * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-                * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-                * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-                * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-                * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-                * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-                * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-                * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-                * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-                * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-                * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-                * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-            * _inner_
-                * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-                    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-                    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-                    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-                    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-                * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-                * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
-    * [._createNS(namespace)](#vscp_dot__createNS)
+            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
     * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
     * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
     * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
@@ -1541,9 +1517,6 @@ VSCP REST api functions
         * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
         * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
         * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-        * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-        * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-        * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
         * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
         * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
         * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -1568,9 +1541,6 @@ VSCP REST api functions
     * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
     * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
     * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-    * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-    * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-    * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
     * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
     * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
     * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -1621,48 +1591,6 @@ REST API version (future use)
 Session key
 
 **Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-<a id="vscp_dot_rest_dot_Client_and__buildUrl"></a>
-
-##### client._buildUrl(path) ⇒
-Build complete URL, including command path.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: URL  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| path | <code>string</code> | Relative command path, after REST API version. |
-
-<a id="vscp_dot_rest_dot_Client_and__makeRequest"></a>
-
-##### client._makeRequest(options) ⇒ <code>object</code>
-Make a request to VSCP daemon via REST api.The onSuccess and onError function parameter are harmonized here.This makes it easier to process them further.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.path | <code>string</code> | Relative path |
-| options.parameter | <code>Array.&lt;string&gt;</code> | Array of URL parameter |
-| options.type | <code>string</code> | 'GET', 'POST', or etc. |
-| [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
-| [options.onError] | <code>function</code> | Callback, which is called for failed request. |
-
-<a id="vscp_dot_rest_dot_Client_and__abort"></a>
-
-##### client._abort(error, [onError]) ⇒ <code>object</code>
-Prepare error object, call error callback and return rejected promise.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - Rejected jquery promise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| error | <code>string</code> | Error description |
-| [onError] | <code>function</code> | Callback |
-
 <a id="vscp_dot_rest_dot_Client_and_openSession"></a>
 
 ##### client.openSession(options) ⇒ <code>object</code>
@@ -1866,79 +1794,6 @@ VSCP websocket api functions
 * [.ws](#vscp_dot_ws) : <code>object</code>
     * [.Client](#vscp_dot_ws_dot_Client)
         * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-        * _instance_
-            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
-            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
-            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
-            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
-            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
-            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
-            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
-            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
-            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
-            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
-            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
-            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
-            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
-            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
-            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
-            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
-            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
-            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
-            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
-            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-            * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
-            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
-            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-            * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-            * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-            * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-            * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-            * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-            * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-            * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-            * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-            * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-            * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
-            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
-            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
-            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
-            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
-            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
-            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-        * _inner_
-            * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-                * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-                * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-                * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-                * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-            * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-            * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
-
-<a id="vscp_dot_ws_dot_Client"></a>
-
-#### ws.Client
-**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
-
-* [.Client](#vscp_dot_ws_dot_Client)
-    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-    * _instance_
         * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
         * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
         * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
@@ -1959,19 +1814,8 @@ VSCP websocket api functions
         * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
         * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
         * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-        * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
         * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
         * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-        * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-        * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-        * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-        * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-        * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-        * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-        * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-        * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-        * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-        * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
         * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
         * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
         * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
@@ -1994,14 +1838,58 @@ VSCP websocket api functions
         * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
         * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
         * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-    * _inner_
-        * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-            * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-            * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-            * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-            * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-        * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-        * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
+
+<a id="vscp_dot_ws_dot_Client"></a>
+
+#### ws.Client
+**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
+
+* [.Client](#vscp_dot_ws_dot_Client)
+    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+    * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+    * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+    * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+    * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+    * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+    * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+    * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+    * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+    * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+    * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+    * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+    * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+    * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+    * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+    * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+    * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+    * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+    * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+    * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+    * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+    * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+    * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+    * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+    * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+    * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+    * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+    * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+    * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+    * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+    * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
 
 <a id="new_vscp_dot_ws_dot_Client_new"></a>
 
@@ -2128,12 +2016,6 @@ VSCP websocket is not connected right now
 VSCP event traffic is closed
 
 **Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_and_webSocketMessages"></a>
-
-##### client.webSocketMessages : <code>object</code>
-VSCP websocket command responses and unsolicited messages
-
-**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 <a id="vscp_dot_ws_dot_Client_and_states"></a>
 
 ##### client.states : <code>enum</code>
@@ -2160,133 +2042,6 @@ Substates of the VSCP websocket
 | --- | --- | --- | --- |
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
-
-<a id="vscp_dot_ws_dot_Client_and_getPendingCommand"></a>
-
-##### client.getPendingCommand(command) ⇒ <code>Command</code>
-Get command from queue with pending commands.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>Command</code> - Command object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-
-<a id="vscp_dot_ws_dot_Client_and__sendCommand"></a>
-
-##### client._sendCommand(options)
-Send command to VSCP server.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.command | <code>string</code> | Command string |
-| options.data | <code>string</code> | Data string |
-| options.simulate | <code>boolean</code> | Simulate the command (true/false) |
-| options.onSuccess | <code>function</code> | Callback on success |
-| options.onError | <code>function</code> | Callback on error |
-
-<a id="vscp_dot_ws_dot_Client_and__sendEvent"></a>
-
-##### client._sendEvent(options)
-Send event to VSCP server.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.data | <code>string</code> | Data string |
-| options.onSuccess | <code>function</code> | Callback on success |
-| options.onError | <code>function</code> | Callback on error |
-
-<a id="vscp_dot_ws_dot_Client_and_signalSuccess"></a>
-
-##### client.signalSuccess(command, [obj])
-Signal success of the current asynchronous operation.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| [obj] | <code>object</code> | Options for on success callback |
-
-<a id="vscp_dot_ws_dot_Client_and_signalError"></a>
-
-##### client.signalError(command, [obj])
-Signal failed of the current asynchronous operation.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| [obj] | <code>object</code> | Options for on error callback |
-
-<a id="vscp_dot_ws_dot_Client_and_signalConnError"></a>
-
-##### client.signalConnError()
-Signal a connection error.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_and_signalMessage"></a>
-
-##### client.signalMessage(msg) ⇒ <code>boolean</code>
-Signal a received VSCP response message.
-If the message is handled by the application, the application will return
-true, which means no further actions shall take place in this object.
-Otherwise the message is handled by the standard onMessage handler here.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>boolean</code> - Message is handled (true) or not (false).  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>string</code> | VSCP server response message |
-
-<a id="vscp_dot_ws_dot_Client_and_signalEvent"></a>
-
-##### client.signalEvent(vscpEvent)
-Signal a received VSCP event.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| vscpEvent | [<code>Event</code>](#vscp_dot_Event) | VSCP event |
-
-<a id="vscp_dot_ws_dot_Client_and_signalVariable"></a>
-
-##### client.signalVariable(variable)
-Signal a received variable.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| variable | <code>object</code> | Variable object |
-| variable.id | <code>number</code> | Consecutive number |
-| variable.name | <code>string</code> | Variable name |
-| variable.type | <code>string</code> | Variable type |
-| variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
-| variable.value | <code>string</code> | Variable value |
-
-<a id="vscp_dot_ws_dot_Client_and_signalTableRow"></a>
-
-##### client.signalTableRow(row)
-Signal a received table row.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| row | <code>object</code> | Table row object |
-| row.date | <code>string</code> | Date and time |
-| row.value | <code>string</code> | Value |
 
 <a id="vscp_dot_ws_dot_Client_and_addEventListener"></a>
 
@@ -2583,77 +2338,6 @@ If "begin" and "end" are omitted, the whole table is returned.
 | options.onTableRow | <code>function</code> | Function which is called on every received table row |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
-
-<a id="vscp_dot_ws_dot_Client_tilde_Command"></a>
-
-##### Client~Command
-**Kind**: inner class of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-* [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-
-<a id="new_vscp_dot_ws_dot_Client_tilde_Command_new"></a>
-
-###### new Command(command, onSuccess, onerror)
-VSCP server command
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| onSuccess | <code>function</code> | Function which is called on successful operation |
-| onerror | <code>function</code> | Function which is called on failed operation |
-
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_command"></a>
-
-###### command.command : <code>string</code>
-Server command string
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess"></a>
-
-###### command.onSuccess : <code>function</code>
-Function which is called on successful operation
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onError"></a>
-
-###### command.onError : <code>function</code>
-Function which is called on failed operation
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_cmdQueue"></a>
-
-##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
-Queue contains all pending VSCP server commands
-
-**Kind**: inner property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex"></a>
-
-##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
-Get the index of a command in the queue.
-
-**Kind**: inner method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>number</code> - Index of command in the queue. If index is < 0, the command was not found.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-
-<a id="vscp_dot__createNS"></a>
-
-### vscp._createNS(namespace)
-Create a general purpose namespace method. This will allow us to create
-namespace a bit easier.
-
-**Kind**: static method of [<code>vscp</code>](#vscp)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
 <a id="vscp_dot_getVarTypeName"></a>
 
@@ -2802,9 +2486,6 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
             * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
             * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-            * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-            * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-            * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
             * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
             * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
             * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -2820,71 +2501,50 @@ Namespace for all functionality of the VSCP provided libraries.
     * [.ws](#vscp_dot_ws) : <code>object</code>
         * [.Client](#vscp_dot_ws_dot_Client)
             * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-            * _instance_
-                * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
-                * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
-                * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
-                * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
-                * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
-                * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
-                * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
-                * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
-                * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
-                * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
-                * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
-                * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
-                * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
-                * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
-                * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
-                * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
-                * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
-                * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
-                * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
-                * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-                * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
-                * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
-                * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-                * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-                * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-                * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-                * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-                * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-                * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-                * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-                * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-                * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-                * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
-                * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
-                * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
-                * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
-                * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
-                * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
-                * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-                * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-                * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-                * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-                * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-                * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-                * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-                * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-                * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-                * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-                * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-                * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-                * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-                * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-                * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-                * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-                * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-            * _inner_
-                * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-                    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-                    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-                    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-                    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-                * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-                * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
-    * [._createNS(namespace)](#vscp_dot__createNS)
+            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
     * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
     * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
     * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
@@ -4296,9 +3956,6 @@ VSCP REST api functions
         * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
         * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
         * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-        * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-        * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-        * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
         * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
         * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
         * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -4323,9 +3980,6 @@ VSCP REST api functions
     * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
     * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
     * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
-    * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
-    * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
-    * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
     * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
     * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
     * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
@@ -4376,48 +4030,6 @@ REST API version (future use)
 Session key
 
 **Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-<a id="vscp_dot_rest_dot_Client_and__buildUrl"></a>
-
-##### client._buildUrl(path) ⇒
-Build complete URL, including command path.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: URL  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| path | <code>string</code> | Relative command path, after REST API version. |
-
-<a id="vscp_dot_rest_dot_Client_and__makeRequest"></a>
-
-##### client._makeRequest(options) ⇒ <code>object</code>
-Make a request to VSCP daemon via REST api.The onSuccess and onError function parameter are harmonized here.This makes it easier to process them further.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.path | <code>string</code> | Relative path |
-| options.parameter | <code>Array.&lt;string&gt;</code> | Array of URL parameter |
-| options.type | <code>string</code> | 'GET', 'POST', or etc. |
-| [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
-| [options.onError] | <code>function</code> | Callback, which is called for failed request. |
-
-<a id="vscp_dot_rest_dot_Client_and__abort"></a>
-
-##### client._abort(error, [onError]) ⇒ <code>object</code>
-Prepare error object, call error callback and return rejected promise.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - Rejected jquery promise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| error | <code>string</code> | Error description |
-| [onError] | <code>function</code> | Callback |
-
 <a id="vscp_dot_rest_dot_Client_and_openSession"></a>
 
 ##### client.openSession(options) ⇒ <code>object</code>
@@ -4621,79 +4233,6 @@ VSCP websocket api functions
 * [.ws](#vscp_dot_ws) : <code>object</code>
     * [.Client](#vscp_dot_ws_dot_Client)
         * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-        * _instance_
-            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
-            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
-            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
-            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
-            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
-            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
-            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
-            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
-            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
-            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
-            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
-            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
-            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
-            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
-            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
-            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
-            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
-            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
-            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
-            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-            * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
-            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
-            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-            * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-            * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-            * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-            * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-            * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-            * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-            * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-            * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-            * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-            * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
-            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
-            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
-            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
-            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
-            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
-            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-        * _inner_
-            * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-                * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-                * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-                * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-                * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-            * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-            * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
-
-<a id="vscp_dot_ws_dot_Client"></a>
-
-#### ws.Client
-**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
-
-* [.Client](#vscp_dot_ws_dot_Client)
-    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
-    * _instance_
         * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
         * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
         * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
@@ -4714,19 +4253,8 @@ VSCP websocket api functions
         * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
         * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
         * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
-        * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
         * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
         * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
-        * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
-        * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
-        * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
-        * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
-        * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
-        * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
-        * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
-        * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
-        * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
-        * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
         * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
         * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
         * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
@@ -4749,14 +4277,58 @@ VSCP websocket api functions
         * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
         * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
         * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
-    * _inner_
-        * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-            * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-            * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-            * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-            * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-        * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
-        * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
+
+<a id="vscp_dot_ws_dot_Client"></a>
+
+#### ws.Client
+**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
+
+* [.Client](#vscp_dot_ws_dot_Client)
+    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+    * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+    * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+    * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+    * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+    * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+    * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+    * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+    * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+    * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+    * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+    * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+    * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+    * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+    * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+    * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+    * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+    * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+    * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+    * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+    * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+    * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+    * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+    * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+    * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+    * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+    * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+    * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+    * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+    * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+    * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
 
 <a id="new_vscp_dot_ws_dot_Client_new"></a>
 
@@ -4883,12 +4455,6 @@ VSCP websocket is not connected right now
 VSCP event traffic is closed
 
 **Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_and_webSocketMessages"></a>
-
-##### client.webSocketMessages : <code>object</code>
-VSCP websocket command responses and unsolicited messages
-
-**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 <a id="vscp_dot_ws_dot_Client_and_states"></a>
 
 ##### client.states : <code>enum</code>
@@ -4915,133 +4481,6 @@ Substates of the VSCP websocket
 | --- | --- | --- | --- |
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
-
-<a id="vscp_dot_ws_dot_Client_and_getPendingCommand"></a>
-
-##### client.getPendingCommand(command) ⇒ <code>Command</code>
-Get command from queue with pending commands.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>Command</code> - Command object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-
-<a id="vscp_dot_ws_dot_Client_and__sendCommand"></a>
-
-##### client._sendCommand(options)
-Send command to VSCP server.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.command | <code>string</code> | Command string |
-| options.data | <code>string</code> | Data string |
-| options.simulate | <code>boolean</code> | Simulate the command (true/false) |
-| options.onSuccess | <code>function</code> | Callback on success |
-| options.onError | <code>function</code> | Callback on error |
-
-<a id="vscp_dot_ws_dot_Client_and__sendEvent"></a>
-
-##### client._sendEvent(options)
-Send event to VSCP server.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>object</code> | Options |
-| options.data | <code>string</code> | Data string |
-| options.onSuccess | <code>function</code> | Callback on success |
-| options.onError | <code>function</code> | Callback on error |
-
-<a id="vscp_dot_ws_dot_Client_and_signalSuccess"></a>
-
-##### client.signalSuccess(command, [obj])
-Signal success of the current asynchronous operation.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| [obj] | <code>object</code> | Options for on success callback |
-
-<a id="vscp_dot_ws_dot_Client_and_signalError"></a>
-
-##### client.signalError(command, [obj])
-Signal failed of the current asynchronous operation.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| [obj] | <code>object</code> | Options for on error callback |
-
-<a id="vscp_dot_ws_dot_Client_and_signalConnError"></a>
-
-##### client.signalConnError()
-Signal a connection error.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_and_signalMessage"></a>
-
-##### client.signalMessage(msg) ⇒ <code>boolean</code>
-Signal a received VSCP response message.
-If the message is handled by the application, the application will return
-true, which means no further actions shall take place in this object.
-Otherwise the message is handled by the standard onMessage handler here.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>boolean</code> - Message is handled (true) or not (false).  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| msg | <code>string</code> | VSCP server response message |
-
-<a id="vscp_dot_ws_dot_Client_and_signalEvent"></a>
-
-##### client.signalEvent(vscpEvent)
-Signal a received VSCP event.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| vscpEvent | [<code>Event</code>](#vscp_dot_Event) | VSCP event |
-
-<a id="vscp_dot_ws_dot_Client_and_signalVariable"></a>
-
-##### client.signalVariable(variable)
-Signal a received variable.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| variable | <code>object</code> | Variable object |
-| variable.id | <code>number</code> | Consecutive number |
-| variable.name | <code>string</code> | Variable name |
-| variable.type | <code>string</code> | Variable type |
-| variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
-| variable.value | <code>string</code> | Variable value |
-
-<a id="vscp_dot_ws_dot_Client_and_signalTableRow"></a>
-
-##### client.signalTableRow(row)
-Signal a received table row.
-
-**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| row | <code>object</code> | Table row object |
-| row.date | <code>string</code> | Date and time |
-| row.value | <code>string</code> | Value |
 
 <a id="vscp_dot_ws_dot_Client_and_addEventListener"></a>
 
@@ -5338,77 +4777,6 @@ If "begin" and "end" are omitted, the whole table is returned.
 | options.onTableRow | <code>function</code> | Function which is called on every received table row |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
-
-<a id="vscp_dot_ws_dot_Client_tilde_Command"></a>
-
-##### Client~Command
-**Kind**: inner class of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-
-* [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
-    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
-    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
-    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
-    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
-
-<a id="new_vscp_dot_ws_dot_Client_tilde_Command_new"></a>
-
-###### new Command(command, onSuccess, onerror)
-VSCP server command
-
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-| onSuccess | <code>function</code> | Function which is called on successful operation |
-| onerror | <code>function</code> | Function which is called on failed operation |
-
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_command"></a>
-
-###### command.command : <code>string</code>
-Server command string
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess"></a>
-
-###### command.onSuccess : <code>function</code>
-Function which is called on successful operation
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onError"></a>
-
-###### command.onError : <code>function</code>
-Function which is called on failed operation
-
-**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
-<a id="vscp_dot_ws_dot_Client_tilde_cmdQueue"></a>
-
-##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
-Queue contains all pending VSCP server commands
-
-**Kind**: inner property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-<a id="vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex"></a>
-
-##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
-Get the index of a command in the queue.
-
-**Kind**: inner method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
-**Returns**: <code>number</code> - Index of command in the queue. If index is < 0, the command was not found.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| command | <code>string</code> | Server command string |
-
-<a id="vscp_dot__createNS"></a>
-
-### vscp._createNS(namespace)
-Create a general purpose namespace method. This will allow us to create
-namespace a bit easier.
-
-**Kind**: static method of [<code>vscp</code>](#vscp)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
 <a id="vscp_dot_getVarTypeName"></a>
 

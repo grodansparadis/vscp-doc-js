@@ -8,12 +8,6 @@
 ## API
 
 * [Reference](api.md)
-
-### Common
-* [Event](api.md#vscp.Event)
-
-### Websocket
-* [Event](api.md#vscp.ws)
-
-### REST
-* [Event](api.md#vscp.rest)
+    * [Event](api.md#vscp_dot_Event)
+    * [REST interface](api.md#vscp_dot_ws)
+    * [Websocket interface](api.md#vscp_dot_rest)

@@ -1,170 +1,173 @@
 <a id="vscp"></a>
+
 ## vscp : <code>object</code>
 Namespace for all functionality of the VSCP provided libraries.
 
 **Kind**: global namespace  
 
 * [vscp](#vscp) : <code>object</code>
-  * [.Event](#vscp.Event)
-    * [new vscp.Event(options)](#new_vscp.Event_new)
-    * [.vscpHead](#vscp.Event+vscpHead) : <code>number</code>
-    * [.vscpClass](#vscp.Event+vscpClass) : <code>number</code>
-    * [.vscpType](#vscp.Event+vscpType) : <code>number</code>
-    * [.vscpObId](#vscp.Event+vscpObId) : <code>number</code>
-    * [.vscpTimeStamp](#vscp.Event+vscpTimeStamp) : <code>number</code>
-    * [.vscpDateTime](#vscp.Event+vscpDateTime) : <code>date</code>
-    * [.vscpGuid](#vscp.Event+vscpGuid) : <code>string</code>
-    * [.vscpData](#vscp.Event+vscpData) : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
-    * [.setIPV6Addr()](#vscp.Event+setIPV6Addr)
-    * [.isIPV6Addr()](#vscp.Event+isIPV6Addr) ⇒ <code>boolean</code>
-    * [.setDumbNode()](#vscp.Event+setDumbNode)
-    * [.isDumbNode()](#vscp.Event+isDumbNode) ⇒ <code>boolean</code>
-    * [.setPriority(priority)](#vscp.Event+setPriority)
-    * [.getPriority()](#vscp.Event+getPriority) ⇒ <code>number</code>
-    * [.setHardCodedAddr()](#vscp.Event+setHardCodedAddr)
-    * [.isHardCodedAddr()](#vscp.Event+isHardCodedAddr) ⇒ <code>boolean</code>
-    * [.setDoNotCalcCRC()](#vscp.Event+setDoNotCalcCRC)
-    * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
-    * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
-  * [.version](#vscp.version)
-  * [.constants](#vscp.constants) : <code>object</code>
-    * [.classes](#vscp.constants.classes) : <code>enum</code>
-    * [.types](#vscp.constants.types) : <code>enum</code>
-    * [.priorities](#vscp.constants.priorities) : <code>enum</code>
-    * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
-    * [.varTypeNames](#vscp.constants.varTypeNames)
-  * [.utility](#vscp.utility) : <code>object</code>
-    * [.readValue(input)](#vscp.utility.readValue) ⇒ <code>number</code>
-    * [.getTime()](#vscp.utility.getTime) ⇒ <code>string</code>
-    * [.guidToStr(guid)](#vscp.utility.guidToStr) ⇒ <code>string</code>
-    * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
-  * [.rest](#vscp.rest) : <code>object</code>
-    * [.Client](#vscp.rest.Client)
-      * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-      * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-      * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-      * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-      * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-      * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-      * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-      * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-      * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-      * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-      * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-      * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-      * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-      * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-      * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-      * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-      * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-      * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-      * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-      * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
-  * [.ws](#vscp.ws) : <code>object</code>
-    * [.Client](#vscp.ws.Client)
-      * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-      * _instance_
-        * [.states](#vscp.ws.Client+states) : <code>enum</code>
-        * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-        * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-        * [.url](#vscp.ws.Client+url) : <code>string</code>
-        * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-        * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-        * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-        * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-        * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-        * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-        * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-        * [.password](#vscp.ws.Client+password) : <code>string</code>
-        * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-        * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-        * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-        * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-        * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-        * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-        * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-        * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-        * [.state](#vscp.ws.Client+state) : <code>number</code>
-        * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-        * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-        * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-        * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-        * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-        * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-        * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-        * [.signalConnError()](#vscp.ws.Client+signalConnError)
-        * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-        * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-        * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-        * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-        * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-        * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-        * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-        * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-        * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-        * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-        * [.connect(options)](#vscp.ws.Client+connect)
-        * [.disconnect()](#vscp.ws.Client+disconnect)
-        * [.start(options)](#vscp.ws.Client+start)
-        * [.stop(options)](#vscp.ws.Client+stop)
-        * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-        * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-        * [.setFilter(options)](#vscp.ws.Client+setFilter)
-        * [.createVar(options)](#vscp.ws.Client+createVar)
-        * [.readVar(options)](#vscp.ws.Client+readVar)
-        * [.writeVar(options)](#vscp.ws.Client+writeVar)
-        * [.resetVar(options)](#vscp.ws.Client+resetVar)
-        * [.removeVar(options)](#vscp.ws.Client+removeVar)
-        * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-        * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-        * [.listVar(options)](#vscp.ws.Client+listVar)
-        * [.readTable(options)](#vscp.ws.Client+readTable)
-      * _inner_
-        * [~Command](#vscp.ws.Client..Command)
-          * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-          * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-          * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-          * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-        * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-        * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
-  * [._createNS(namespace)](#vscp._createNS)
-  * [.getVarTypeName(n)](#vscp.getVarTypeName) ⇒ <code>string</code>
-  * [.getVarTypeNumerical(str)](#vscp.getVarTypeNumerical) ⇒ <code>number</code>
-  * [.getEditorModeFromType(n)](#vscp.getEditorModeFromType) ⇒ <code>string</code>
-  * [.b64EncodeUnicode(str)](#vscp.b64EncodeUnicode) ⇒ <code>string</code>
-  * [.b64DecodeUnicode(str)](#vscp.b64DecodeUnicode) ⇒ <code>string</code>
-  * [.isBase64Type(type)](#vscp.isBase64Type) ⇒ <code>bool</code>
-  * [.decodeValueIfBase64(type, value)](#vscp.decodeValueIfBase64) ⇒ <code>string</code>
-  * [.encodeValueIfBase64(type, value)](#vscp.encodeValueIfBase64) ⇒ <code>string</code>
+    * [.Event](#vscp_dot_Event)
+        * [new vscp.Event(options)](#new_vscp_dot_Event_new)
+        * [.vscpHead](#vscp_dot_Event_and_vscpHead) : <code>number</code>
+        * [.vscpClass](#vscp_dot_Event_and_vscpClass) : <code>number</code>
+        * [.vscpType](#vscp_dot_Event_and_vscpType) : <code>number</code>
+        * [.vscpObId](#vscp_dot_Event_and_vscpObId) : <code>number</code>
+        * [.vscpTimeStamp](#vscp_dot_Event_and_vscpTimeStamp) : <code>number</code>
+        * [.vscpDateTime](#vscp_dot_Event_and_vscpDateTime) : <code>date</code>
+        * [.vscpGuid](#vscp_dot_Event_and_vscpGuid) : <code>string</code>
+        * [.vscpData](#vscp_dot_Event_and_vscpData) : <code>Array.&lt;number&gt;</code> \| <code>string</code>
+        * [.setIPV6Addr()](#vscp_dot_Event_and_setIPV6Addr)
+        * [.isIPV6Addr()](#vscp_dot_Event_and_isIPV6Addr) ⇒ <code>boolean</code>
+        * [.setDumbNode()](#vscp_dot_Event_and_setDumbNode)
+        * [.isDumbNode()](#vscp_dot_Event_and_isDumbNode) ⇒ <code>boolean</code>
+        * [.setPriority(priority)](#vscp_dot_Event_and_setPriority)
+        * [.getPriority()](#vscp_dot_Event_and_getPriority) ⇒ <code>number</code>
+        * [.setHardCodedAddr()](#vscp_dot_Event_and_setHardCodedAddr)
+        * [.isHardCodedAddr()](#vscp_dot_Event_and_isHardCodedAddr) ⇒ <code>boolean</code>
+        * [.setDoNotCalcCRC()](#vscp_dot_Event_and_setDoNotCalcCRC)
+        * [.isDoNotCalcCRC()](#vscp_dot_Event_and_isDoNotCalcCRC) ⇒ <code>boolean</code>
+        * [.getText()](#vscp_dot_Event_and_getText) ⇒ <code>string</code>
+    * [.version](#vscp_dot_version)
+    * [.constants](#vscp_dot_constants) : <code>object</code>
+        * [.classes](#vscp_dot_constants_dot_classes) : <code>enum</code>
+        * [.types](#vscp_dot_constants_dot_types) : <code>enum</code>
+        * [.priorities](#vscp_dot_constants_dot_priorities) : <code>enum</code>
+        * [.varTypes](#vscp_dot_constants_dot_varTypes) : <code>enum</code>
+        * [.varTypeNames](#vscp_dot_constants_dot_varTypeNames)
+    * [.utility](#vscp_dot_utility) : <code>object</code>
+        * [.readValue(input)](#vscp_dot_utility_dot_readValue) ⇒ <code>number</code>
+        * [.getTime()](#vscp_dot_utility_dot_getTime) ⇒ <code>string</code>
+        * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
+        * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
+    * [.rest](#vscp_dot_rest) : <code>object</code>
+        * [.Client](#vscp_dot_rest_dot_Client)
+            * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+            * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+            * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+            * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+            * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+            * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+            * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+            * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+            * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+            * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+            * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+            * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+            * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+            * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+            * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+            * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+            * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+            * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+            * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+            * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.ws](#vscp_dot_ws) : <code>object</code>
+        * [.Client](#vscp_dot_ws_dot_Client)
+            * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+            * _instance_
+                * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+                * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+                * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+                * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+                * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+                * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+                * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+                * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+                * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+                * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+                * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+                * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+                * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+                * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+                * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+                * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+                * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+                * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+                * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+                * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+                * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+                * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+                * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+                * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+                * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+                * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+                * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+                * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+                * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+                * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+                * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+                * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+                * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+                * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+                * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+                * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+                * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+                * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+                * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+                * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+                * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+                * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+                * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+                * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+                * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+                * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+                * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+                * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+                * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+                * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+                * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+                * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+                * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+                * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+                * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+            * _inner_
+                * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+                    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+                    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+                    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+                    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+                * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+                * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
+    * [._createNS(namespace)](#vscp_dot__createNS)
+    * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
+    * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
+    * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
+    * [.b64EncodeUnicode(str)](#vscp_dot_b64EncodeUnicode) ⇒ <code>string</code>
+    * [.b64DecodeUnicode(str)](#vscp_dot_b64DecodeUnicode) ⇒ <code>string</code>
+    * [.isBase64Type(type)](#vscp_dot_isBase64Type) ⇒ <code>bool</code>
+    * [.decodeValueIfBase64(type, value)](#vscp_dot_decodeValueIfBase64) ⇒ <code>string</code>
+    * [.encodeValueIfBase64(type, value)](#vscp_dot_encodeValueIfBase64) ⇒ <code>string</code>
 
-<a id="vscp.Event"></a>
+<a id="vscp_dot_Event"></a>
+
 ### vscp.Event
-**Kind**: static class of <code>[vscp](#vscp)</code>  
+**Kind**: static class of [<code>vscp</code>](#vscp)  
 
-* [.Event](#vscp.Event)
-  * [new vscp.Event(options)](#new_vscp.Event_new)
-  * [.vscpHead](#vscp.Event+vscpHead) : <code>number</code>
-  * [.vscpClass](#vscp.Event+vscpClass) : <code>number</code>
-  * [.vscpType](#vscp.Event+vscpType) : <code>number</code>
-  * [.vscpObId](#vscp.Event+vscpObId) : <code>number</code>
-  * [.vscpTimeStamp](#vscp.Event+vscpTimeStamp) : <code>number</code>
-  * [.vscpDateTime](#vscp.Event+vscpDateTime) : <code>date</code>
-  * [.vscpGuid](#vscp.Event+vscpGuid) : <code>string</code>
-  * [.vscpData](#vscp.Event+vscpData) : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
-  * [.setIPV6Addr()](#vscp.Event+setIPV6Addr)
-  * [.isIPV6Addr()](#vscp.Event+isIPV6Addr) ⇒ <code>boolean</code>
-  * [.setDumbNode()](#vscp.Event+setDumbNode)
-  * [.isDumbNode()](#vscp.Event+isDumbNode) ⇒ <code>boolean</code>
-  * [.setPriority(priority)](#vscp.Event+setPriority)
-  * [.getPriority()](#vscp.Event+getPriority) ⇒ <code>number</code>
-  * [.setHardCodedAddr()](#vscp.Event+setHardCodedAddr)
-  * [.isHardCodedAddr()](#vscp.Event+isHardCodedAddr) ⇒ <code>boolean</code>
-  * [.setDoNotCalcCRC()](#vscp.Event+setDoNotCalcCRC)
-  * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
-  * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
+* [.Event](#vscp_dot_Event)
+    * [new vscp.Event(options)](#new_vscp_dot_Event_new)
+    * [.vscpHead](#vscp_dot_Event_and_vscpHead) : <code>number</code>
+    * [.vscpClass](#vscp_dot_Event_and_vscpClass) : <code>number</code>
+    * [.vscpType](#vscp_dot_Event_and_vscpType) : <code>number</code>
+    * [.vscpObId](#vscp_dot_Event_and_vscpObId) : <code>number</code>
+    * [.vscpTimeStamp](#vscp_dot_Event_and_vscpTimeStamp) : <code>number</code>
+    * [.vscpDateTime](#vscp_dot_Event_and_vscpDateTime) : <code>date</code>
+    * [.vscpGuid](#vscp_dot_Event_and_vscpGuid) : <code>string</code>
+    * [.vscpData](#vscp_dot_Event_and_vscpData) : <code>Array.&lt;number&gt;</code> \| <code>string</code>
+    * [.setIPV6Addr()](#vscp_dot_Event_and_setIPV6Addr)
+    * [.isIPV6Addr()](#vscp_dot_Event_and_isIPV6Addr) ⇒ <code>boolean</code>
+    * [.setDumbNode()](#vscp_dot_Event_and_setDumbNode)
+    * [.isDumbNode()](#vscp_dot_Event_and_isDumbNode) ⇒ <code>boolean</code>
+    * [.setPriority(priority)](#vscp_dot_Event_and_setPriority)
+    * [.getPriority()](#vscp_dot_Event_and_getPriority) ⇒ <code>number</code>
+    * [.setHardCodedAddr()](#vscp_dot_Event_and_setHardCodedAddr)
+    * [.isHardCodedAddr()](#vscp_dot_Event_and_isHardCodedAddr) ⇒ <code>boolean</code>
+    * [.setDoNotCalcCRC()](#vscp_dot_Event_and_setDoNotCalcCRC)
+    * [.isDoNotCalcCRC()](#vscp_dot_Event_and_isDoNotCalcCRC) ⇒ <code>boolean</code>
+    * [.getText()](#vscp_dot_Event_and_getText) ⇒ <code>string</code>
 
-<a id="new_vscp.Event_new"></a>
+<a id="new_vscp_dot_Event_new"></a>
+
 #### new vscp.Event(options)
 VSCP event.
 
@@ -183,120 +186,140 @@ VSCP event.
 | options.vscpObId | <code>number</code> | Object id |
 | options.vscpTimeStamp | <code>number</code> | Timestamp |
 | options.vscpGuid | <code>string</code> | GUID string |
-| options.vscpData | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | Event data |
+| options.vscpData | <code>Array.&lt;number&gt;</code> \| <code>string</code> | Event data |
 
-<a id="vscp.Event+vscpHead"></a>
+<a id="vscp_dot_Event_and_vscpHead"></a>
+
 #### event.vscpHead : <code>number</code>
 VSCP event head
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpClass"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpClass"></a>
+
 #### event.vscpClass : <code>number</code>
 VSCP class
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpType"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpType"></a>
+
 #### event.vscpType : <code>number</code>
 VSCP type
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpObId"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpObId"></a>
+
 #### event.vscpObId : <code>number</code>
 VSCP object id used by driver for channel info and etc.
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpTimeStamp"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpTimeStamp"></a>
+
 #### event.vscpTimeStamp : <code>number</code>
 Relative timestamp for package in us
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpDateTime"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpDateTime"></a>
+
 #### event.vscpDateTime : <code>date</code>
 Date/Time for package
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpGuid"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpGuid"></a>
+
 #### event.vscpGuid : <code>string</code>
 Node global unique id LSB(15) -> MSB(0)
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpData"></a>
-#### event.vscpData : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpData"></a>
+
+#### event.vscpData : <code>Array.&lt;number&gt;</code> \| <code>string</code>
 Data array or string
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+setIPV6Addr"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_setIPV6Addr"></a>
+
 #### event.setIPV6Addr()
 Set GUID as IP v6 address
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isIPV6Addr"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isIPV6Addr"></a>
+
 #### event.isIPV6Addr() ⇒ <code>boolean</code>
 Is GUID a IP v6 address or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the GUID is a IP v6 address, it will return true, otherwise false.  
-<a id="vscp.Event+setDumbNode"></a>
+<a id="vscp_dot_Event_and_setDumbNode"></a>
+
 #### event.setDumbNode()
 Set dumb node. No MDF, registers, nothing.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isDumbNode"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isDumbNode"></a>
+
 #### event.isDumbNode() ⇒ <code>boolean</code>
 Is node a dump node or not?
 Dumb node means no MDF, registers, nothing.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the node is a dumb node, it will return true, otherwise false.  
-<a id="vscp.Event+setPriority"></a>
+<a id="vscp_dot_Event_and_setPriority"></a>
+
 #### event.setPriority(priority)
 Set the VSCP event priority.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | priority | <code>number</code> | Priority |
 
-<a id="vscp.Event+getPriority"></a>
+<a id="vscp_dot_Event_and_getPriority"></a>
+
 #### event.getPriority() ⇒ <code>number</code>
 Get the VSCP event priority.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>number</code> - Priority of the event.  
-<a id="vscp.Event+setHardCodedAddr"></a>
+<a id="vscp_dot_Event_and_setHardCodedAddr"></a>
+
 #### event.setHardCodedAddr()
 Set the node id of the event sender as hard coded?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isHardCodedAddr"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isHardCodedAddr"></a>
+
 #### event.isHardCodedAddr() ⇒ <code>boolean</code>
 Is the node id of the event sender hard coded or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the node id is hard coded, it will return true, otherwise false.  
-<a id="vscp.Event+setDoNotCalcCRC"></a>
+<a id="vscp_dot_Event_and_setDoNotCalcCRC"></a>
+
 #### event.setDoNotCalcCRC()
 Set flag for no CRC calculation?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isDoNotCalcCRC"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isDoNotCalcCRC"></a>
+
 #### event.isDoNotCalcCRC() ⇒ <code>boolean</code>
 Is CRC calculated or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If nor CRC should be calculated true is returned.  
-<a id="vscp.Event+getText"></a>
+<a id="vscp_dot_Event_and_getText"></a>
+
 #### event.getText() ⇒ <code>string</code>
 Get event as string.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>string</code> - Event as string  
-<a id="vscp.version"></a>
+<a id="vscp_dot_version"></a>
+
 ### vscp.version
 VSCP websocket library version
 
-**Kind**: static property of <code>[vscp](#vscp)</code>  
+**Kind**: static property of [<code>vscp</code>](#vscp)  
 **Properties**
 
 | Name | Type | Description |
@@ -305,24 +328,26 @@ VSCP websocket library version
 | minor | <code>number</code> | Minor version number |
 | patch | <code>number</code> | Sub-minor version number |
 
-<a id="vscp.constants"></a>
+<a id="vscp_dot_constants"></a>
+
 ### vscp.constants : <code>object</code>
 VSCP constants
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.constants](#vscp.constants) : <code>object</code>
-  * [.classes](#vscp.constants.classes) : <code>enum</code>
-  * [.types](#vscp.constants.types) : <code>enum</code>
-  * [.priorities](#vscp.constants.priorities) : <code>enum</code>
-  * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
-  * [.varTypeNames](#vscp.constants.varTypeNames)
+* [.constants](#vscp_dot_constants) : <code>object</code>
+    * [.classes](#vscp_dot_constants_dot_classes) : <code>enum</code>
+    * [.types](#vscp_dot_constants_dot_types) : <code>enum</code>
+    * [.priorities](#vscp_dot_constants_dot_priorities) : <code>enum</code>
+    * [.varTypes](#vscp_dot_constants_dot_varTypes) : <code>enum</code>
+    * [.varTypeNames](#vscp_dot_constants_dot_varTypeNames)
 
-<a id="vscp.constants.classes"></a>
+<a id="vscp_dot_constants_dot_classes"></a>
+
 #### constants.classes : <code>enum</code>
 VSCP classes
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -386,11 +411,12 @@ VSCP classes
 | VSCP_CLASS2_MEASUREMENT_FLOAT | <code>number</code> | <code>1060</code> | 
 | VSCP_CLASS2_VSCPD | <code>number</code> | <code>65535</code> | 
 
-<a id="vscp.constants.types"></a>
+<a id="vscp_dot_constants_dot_types"></a>
+
 #### constants.types : <code>enum</code>
 VSCP class types
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -1366,11 +1392,12 @@ VSCP class types
 | VSCP2_TYPE_VSCPD_TIMER_ELLAPSED | <code>number</code> | <code>29</code> | 
 | VSCP2_TYPE_VSCPD_NEW_CALCULATION | <code>number</code> | <code>30</code> | 
 
-<a id="vscp.constants.priorities"></a>
+<a id="vscp_dot_constants_dot_priorities"></a>
+
 #### constants.priorities : <code>enum</code>
 VSCP class priorities
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -1384,11 +1411,12 @@ VSCP class priorities
 | PRIORITY_6 | <code>number</code> | <code>6</code> | 
 | PRIORITY_7_LOW | <code>number</code> | <code>7</code> | 
 
-<a id="vscp.constants.varTypes"></a>
+<a id="vscp_dot_constants_dot_varTypes"></a>
+
 #### constants.varTypes : <code>enum</code>
 VSCP variable types
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -1424,134 +1452,142 @@ VSCP variable types
 | USER | <code>number</code> | <code>502</code> | 
 | FILTER | <code>number</code> | <code>503</code> | 
 
-<a id="vscp.constants.varTypeNames"></a>
+<a id="vscp_dot_constants_dot_varTypeNames"></a>
+
 #### constants.varTypeNames
 VSCP variable type names as string. Use to fill drop down boxes and similar.
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
-<a id="vscp.utility"></a>
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_constants)  
+<a id="vscp_dot_utility"></a>
+
 ### vscp.utility : <code>object</code>
 Utility functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.utility](#vscp.utility) : <code>object</code>
-  * [.readValue(input)](#vscp.utility.readValue) ⇒ <code>number</code>
-  * [.getTime()](#vscp.utility.getTime) ⇒ <code>string</code>
-  * [.guidToStr(guid)](#vscp.utility.guidToStr) ⇒ <code>string</code>
-  * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
-  * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
+* [.utility](#vscp_dot_utility) : <code>object</code>
+    * [.readValue(input)](#vscp_dot_utility_dot_readValue) ⇒ <code>number</code>
+    * [.getTime()](#vscp_dot_utility_dot_getTime) ⇒ <code>string</code>
+    * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
+    * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
 
-<a id="vscp.utility.readValue"></a>
+<a id="vscp_dot_utility_dot_readValue"></a>
+
 #### utility.readValue(input) ⇒ <code>number</code>
 Read a hex or decimal value and return as an integer.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>number</code> - Value  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | input | <code>string</code> | Hex or decimal value as string |
 
-<a id="vscp.utility.getTime"></a>
+<a id="vscp_dot_utility_dot_getTime"></a>
+
 #### utility.getTime() ⇒ <code>string</code>
 Utility function which returns the current time in the following format: hh:mm:ss.us
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>string</code> - Current time in the format hh:mm:ss.us  
-<a id="vscp.utility.guidToStr"></a>
+<a id="vscp_dot_utility_dot_guidToStr"></a>
+
 #### utility.guidToStr(guid) ⇒ <code>string</code>
 Converts a GUID number array to a GUID string.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>string</code> - GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>Array.&lt;number&gt;</code> | GUID number array |
 
-<a id="vscp.utility.strToGuid"></a>
+<a id="vscp_dot_utility_dot_strToGuid"></a>
+
 #### utility.strToGuid(guid) ⇒ <code>Array.&lt;number&gt;</code>
 Converts a GUID string to a GUID number array.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>Array.&lt;number&gt;</code> - GUID number array  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a id="vscp.utility.getNodeId"></a>
+<a id="vscp_dot_utility_dot_getNodeId"></a>
+
 #### utility.getNodeId(guid) ⇒ <code>number</code>
 Get node id from a node GUID string.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>number</code> - Node id  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a id="vscp.rest"></a>
+<a id="vscp_dot_rest"></a>
+
 ### vscp.rest : <code>object</code>
 VSCP REST api functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.rest](#vscp.rest) : <code>object</code>
-  * [.Client](#vscp.rest.Client)
-    * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-    * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-    * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-    * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-    * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-    * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-    * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-    * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-    * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-    * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-    * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-    * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-    * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-    * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-    * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-    * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-    * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-    * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-    * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-    * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
+* [.rest](#vscp_dot_rest) : <code>object</code>
+    * [.Client](#vscp_dot_rest_dot_Client)
+        * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+        * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+        * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+        * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+        * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+        * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+        * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+        * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+        * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+        * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+        * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+        * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+        * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+        * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+        * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+        * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+        * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+        * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+        * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+        * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
 
-<a id="vscp.rest.Client"></a>
+<a id="vscp_dot_rest_dot_Client"></a>
+
 #### rest.Client
-**Kind**: static class of <code>[rest](#vscp.rest)</code>  
+**Kind**: static class of [<code>rest</code>](#vscp_dot_rest)  
 
-* [.Client](#vscp.rest.Client)
-  * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-  * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-  * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-  * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-  * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-  * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-  * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-  * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-  * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-  * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-  * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-  * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-  * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-  * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-  * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-  * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-  * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-  * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-  * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-  * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
+* [.Client](#vscp_dot_rest_dot_Client)
+    * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+    * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+    * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+    * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+    * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+    * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+    * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+    * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+    * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+    * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+    * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+    * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+    * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+    * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+    * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+    * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+    * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+    * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+    * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+    * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
 
-<a id="new_vscp.rest.Client_new"></a>
+<a id="new_vscp_dot_rest_dot_Client_new"></a>
+
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.
-The function interface uses jquery ajax call in the background and will
-return object with the jquery promise interface.
+The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn object with the jquery promise interface.
 
 
 | Param | Type | Description |
@@ -1561,44 +1597,48 @@ return object with the jquery promise interface.
 | [options.pathPrefix] | <code>string</code> | Path prefix (default: '/vscp'), which comes right after the base url. |
 | [options.apiVersion] | <code>string</code> | API version (for future use) |
 
-<a id="vscp.rest.Client+baseUrl"></a>
+<a id="vscp_dot_rest_dot_Client_and_baseUrl"></a>
+
 ##### client.baseUrl : <code>string</code>
 Base URL
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+pathPrefix"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_pathPrefix"></a>
+
 ##### client.pathPrefix : <code>string</code>
 Path prefix
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+apiVersion"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_apiVersion"></a>
+
 ##### client.apiVersion : <code>string</code>
 REST API version (future use)
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+sessionKey"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_sessionKey"></a>
+
 ##### client.sessionKey : <code>string</code>
 Session key
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+_buildUrl"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and__buildUrl"></a>
+
 ##### client._buildUrl(path) ⇒
 Build complete URL, including command path.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: URL  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>string</code> | Relative command path, after REST API version. |
 
-<a id="vscp.rest.Client+_makeRequest"></a>
-##### client._makeRequest(options) ⇒ <code>object</code>
-Make a request to VSCP daemon via REST api.
-The onSuccess and onError function parameter are harmonized here.
-This makes it easier to process them further.
+<a id="vscp_dot_rest_dot_Client_and__makeRequest"></a>
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+##### client._makeRequest(options) ⇒ <code>object</code>
+Make a request to VSCP daemon via REST api.The onSuccess and onError function parameter are harmonized here.This makes it easier to process them further.
+
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1610,11 +1650,12 @@ This makes it easier to process them further.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+_abort"></a>
+<a id="vscp_dot_rest_dot_Client_and__abort"></a>
+
 ##### client._abort(error, [onError]) ⇒ <code>object</code>
 Prepare error object, call error callback and return rejected promise.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - Rejected jquery promise  
 
 | Param | Type | Description |
@@ -1622,11 +1663,12 @@ Prepare error object, call error callback and return rejected promise.
 | error | <code>string</code> | Error description |
 | [onError] | <code>function</code> | Callback |
 
-<a id="vscp.rest.Client+openSession"></a>
+<a id="vscp_dot_rest_dot_Client_and_openSession"></a>
+
 ##### client.openSession(options) ⇒ <code>object</code>
 Open a session.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1637,11 +1679,12 @@ Open a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+closeSession"></a>
+<a id="vscp_dot_rest_dot_Client_and_closeSession"></a>
+
 ##### client.closeSession([options]) ⇒ <code>object</code>
 Close a session.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1650,11 +1693,12 @@ Close a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+getStatus"></a>
+<a id="vscp_dot_rest_dot_Client_and_getStatus"></a>
+
 ##### client.getStatus([options]) ⇒ <code>object</code>
 Get status and how many events are in the queue.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1663,11 +1707,12 @@ Get status and how many events are in the queue.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+sendEvent"></a>
+<a id="vscp_dot_rest_dot_Client_and_sendEvent"></a>
+
 ##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1677,11 +1722,12 @@ Send a VSCP event.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+readEvent"></a>
+<a id="vscp_dot_rest_dot_Client_and_readEvent"></a>
+
 ##### client.readEvent([options]) ⇒ <code>object</code>
 Read one or more VSCP events.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1691,11 +1737,12 @@ Read one or more VSCP events.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+setFilter"></a>
+<a id="vscp_dot_rest_dot_Client_and_setFilter"></a>
+
 ##### client.setFilter(options) ⇒ <code>object</code>
 Set filter.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1704,19 +1751,20 @@ Set filter.
 | [options.filterPriority] | <code>number</code> | Priority filter |
 | [options.filterClass] | <code>number</code> | Class filter |
 | [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID filter |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
 | [options.maskPriority] | <code>number</code> | Priority mask |
 | [options.maskClass] | <code>number</code> | Class mask |
 | [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID mask |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+clearQueue"></a>
+<a id="vscp_dot_rest_dot_Client_and_clearQueue"></a>
+
 ##### client.clearQueue([options]) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1725,11 +1773,12 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+createVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_createVar"></a>
+
 ##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1744,11 +1793,12 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+readVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_readVar"></a>
+
 ##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1758,11 +1808,12 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+writeVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_writeVar"></a>
+
 ##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1774,11 +1825,12 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+removeVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_removeVar"></a>
+
 ##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1788,11 +1840,12 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+listVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_listVar"></a>
+
 ##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -1803,160 +1856,290 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws"></a>
+<a id="vscp_dot_ws"></a>
+
 ### vscp.ws : <code>object</code>
 VSCP websocket api functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.ws](#vscp.ws) : <code>object</code>
-  * [.Client](#vscp.ws.Client)
-    * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-    * _instance_
-      * [.states](#vscp.ws.Client+states) : <code>enum</code>
-      * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-      * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-      * [.url](#vscp.ws.Client+url) : <code>string</code>
-      * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-      * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-      * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-      * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-      * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-      * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-      * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-      * [.password](#vscp.ws.Client+password) : <code>string</code>
-      * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-      * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-      * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-      * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-      * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-      * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-      * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-      * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-      * [.state](#vscp.ws.Client+state) : <code>number</code>
-      * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-      * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-      * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-      * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-      * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-      * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-      * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-      * [.signalConnError()](#vscp.ws.Client+signalConnError)
-      * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-      * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-      * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-      * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-      * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-      * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-      * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-      * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-      * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-      * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-      * [.connect(options)](#vscp.ws.Client+connect)
-      * [.disconnect()](#vscp.ws.Client+disconnect)
-      * [.start(options)](#vscp.ws.Client+start)
-      * [.stop(options)](#vscp.ws.Client+stop)
-      * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-      * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-      * [.setFilter(options)](#vscp.ws.Client+setFilter)
-      * [.createVar(options)](#vscp.ws.Client+createVar)
-      * [.readVar(options)](#vscp.ws.Client+readVar)
-      * [.writeVar(options)](#vscp.ws.Client+writeVar)
-      * [.resetVar(options)](#vscp.ws.Client+resetVar)
-      * [.removeVar(options)](#vscp.ws.Client+removeVar)
-      * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-      * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-      * [.listVar(options)](#vscp.ws.Client+listVar)
-      * [.readTable(options)](#vscp.ws.Client+readTable)
-    * _inner_
-      * [~Command](#vscp.ws.Client..Command)
-        * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-        * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-        * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-        * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-      * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-      * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
+* [.ws](#vscp_dot_ws) : <code>object</code>
+    * [.Client](#vscp_dot_ws_dot_Client)
+        * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+        * _instance_
+            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+            * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+            * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+            * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+            * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+            * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+            * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+            * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+            * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+            * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+            * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+            * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+        * _inner_
+            * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+                * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+                * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+                * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+                * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+            * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+            * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
 
-<a id="vscp.ws.Client"></a>
+<a id="vscp_dot_ws_dot_Client"></a>
+
 #### ws.Client
-**Kind**: static class of <code>[ws](#vscp.ws)</code>  
+**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
 
-* [.Client](#vscp.ws.Client)
-  * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-  * _instance_
-    * [.states](#vscp.ws.Client+states) : <code>enum</code>
-    * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-    * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-    * [.url](#vscp.ws.Client+url) : <code>string</code>
-    * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-    * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-    * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-    * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-    * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-    * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-    * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-    * [.password](#vscp.ws.Client+password) : <code>string</code>
-    * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-    * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-    * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-    * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-    * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-    * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-    * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-    * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-    * [.state](#vscp.ws.Client+state) : <code>number</code>
-    * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-    * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-    * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-    * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-    * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-    * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-    * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-    * [.signalConnError()](#vscp.ws.Client+signalConnError)
-    * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-    * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-    * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-    * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-    * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-    * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-    * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-    * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-    * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-    * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-    * [.connect(options)](#vscp.ws.Client+connect)
-    * [.disconnect()](#vscp.ws.Client+disconnect)
-    * [.start(options)](#vscp.ws.Client+start)
-    * [.stop(options)](#vscp.ws.Client+stop)
-    * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-    * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-    * [.setFilter(options)](#vscp.ws.Client+setFilter)
-    * [.createVar(options)](#vscp.ws.Client+createVar)
-    * [.readVar(options)](#vscp.ws.Client+readVar)
-    * [.writeVar(options)](#vscp.ws.Client+writeVar)
-    * [.resetVar(options)](#vscp.ws.Client+resetVar)
-    * [.removeVar(options)](#vscp.ws.Client+removeVar)
-    * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-    * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-    * [.listVar(options)](#vscp.ws.Client+listVar)
-    * [.readTable(options)](#vscp.ws.Client+readTable)
-  * _inner_
-    * [~Command](#vscp.ws.Client..Command)
-      * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-      * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-      * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-      * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-    * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-    * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
+* [.Client](#vscp_dot_ws_dot_Client)
+    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+    * _instance_
+        * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+        * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+        * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+        * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+        * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+        * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+        * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+        * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+        * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+        * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+        * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+        * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+        * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+        * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+        * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+        * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+        * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+        * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+        * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+        * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+        * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+        * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+        * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+        * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+        * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+        * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+        * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+        * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+        * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+        * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+        * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+        * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+        * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+        * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+        * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+        * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+        * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+        * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+        * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+        * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+        * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+    * _inner_
+        * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+            * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+            * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+            * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+            * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+        * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+        * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
 
-<a id="new_vscp.ws.Client_new"></a>
+<a id="new_vscp_dot_ws_dot_Client_new"></a>
+
 ##### new vscp.ws.Client()
 VSCP websocket client, used for connection establishment to a VSCP server.
 
-<a id="vscp.ws.Client+states"></a>
+<a id="vscp_dot_ws_dot_Client_and_socket"></a>
+
+##### client.socket : <code>object</code>
+Websocket
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_url"></a>
+
+##### client.url : <code>string</code>
+url used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userName"></a>
+
+##### client.userName : <code>string</code>
+User name used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userId"></a>
+
+##### client.userId : <code>number</code>
+User id from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userFullname"></a>
+
+##### client.userFullname : <code>string</code>
+User full name from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userRights"></a>
+
+##### client.userRights : <code>array</code>
+User rights from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userRemotes"></a>
+
+##### client.userRemotes : <code>array</code>
+User allowed remotes from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userEvents"></a>
+
+##### client.userEvents : <code>array</code>
+User allowed events from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userNote"></a>
+
+##### client.userNote : <code>string</code>
+User note from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_password"></a>
+
+##### client.password : <code>string</code>
+Password used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_vscpkey"></a>
+
+##### client.vscpkey : <code>string</code>
+Secret key used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_authdomain"></a>
+
+##### client.authdomain : <code>string</code>
+authdomain used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_passwordHash"></a>
+
+##### client.passwordHash : <code>string</code>
+Password hash used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onConnError"></a>
+
+##### client.onConnError : <code>function</code>
+Callback called on any connection error
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onMessage"></a>
+
+##### client.onMessage : <code>function</code>
+Callback called on any received VSCP response message
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onEvent"></a>
+
+##### client.onEvent : <code>Array.&lt;function()&gt;</code>
+Callbacks called on any received VSCP event message
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onVariable"></a>
+
+##### client.onVariable : <code>function</code>
+Callback called on any received variable (see LSTVAR command)
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onTableRow"></a>
+
+##### client.onTableRow : <code>function</code>
+Callback called on any received table row (see GT command)
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_state"></a>
+
+##### client.state : <code>number</code>
+VSCP websocket is not connected right now
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_substate"></a>
+
+##### client.substate : <code>number</code>
+VSCP event traffic is closed
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_webSocketMessages"></a>
+
+##### client.webSocketMessages : <code>object</code>
+VSCP websocket command responses and unsolicited messages
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_states"></a>
+
 ##### client.states : <code>enum</code>
 States of the VSCP websocket
 
-**Kind**: instance enum property of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance enum of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -1965,11 +2148,12 @@ States of the VSCP websocket
 | CONNECTED | <code>number</code> | <code>1</code> | Standard websocket connection established |
 | AUTHENTICATED | <code>number</code> | <code>2</code> | Authentication with VSCP server successful |
 
-<a id="vscp.ws.Client+substates"></a>
+<a id="vscp_dot_ws_dot_Client_and_substates"></a>
+
 ##### client.substates : <code>enum</code>
 Substates of the VSCP websocket
 
-**Kind**: instance enum property of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance enum of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -1977,127 +2161,24 @@ Substates of the VSCP websocket
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
 
-<a id="vscp.ws.Client+socket"></a>
-##### client.socket : <code>object</code>
-Websocket
+<a id="vscp_dot_ws_dot_Client_and_getPendingCommand"></a>
 
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+url"></a>
-##### client.url : <code>string</code>
-url used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userName"></a>
-##### client.userName : <code>string</code>
-User name used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userId"></a>
-##### client.userId : <code>number</code>
-User id from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userFullname"></a>
-##### client.userFullname : <code>string</code>
-User full name from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userRights"></a>
-##### client.userRights : <code>array</code>
-User rights from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userRemotes"></a>
-##### client.userRemotes : <code>array</code>
-User allowed remotes from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userEvents"></a>
-##### client.userEvents : <code>array</code>
-User allowed events from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userNote"></a>
-##### client.userNote : <code>string</code>
-User note from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+password"></a>
-##### client.password : <code>string</code>
-Password used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+vscpkey"></a>
-##### client.vscpkey : <code>string</code>
-Secret key used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+authdomain"></a>
-##### client.authdomain : <code>string</code>
-authdomain used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+passwordHash"></a>
-##### client.passwordHash : <code>string</code>
-Password hash used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onConnError"></a>
-##### client.onConnError : <code>function</code>
-Callback called on any connection error
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onMessage"></a>
-##### client.onMessage : <code>function</code>
-Callback called on any received VSCP response message
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onEvent"></a>
-##### client.onEvent : <code>Array.&lt;function()&gt;</code>
-Callbacks called on any received VSCP event message
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onVariable"></a>
-##### client.onVariable : <code>function</code>
-Callback called on any received variable (see LSTVAR command)
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onTableRow"></a>
-##### client.onTableRow : <code>function</code>
-Callback called on any received table row (see GT command)
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+state"></a>
-##### client.state : <code>number</code>
-VSCP websocket is not connected right now
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+substate"></a>
-##### client.substate : <code>number</code>
-VSCP event traffic is closed
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+webSocketMessages"></a>
-##### client.webSocketMessages : <code>object</code>
-VSCP websocket command responses and unsolicited messages
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+getPendingCommand"></a>
 ##### client.getPendingCommand(command) ⇒ <code>Command</code>
 Get command from queue with pending commands.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>Command</code> - Command object  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a id="vscp.ws.Client+_sendCommand"></a>
+<a id="vscp_dot_ws_dot_Client_and__sendCommand"></a>
+
 ##### client._sendCommand(options)
 Send command to VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2108,11 +2189,12 @@ Send command to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a id="vscp.ws.Client+_sendEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and__sendEvent"></a>
+
 ##### client._sendEvent(options)
 Send event to VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2121,62 +2203,68 @@ Send event to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a id="vscp.ws.Client+signalSuccess"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalSuccess"></a>
+
 ##### client.signalSuccess(command, [obj])
 Signal success of the current asynchronous operation.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on success callback |
 
-<a id="vscp.ws.Client+signalError"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalError"></a>
+
 ##### client.signalError(command, [obj])
 Signal failed of the current asynchronous operation.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on error callback |
 
-<a id="vscp.ws.Client+signalConnError"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalConnError"></a>
+
 ##### client.signalConnError()
 Signal a connection error.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+signalMessage"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_signalMessage"></a>
+
 ##### client.signalMessage(msg) ⇒ <code>boolean</code>
 Signal a received VSCP response message.
 If the message is handled by the application, the application will return
 true, which means no further actions shall take place in this object.
 Otherwise the message is handled by the standard onMessage handler here.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>boolean</code> - Message is handled (true) or not (false).  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a id="vscp.ws.Client+signalEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalEvent"></a>
+
 ##### client.signalEvent(vscpEvent)
 Signal a received VSCP event.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| vscpEvent | <code>[Event](#vscp.Event)</code> | VSCP event |
+| vscpEvent | [<code>Event</code>](#vscp_dot_Event) | VSCP event |
 
-<a id="vscp.ws.Client+signalVariable"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalVariable"></a>
+
 ##### client.signalVariable(variable)
 Signal a received variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2187,11 +2275,12 @@ Signal a received variable.
 | variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
 | variable.value | <code>string</code> | Variable value |
 
-<a id="vscp.ws.Client+signalTableRow"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalTableRow"></a>
+
 ##### client.signalTableRow(row)
 Signal a received table row.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2199,31 +2288,34 @@ Signal a received table row.
 | row.date | <code>string</code> | Date and time |
 | row.value | <code>string</code> | Value |
 
-<a id="vscp.ws.Client+addEventListener"></a>
+<a id="vscp_dot_ws_dot_Client_and_addEventListener"></a>
+
 ##### client.addEventListener(eventListener)
 Add a event listener.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a id="vscp.ws.Client+removeEventListener"></a>
+<a id="vscp_dot_ws_dot_Client_and_removeEventListener"></a>
+
 ##### client.removeEventListener(eventListener)
 Remove a event listener.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a id="vscp.ws.Client+getAuthHash"></a>
+<a id="vscp_dot_ws_dot_Client_and_getAuthHash"></a>
+
 ##### client.getAuthHash(userName, password, str_iv) ⇒ <code>string</code>
 Calculates the VSCP server websocket authentication hash.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>string</code> - Authentication ("encrypted user:password")  
 
 | Param | Type | Description |
@@ -2232,32 +2324,36 @@ Calculates the VSCP server websocket authentication hash.
 | password | <code>string</code> | Password |
 | str_iv | <code>string</code> | 16 random byte iv in hex form |
 
-<a id="vscp.ws.Client+onWebSocketOpen"></a>
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketOpen"></a>
+
 ##### client.onWebSocketOpen()
 This function is called by the websocket in case the connection is established.
 It will initiate the authentication with the VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onWebSocketClose"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketClose"></a>
+
 ##### client.onWebSocketClose()
 This function is called by the websocket in case that the connection is closed.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onWebSocketMessage"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketMessage"></a>
+
 ##### client.onWebSocketMessage(msg)
 This function is called for any websocket message (VSCP server response message).
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a id="vscp.ws.Client+connect"></a>
+<a id="vscp_dot_ws_dot_Client_and_connect"></a>
+
 ##### client.connect(options)
 Connect to a VSCP server with the given URL.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2270,16 +2366,18 @@ Connect to a VSCP server with the given URL.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful connection establishment. |
 | [options.onError] | <code>function</code> | Function which is called on a failed connection establishment or in case the connection is lost during the session. |
 
-<a id="vscp.ws.Client+disconnect"></a>
+<a id="vscp_dot_ws_dot_Client_and_disconnect"></a>
+
 ##### client.disconnect()
 Disconnect from a VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+start"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_start"></a>
+
 ##### client.start(options)
 Start receiving events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2287,11 +2385,12 @@ Start receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+stop"></a>
+<a id="vscp_dot_ws_dot_Client_and_stop"></a>
+
 ##### client.stop(options)
 Stop receiving events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2299,11 +2398,12 @@ Stop receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+clearQueue"></a>
+<a id="vscp_dot_ws_dot_Client_and_clearQueue"></a>
+
 ##### client.clearQueue(options)
 Clear the VSCP event queue on the server side.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2311,24 +2411,26 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+sendEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and_sendEvent"></a>
+
 ##### client.sendEvent(options)
 Send a VSCP event to the VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | Options |
-| options.event | <code>[Event](#vscp.Event)</code> | VSCP event to send |
+| options.event | [<code>Event</code>](#vscp_dot_Event) | VSCP event to send |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+setFilter"></a>
+<a id="vscp_dot_ws_dot_Client_and_setFilter"></a>
+
 ##### client.setFilter(options)
 Set a filter in the VSCP server for VSCP events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2336,19 +2438,20 @@ Set a filter in the VSCP server for VSCP events.
 | [options.filterPriority] | <code>number</code> | Priority filter |
 | [options.filterClass] | <code>number</code> | Class filter |
 | [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID filter |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
 | [options.maskPriority] | <code>number</code> | Priority mask |
 | [options.maskClass] | <code>number</code> | Class mask |
 | [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID mask |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+createVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_createVar"></a>
+
 ##### client.createVar(options)
 Create a a VSCP remote variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2362,11 +2465,12 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+readVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_readVar"></a>
+
 ##### client.readVar(options)
 Read a value from a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2375,11 +2479,12 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+writeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_writeVar"></a>
+
 ##### client.writeVar(options)
 Write a value to a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2390,11 +2495,12 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+resetVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_resetVar"></a>
+
 ##### client.resetVar(options)
 Reset a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2403,11 +2509,12 @@ Reset a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+removeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_removeVar"></a>
+
 ##### client.removeVar(options)
 Remove a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2416,11 +2523,12 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+lengthVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_lengthVar"></a>
+
 ##### client.lengthVar(options)
 Get a VSCP server variable length.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2429,11 +2537,12 @@ Get a VSCP server variable length.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+lastChangeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_lastChangeVar"></a>
+
 ##### client.lastChangeVar(options)
 Get last change of a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2442,11 +2551,12 @@ Get last change of a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+listVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_listVar"></a>
+
 ##### client.listVar(options)
 List all VSCP server variables.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2456,12 +2566,13 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+readTable"></a>
+<a id="vscp_dot_ws_dot_Client_and_readTable"></a>
+
 ##### client.readTable(options)
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2473,17 +2584,19 @@ If "begin" and "end" are omitted, the whole table is returned.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client..Command"></a>
+<a id="vscp_dot_ws_dot_Client_tilde_Command"></a>
+
 ##### Client~Command
-**Kind**: inner class of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: inner class of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
-  * [~Command](#vscp.ws.Client..Command)
-    * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-    * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-    * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-    * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
+* [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
 
-<a id="new_vscp.ws.Client..Command_new"></a>
+<a id="new_vscp_dot_ws_dot_Client_tilde_Command_new"></a>
+
 ###### new Command(command, onSuccess, onerror)
 VSCP server command
 
@@ -2494,119 +2607,132 @@ VSCP server command
 | onSuccess | <code>function</code> | Function which is called on successful operation |
 | onerror | <code>function</code> | Function which is called on failed operation |
 
-<a id="vscp.ws.Client..Command+command"></a>
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_command"></a>
+
 ###### command.command : <code>string</code>
 Server command string
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..Command+onSuccess"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess"></a>
+
 ###### command.onSuccess : <code>function</code>
 Function which is called on successful operation
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..Command+onError"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onError"></a>
+
 ###### command.onError : <code>function</code>
 Function which is called on failed operation
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..cmdQueue"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_cmdQueue"></a>
+
 ##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
 Queue contains all pending VSCP server commands
 
-**Kind**: inner property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client..getPendingCommandIndex"></a>
+**Kind**: inner property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex"></a>
+
 ##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
 Get the index of a command in the queue.
 
-**Kind**: inner method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: inner method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>number</code> - Index of command in the queue. If index is < 0, the command was not found.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a id="vscp._createNS"></a>
+<a id="vscp_dot__createNS"></a>
+
 ### vscp._createNS(namespace)
 Create a general purpose namespace method. This will allow us to create
 namespace a bit easier.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
-<a id="vscp.getVarTypeName"></a>
+<a id="vscp_dot_getVarTypeName"></a>
+
 ### vscp.getVarTypeName(n) ⇒ <code>string</code>
 Get variable type name as string by numerical code.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Variable type name  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | n | <code>number</code> | Numerical code |
 
-<a id="vscp.getVarTypeNumerical"></a>
+<a id="vscp_dot_getVarTypeNumerical"></a>
+
 ### vscp.getVarTypeNumerical(str) ⇒ <code>number</code>
 Get numerical code of variable type from string.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>number</code> - Variable type numerical code  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Variable type name |
 
-<a id="vscp.getEditorModeFromType"></a>
+<a id="vscp_dot_getEditorModeFromType"></a>
+
 ### vscp.getEditorModeFromType(n) ⇒ <code>string</code>
 Get ace editor formation mode string from numerical variable type code.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Ace editro formation mode string  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | n | <code>number</code> | Variable type numerical code |
 
-<a id="vscp.b64EncodeUnicode"></a>
+<a id="vscp_dot_b64EncodeUnicode"></a>
+
 ### vscp.b64EncodeUnicode(str) ⇒ <code>string</code>
 Encode base64 unicode safe.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Base64  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Unicode string |
 
-<a id="vscp.b64DecodeUnicode"></a>
+<a id="vscp_dot_b64DecodeUnicode"></a>
+
 ### vscp.b64DecodeUnicode(str) ⇒ <code>string</code>
 Decode base64 unicode safe.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Unicode string  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Base64 |
 
-<a id="vscp.isBase64Type"></a>
+<a id="vscp_dot_isBase64Type"></a>
+
 ### vscp.isBase64Type(type) ⇒ <code>bool</code>
 Determine whether the given variable type is a type stored base64 encoded or not.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>bool</code> - Stored base64 encoded (true) or not (false).  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>number</code> | Variable type numerical code |
 
-<a id="vscp.decodeValueIfBase64"></a>
+<a id="vscp_dot_decodeValueIfBase64"></a>
+
 ### vscp.decodeValueIfBase64(type, value) ⇒ <code>string</code>
 Decode the value if its base64 encoded.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Decoded value if type is base64 encoded type otherwise original value.  
 
 | Param | Type | Description |
@@ -2614,11 +2740,12 @@ Decode the value if its base64 encoded.
 | type | <code>number</code> | Variable type numerical code |
 | value | <code>string</code> | Value |
 
-<a id="vscp.encodeValueIfBase64"></a>
+<a id="vscp_dot_encodeValueIfBase64"></a>
+
 ### vscp.encodeValueIfBase64(type, value) ⇒ <code>string</code>
 Encode the value if its stored in base64.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Encoded value if type is base64 encoded type otherwise original value.  
 
 | Param | Type | Description |
@@ -2627,172 +2754,175 @@ Encode the value if its stored in base64.
 | value | <code>string</code> | Value |
 
 <a id="vscp"></a>
+
 ## vscp : <code>object</code>
 Namespace for all functionality of the VSCP provided libraries.
 
 **Kind**: global namespace  
 
 * [vscp](#vscp) : <code>object</code>
-  * [.Event](#vscp.Event)
-    * [new vscp.Event(options)](#new_vscp.Event_new)
-    * [.vscpHead](#vscp.Event+vscpHead) : <code>number</code>
-    * [.vscpClass](#vscp.Event+vscpClass) : <code>number</code>
-    * [.vscpType](#vscp.Event+vscpType) : <code>number</code>
-    * [.vscpObId](#vscp.Event+vscpObId) : <code>number</code>
-    * [.vscpTimeStamp](#vscp.Event+vscpTimeStamp) : <code>number</code>
-    * [.vscpDateTime](#vscp.Event+vscpDateTime) : <code>date</code>
-    * [.vscpGuid](#vscp.Event+vscpGuid) : <code>string</code>
-    * [.vscpData](#vscp.Event+vscpData) : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
-    * [.setIPV6Addr()](#vscp.Event+setIPV6Addr)
-    * [.isIPV6Addr()](#vscp.Event+isIPV6Addr) ⇒ <code>boolean</code>
-    * [.setDumbNode()](#vscp.Event+setDumbNode)
-    * [.isDumbNode()](#vscp.Event+isDumbNode) ⇒ <code>boolean</code>
-    * [.setPriority(priority)](#vscp.Event+setPriority)
-    * [.getPriority()](#vscp.Event+getPriority) ⇒ <code>number</code>
-    * [.setHardCodedAddr()](#vscp.Event+setHardCodedAddr)
-    * [.isHardCodedAddr()](#vscp.Event+isHardCodedAddr) ⇒ <code>boolean</code>
-    * [.setDoNotCalcCRC()](#vscp.Event+setDoNotCalcCRC)
-    * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
-    * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
-  * [.version](#vscp.version)
-  * [.constants](#vscp.constants) : <code>object</code>
-    * [.classes](#vscp.constants.classes) : <code>enum</code>
-    * [.types](#vscp.constants.types) : <code>enum</code>
-    * [.priorities](#vscp.constants.priorities) : <code>enum</code>
-    * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
-    * [.varTypeNames](#vscp.constants.varTypeNames)
-  * [.utility](#vscp.utility) : <code>object</code>
-    * [.readValue(input)](#vscp.utility.readValue) ⇒ <code>number</code>
-    * [.getTime()](#vscp.utility.getTime) ⇒ <code>string</code>
-    * [.guidToStr(guid)](#vscp.utility.guidToStr) ⇒ <code>string</code>
-    * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
-    * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
-  * [.rest](#vscp.rest) : <code>object</code>
-    * [.Client](#vscp.rest.Client)
-      * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-      * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-      * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-      * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-      * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-      * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-      * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-      * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-      * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-      * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-      * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-      * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-      * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-      * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-      * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-      * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-      * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-      * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-      * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-      * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
-  * [.ws](#vscp.ws) : <code>object</code>
-    * [.Client](#vscp.ws.Client)
-      * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-      * _instance_
-        * [.states](#vscp.ws.Client+states) : <code>enum</code>
-        * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-        * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-        * [.url](#vscp.ws.Client+url) : <code>string</code>
-        * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-        * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-        * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-        * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-        * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-        * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-        * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-        * [.password](#vscp.ws.Client+password) : <code>string</code>
-        * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-        * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-        * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-        * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-        * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-        * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-        * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-        * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-        * [.state](#vscp.ws.Client+state) : <code>number</code>
-        * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-        * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-        * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-        * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-        * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-        * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-        * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-        * [.signalConnError()](#vscp.ws.Client+signalConnError)
-        * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-        * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-        * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-        * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-        * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-        * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-        * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-        * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-        * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-        * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-        * [.connect(options)](#vscp.ws.Client+connect)
-        * [.disconnect()](#vscp.ws.Client+disconnect)
-        * [.start(options)](#vscp.ws.Client+start)
-        * [.stop(options)](#vscp.ws.Client+stop)
-        * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-        * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-        * [.setFilter(options)](#vscp.ws.Client+setFilter)
-        * [.createVar(options)](#vscp.ws.Client+createVar)
-        * [.readVar(options)](#vscp.ws.Client+readVar)
-        * [.writeVar(options)](#vscp.ws.Client+writeVar)
-        * [.resetVar(options)](#vscp.ws.Client+resetVar)
-        * [.removeVar(options)](#vscp.ws.Client+removeVar)
-        * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-        * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-        * [.listVar(options)](#vscp.ws.Client+listVar)
-        * [.readTable(options)](#vscp.ws.Client+readTable)
-      * _inner_
-        * [~Command](#vscp.ws.Client..Command)
-          * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-          * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-          * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-          * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-        * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-        * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
-  * [._createNS(namespace)](#vscp._createNS)
-  * [.getVarTypeName(n)](#vscp.getVarTypeName) ⇒ <code>string</code>
-  * [.getVarTypeNumerical(str)](#vscp.getVarTypeNumerical) ⇒ <code>number</code>
-  * [.getEditorModeFromType(n)](#vscp.getEditorModeFromType) ⇒ <code>string</code>
-  * [.b64EncodeUnicode(str)](#vscp.b64EncodeUnicode) ⇒ <code>string</code>
-  * [.b64DecodeUnicode(str)](#vscp.b64DecodeUnicode) ⇒ <code>string</code>
-  * [.isBase64Type(type)](#vscp.isBase64Type) ⇒ <code>bool</code>
-  * [.decodeValueIfBase64(type, value)](#vscp.decodeValueIfBase64) ⇒ <code>string</code>
-  * [.encodeValueIfBase64(type, value)](#vscp.encodeValueIfBase64) ⇒ <code>string</code>
+    * [.Event](#vscp_dot_Event)
+        * [new vscp.Event(options)](#new_vscp_dot_Event_new)
+        * [.vscpHead](#vscp_dot_Event_and_vscpHead) : <code>number</code>
+        * [.vscpClass](#vscp_dot_Event_and_vscpClass) : <code>number</code>
+        * [.vscpType](#vscp_dot_Event_and_vscpType) : <code>number</code>
+        * [.vscpObId](#vscp_dot_Event_and_vscpObId) : <code>number</code>
+        * [.vscpTimeStamp](#vscp_dot_Event_and_vscpTimeStamp) : <code>number</code>
+        * [.vscpDateTime](#vscp_dot_Event_and_vscpDateTime) : <code>date</code>
+        * [.vscpGuid](#vscp_dot_Event_and_vscpGuid) : <code>string</code>
+        * [.vscpData](#vscp_dot_Event_and_vscpData) : <code>Array.&lt;number&gt;</code> \| <code>string</code>
+        * [.setIPV6Addr()](#vscp_dot_Event_and_setIPV6Addr)
+        * [.isIPV6Addr()](#vscp_dot_Event_and_isIPV6Addr) ⇒ <code>boolean</code>
+        * [.setDumbNode()](#vscp_dot_Event_and_setDumbNode)
+        * [.isDumbNode()](#vscp_dot_Event_and_isDumbNode) ⇒ <code>boolean</code>
+        * [.setPriority(priority)](#vscp_dot_Event_and_setPriority)
+        * [.getPriority()](#vscp_dot_Event_and_getPriority) ⇒ <code>number</code>
+        * [.setHardCodedAddr()](#vscp_dot_Event_and_setHardCodedAddr)
+        * [.isHardCodedAddr()](#vscp_dot_Event_and_isHardCodedAddr) ⇒ <code>boolean</code>
+        * [.setDoNotCalcCRC()](#vscp_dot_Event_and_setDoNotCalcCRC)
+        * [.isDoNotCalcCRC()](#vscp_dot_Event_and_isDoNotCalcCRC) ⇒ <code>boolean</code>
+        * [.getText()](#vscp_dot_Event_and_getText) ⇒ <code>string</code>
+    * [.version](#vscp_dot_version)
+    * [.constants](#vscp_dot_constants) : <code>object</code>
+        * [.classes](#vscp_dot_constants_dot_classes) : <code>enum</code>
+        * [.types](#vscp_dot_constants_dot_types) : <code>enum</code>
+        * [.priorities](#vscp_dot_constants_dot_priorities) : <code>enum</code>
+        * [.varTypes](#vscp_dot_constants_dot_varTypes) : <code>enum</code>
+        * [.varTypeNames](#vscp_dot_constants_dot_varTypeNames)
+    * [.utility](#vscp_dot_utility) : <code>object</code>
+        * [.readValue(input)](#vscp_dot_utility_dot_readValue) ⇒ <code>number</code>
+        * [.getTime()](#vscp_dot_utility_dot_getTime) ⇒ <code>string</code>
+        * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
+        * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
+        * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
+    * [.rest](#vscp_dot_rest) : <code>object</code>
+        * [.Client](#vscp_dot_rest_dot_Client)
+            * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+            * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+            * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+            * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+            * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+            * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+            * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+            * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+            * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+            * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+            * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+            * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+            * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+            * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+            * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+            * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+            * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+            * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+            * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+            * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.ws](#vscp_dot_ws) : <code>object</code>
+        * [.Client](#vscp_dot_ws_dot_Client)
+            * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+            * _instance_
+                * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+                * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+                * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+                * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+                * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+                * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+                * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+                * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+                * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+                * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+                * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+                * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+                * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+                * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+                * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+                * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+                * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+                * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+                * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+                * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+                * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+                * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+                * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+                * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+                * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+                * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+                * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+                * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+                * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+                * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+                * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+                * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+                * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+                * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+                * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+                * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+                * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+                * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+                * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+                * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+                * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+                * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+                * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+                * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+                * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+                * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+                * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+                * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+                * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+                * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+                * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+                * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+                * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+                * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+                * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+            * _inner_
+                * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+                    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+                    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+                    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+                    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+                * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+                * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
+    * [._createNS(namespace)](#vscp_dot__createNS)
+    * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
+    * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
+    * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
+    * [.b64EncodeUnicode(str)](#vscp_dot_b64EncodeUnicode) ⇒ <code>string</code>
+    * [.b64DecodeUnicode(str)](#vscp_dot_b64DecodeUnicode) ⇒ <code>string</code>
+    * [.isBase64Type(type)](#vscp_dot_isBase64Type) ⇒ <code>bool</code>
+    * [.decodeValueIfBase64(type, value)](#vscp_dot_decodeValueIfBase64) ⇒ <code>string</code>
+    * [.encodeValueIfBase64(type, value)](#vscp_dot_encodeValueIfBase64) ⇒ <code>string</code>
 
-<a id="vscp.Event"></a>
+<a id="vscp_dot_Event"></a>
+
 ### vscp.Event
-**Kind**: static class of <code>[vscp](#vscp)</code>  
+**Kind**: static class of [<code>vscp</code>](#vscp)  
 
-* [.Event](#vscp.Event)
-  * [new vscp.Event(options)](#new_vscp.Event_new)
-  * [.vscpHead](#vscp.Event+vscpHead) : <code>number</code>
-  * [.vscpClass](#vscp.Event+vscpClass) : <code>number</code>
-  * [.vscpType](#vscp.Event+vscpType) : <code>number</code>
-  * [.vscpObId](#vscp.Event+vscpObId) : <code>number</code>
-  * [.vscpTimeStamp](#vscp.Event+vscpTimeStamp) : <code>number</code>
-  * [.vscpDateTime](#vscp.Event+vscpDateTime) : <code>date</code>
-  * [.vscpGuid](#vscp.Event+vscpGuid) : <code>string</code>
-  * [.vscpData](#vscp.Event+vscpData) : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
-  * [.setIPV6Addr()](#vscp.Event+setIPV6Addr)
-  * [.isIPV6Addr()](#vscp.Event+isIPV6Addr) ⇒ <code>boolean</code>
-  * [.setDumbNode()](#vscp.Event+setDumbNode)
-  * [.isDumbNode()](#vscp.Event+isDumbNode) ⇒ <code>boolean</code>
-  * [.setPriority(priority)](#vscp.Event+setPriority)
-  * [.getPriority()](#vscp.Event+getPriority) ⇒ <code>number</code>
-  * [.setHardCodedAddr()](#vscp.Event+setHardCodedAddr)
-  * [.isHardCodedAddr()](#vscp.Event+isHardCodedAddr) ⇒ <code>boolean</code>
-  * [.setDoNotCalcCRC()](#vscp.Event+setDoNotCalcCRC)
-  * [.isDoNotCalcCRC()](#vscp.Event+isDoNotCalcCRC) ⇒ <code>boolean</code>
-  * [.getText()](#vscp.Event+getText) ⇒ <code>string</code>
+* [.Event](#vscp_dot_Event)
+    * [new vscp.Event(options)](#new_vscp_dot_Event_new)
+    * [.vscpHead](#vscp_dot_Event_and_vscpHead) : <code>number</code>
+    * [.vscpClass](#vscp_dot_Event_and_vscpClass) : <code>number</code>
+    * [.vscpType](#vscp_dot_Event_and_vscpType) : <code>number</code>
+    * [.vscpObId](#vscp_dot_Event_and_vscpObId) : <code>number</code>
+    * [.vscpTimeStamp](#vscp_dot_Event_and_vscpTimeStamp) : <code>number</code>
+    * [.vscpDateTime](#vscp_dot_Event_and_vscpDateTime) : <code>date</code>
+    * [.vscpGuid](#vscp_dot_Event_and_vscpGuid) : <code>string</code>
+    * [.vscpData](#vscp_dot_Event_and_vscpData) : <code>Array.&lt;number&gt;</code> \| <code>string</code>
+    * [.setIPV6Addr()](#vscp_dot_Event_and_setIPV6Addr)
+    * [.isIPV6Addr()](#vscp_dot_Event_and_isIPV6Addr) ⇒ <code>boolean</code>
+    * [.setDumbNode()](#vscp_dot_Event_and_setDumbNode)
+    * [.isDumbNode()](#vscp_dot_Event_and_isDumbNode) ⇒ <code>boolean</code>
+    * [.setPriority(priority)](#vscp_dot_Event_and_setPriority)
+    * [.getPriority()](#vscp_dot_Event_and_getPriority) ⇒ <code>number</code>
+    * [.setHardCodedAddr()](#vscp_dot_Event_and_setHardCodedAddr)
+    * [.isHardCodedAddr()](#vscp_dot_Event_and_isHardCodedAddr) ⇒ <code>boolean</code>
+    * [.setDoNotCalcCRC()](#vscp_dot_Event_and_setDoNotCalcCRC)
+    * [.isDoNotCalcCRC()](#vscp_dot_Event_and_isDoNotCalcCRC) ⇒ <code>boolean</code>
+    * [.getText()](#vscp_dot_Event_and_getText) ⇒ <code>string</code>
 
-<a id="new_vscp.Event_new"></a>
+<a id="new_vscp_dot_Event_new"></a>
+
 #### new vscp.Event(options)
 VSCP event.
 
@@ -2811,120 +2941,140 @@ VSCP event.
 | options.vscpObId | <code>number</code> | Object id |
 | options.vscpTimeStamp | <code>number</code> | Timestamp |
 | options.vscpGuid | <code>string</code> | GUID string |
-| options.vscpData | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | Event data |
+| options.vscpData | <code>Array.&lt;number&gt;</code> \| <code>string</code> | Event data |
 
-<a id="vscp.Event+vscpHead"></a>
+<a id="vscp_dot_Event_and_vscpHead"></a>
+
 #### event.vscpHead : <code>number</code>
 VSCP event head
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpClass"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpClass"></a>
+
 #### event.vscpClass : <code>number</code>
 VSCP class
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpType"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpType"></a>
+
 #### event.vscpType : <code>number</code>
 VSCP type
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpObId"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpObId"></a>
+
 #### event.vscpObId : <code>number</code>
 VSCP object id used by driver for channel info and etc.
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpTimeStamp"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpTimeStamp"></a>
+
 #### event.vscpTimeStamp : <code>number</code>
 Relative timestamp for package in us
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpDateTime"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpDateTime"></a>
+
 #### event.vscpDateTime : <code>date</code>
 Date/Time for package
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpGuid"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpGuid"></a>
+
 #### event.vscpGuid : <code>string</code>
 Node global unique id LSB(15) -> MSB(0)
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+vscpData"></a>
-#### event.vscpData : <code>Array.&lt;number&gt;</code> &#124; <code>string</code>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_vscpData"></a>
+
+#### event.vscpData : <code>Array.&lt;number&gt;</code> \| <code>string</code>
 Data array or string
 
-**Kind**: instance property of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+setIPV6Addr"></a>
+**Kind**: instance property of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_setIPV6Addr"></a>
+
 #### event.setIPV6Addr()
 Set GUID as IP v6 address
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isIPV6Addr"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isIPV6Addr"></a>
+
 #### event.isIPV6Addr() ⇒ <code>boolean</code>
 Is GUID a IP v6 address or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the GUID is a IP v6 address, it will return true, otherwise false.  
-<a id="vscp.Event+setDumbNode"></a>
+<a id="vscp_dot_Event_and_setDumbNode"></a>
+
 #### event.setDumbNode()
 Set dumb node. No MDF, registers, nothing.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isDumbNode"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isDumbNode"></a>
+
 #### event.isDumbNode() ⇒ <code>boolean</code>
 Is node a dump node or not?
 Dumb node means no MDF, registers, nothing.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the node is a dumb node, it will return true, otherwise false.  
-<a id="vscp.Event+setPriority"></a>
+<a id="vscp_dot_Event_and_setPriority"></a>
+
 #### event.setPriority(priority)
 Set the VSCP event priority.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | priority | <code>number</code> | Priority |
 
-<a id="vscp.Event+getPriority"></a>
+<a id="vscp_dot_Event_and_getPriority"></a>
+
 #### event.getPriority() ⇒ <code>number</code>
 Get the VSCP event priority.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>number</code> - Priority of the event.  
-<a id="vscp.Event+setHardCodedAddr"></a>
+<a id="vscp_dot_Event_and_setHardCodedAddr"></a>
+
 #### event.setHardCodedAddr()
 Set the node id of the event sender as hard coded?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isHardCodedAddr"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isHardCodedAddr"></a>
+
 #### event.isHardCodedAddr() ⇒ <code>boolean</code>
 Is the node id of the event sender hard coded or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If the node id is hard coded, it will return true, otherwise false.  
-<a id="vscp.Event+setDoNotCalcCRC"></a>
+<a id="vscp_dot_Event_and_setDoNotCalcCRC"></a>
+
 #### event.setDoNotCalcCRC()
 Set flag for no CRC calculation?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
-<a id="vscp.Event+isDoNotCalcCRC"></a>
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
+<a id="vscp_dot_Event_and_isDoNotCalcCRC"></a>
+
 #### event.isDoNotCalcCRC() ⇒ <code>boolean</code>
 Is CRC calculated or not?
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>boolean</code> - If nor CRC should be calculated true is returned.  
-<a id="vscp.Event+getText"></a>
+<a id="vscp_dot_Event_and_getText"></a>
+
 #### event.getText() ⇒ <code>string</code>
 Get event as string.
 
-**Kind**: instance method of <code>[Event](#vscp.Event)</code>  
+**Kind**: instance method of [<code>Event</code>](#vscp_dot_Event)  
 **Returns**: <code>string</code> - Event as string  
-<a id="vscp.version"></a>
+<a id="vscp_dot_version"></a>
+
 ### vscp.version
 VSCP websocket library version
 
-**Kind**: static property of <code>[vscp](#vscp)</code>  
+**Kind**: static property of [<code>vscp</code>](#vscp)  
 **Properties**
 
 | Name | Type | Description |
@@ -2933,24 +3083,26 @@ VSCP websocket library version
 | minor | <code>number</code> | Minor version number |
 | patch | <code>number</code> | Sub-minor version number |
 
-<a id="vscp.constants"></a>
+<a id="vscp_dot_constants"></a>
+
 ### vscp.constants : <code>object</code>
 VSCP constants
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.constants](#vscp.constants) : <code>object</code>
-  * [.classes](#vscp.constants.classes) : <code>enum</code>
-  * [.types](#vscp.constants.types) : <code>enum</code>
-  * [.priorities](#vscp.constants.priorities) : <code>enum</code>
-  * [.varTypes](#vscp.constants.varTypes) : <code>enum</code>
-  * [.varTypeNames](#vscp.constants.varTypeNames)
+* [.constants](#vscp_dot_constants) : <code>object</code>
+    * [.classes](#vscp_dot_constants_dot_classes) : <code>enum</code>
+    * [.types](#vscp_dot_constants_dot_types) : <code>enum</code>
+    * [.priorities](#vscp_dot_constants_dot_priorities) : <code>enum</code>
+    * [.varTypes](#vscp_dot_constants_dot_varTypes) : <code>enum</code>
+    * [.varTypeNames](#vscp_dot_constants_dot_varTypeNames)
 
-<a id="vscp.constants.classes"></a>
+<a id="vscp_dot_constants_dot_classes"></a>
+
 #### constants.classes : <code>enum</code>
 VSCP classes
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -3014,11 +3166,12 @@ VSCP classes
 | VSCP_CLASS2_MEASUREMENT_FLOAT | <code>number</code> | <code>1060</code> | 
 | VSCP_CLASS2_VSCPD | <code>number</code> | <code>65535</code> | 
 
-<a id="vscp.constants.types"></a>
+<a id="vscp_dot_constants_dot_types"></a>
+
 #### constants.types : <code>enum</code>
 VSCP class types
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -3994,11 +4147,12 @@ VSCP class types
 | VSCP2_TYPE_VSCPD_TIMER_ELLAPSED | <code>number</code> | <code>29</code> | 
 | VSCP2_TYPE_VSCPD_NEW_CALCULATION | <code>number</code> | <code>30</code> | 
 
-<a id="vscp.constants.priorities"></a>
+<a id="vscp_dot_constants_dot_priorities"></a>
+
 #### constants.priorities : <code>enum</code>
 VSCP class priorities
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -4012,11 +4166,12 @@ VSCP class priorities
 | PRIORITY_6 | <code>number</code> | <code>6</code> | 
 | PRIORITY_7_LOW | <code>number</code> | <code>7</code> | 
 
-<a id="vscp.constants.varTypes"></a>
+<a id="vscp_dot_constants_dot_varTypes"></a>
+
 #### constants.varTypes : <code>enum</code>
 VSCP variable types
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_constants)  
 **Properties**
 
 | Name | Type | Default |
@@ -4052,134 +4207,142 @@ VSCP variable types
 | USER | <code>number</code> | <code>502</code> | 
 | FILTER | <code>number</code> | <code>503</code> | 
 
-<a id="vscp.constants.varTypeNames"></a>
+<a id="vscp_dot_constants_dot_varTypeNames"></a>
+
 #### constants.varTypeNames
 VSCP variable type names as string. Use to fill drop down boxes and similar.
 
-**Kind**: static constant of <code>[constants](#vscp.constants)</code>  
-<a id="vscp.utility"></a>
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_constants)  
+<a id="vscp_dot_utility"></a>
+
 ### vscp.utility : <code>object</code>
 Utility functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.utility](#vscp.utility) : <code>object</code>
-  * [.readValue(input)](#vscp.utility.readValue) ⇒ <code>number</code>
-  * [.getTime()](#vscp.utility.getTime) ⇒ <code>string</code>
-  * [.guidToStr(guid)](#vscp.utility.guidToStr) ⇒ <code>string</code>
-  * [.strToGuid(guid)](#vscp.utility.strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
-  * [.getNodeId(guid)](#vscp.utility.getNodeId) ⇒ <code>number</code>
+* [.utility](#vscp_dot_utility) : <code>object</code>
+    * [.readValue(input)](#vscp_dot_utility_dot_readValue) ⇒ <code>number</code>
+    * [.getTime()](#vscp_dot_utility_dot_getTime) ⇒ <code>string</code>
+    * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
+    * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
+    * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
 
-<a id="vscp.utility.readValue"></a>
+<a id="vscp_dot_utility_dot_readValue"></a>
+
 #### utility.readValue(input) ⇒ <code>number</code>
 Read a hex or decimal value and return as an integer.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>number</code> - Value  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | input | <code>string</code> | Hex or decimal value as string |
 
-<a id="vscp.utility.getTime"></a>
+<a id="vscp_dot_utility_dot_getTime"></a>
+
 #### utility.getTime() ⇒ <code>string</code>
 Utility function which returns the current time in the following format: hh:mm:ss.us
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>string</code> - Current time in the format hh:mm:ss.us  
-<a id="vscp.utility.guidToStr"></a>
+<a id="vscp_dot_utility_dot_guidToStr"></a>
+
 #### utility.guidToStr(guid) ⇒ <code>string</code>
 Converts a GUID number array to a GUID string.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>string</code> - GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>Array.&lt;number&gt;</code> | GUID number array |
 
-<a id="vscp.utility.strToGuid"></a>
+<a id="vscp_dot_utility_dot_strToGuid"></a>
+
 #### utility.strToGuid(guid) ⇒ <code>Array.&lt;number&gt;</code>
 Converts a GUID string to a GUID number array.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>Array.&lt;number&gt;</code> - GUID number array  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a id="vscp.utility.getNodeId"></a>
+<a id="vscp_dot_utility_dot_getNodeId"></a>
+
 #### utility.getNodeId(guid) ⇒ <code>number</code>
 Get node id from a node GUID string.
 
-**Kind**: static method of <code>[utility](#vscp.utility)</code>  
+**Kind**: static method of [<code>utility</code>](#vscp_dot_utility)  
 **Returns**: <code>number</code> - Node id  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
-<a id="vscp.rest"></a>
+<a id="vscp_dot_rest"></a>
+
 ### vscp.rest : <code>object</code>
 VSCP REST api functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.rest](#vscp.rest) : <code>object</code>
-  * [.Client](#vscp.rest.Client)
-    * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-    * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-    * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-    * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-    * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-    * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-    * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-    * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-    * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-    * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-    * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-    * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-    * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-    * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-    * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-    * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-    * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-    * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-    * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-    * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
+* [.rest](#vscp_dot_rest) : <code>object</code>
+    * [.Client](#vscp_dot_rest_dot_Client)
+        * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+        * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+        * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+        * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+        * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+        * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+        * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+        * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+        * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+        * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+        * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+        * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+        * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+        * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+        * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+        * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+        * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+        * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+        * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+        * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
 
-<a id="vscp.rest.Client"></a>
+<a id="vscp_dot_rest_dot_Client"></a>
+
 #### rest.Client
-**Kind**: static class of <code>[rest](#vscp.rest)</code>  
+**Kind**: static class of [<code>rest</code>](#vscp_dot_rest)  
 
-* [.Client](#vscp.rest.Client)
-  * [new vscp.rest.Client(config)](#new_vscp.rest.Client_new)
-  * [.baseUrl](#vscp.rest.Client+baseUrl) : <code>string</code>
-  * [.pathPrefix](#vscp.rest.Client+pathPrefix) : <code>string</code>
-  * [.apiVersion](#vscp.rest.Client+apiVersion) : <code>string</code>
-  * [.sessionKey](#vscp.rest.Client+sessionKey) : <code>string</code>
-  * [._buildUrl(path)](#vscp.rest.Client+_buildUrl) ⇒
-  * [._makeRequest(options)](#vscp.rest.Client+_makeRequest) ⇒ <code>object</code>
-  * [._abort(error, [onError])](#vscp.rest.Client+_abort) ⇒ <code>object</code>
-  * [.openSession(options)](#vscp.rest.Client+openSession) ⇒ <code>object</code>
-  * [.closeSession([options])](#vscp.rest.Client+closeSession) ⇒ <code>object</code>
-  * [.getStatus([options])](#vscp.rest.Client+getStatus) ⇒ <code>object</code>
-  * [.sendEvent(options)](#vscp.rest.Client+sendEvent) ⇒ <code>object</code>
-  * [.readEvent([options])](#vscp.rest.Client+readEvent) ⇒ <code>object</code>
-  * [.setFilter(options)](#vscp.rest.Client+setFilter) ⇒ <code>object</code>
-  * [.clearQueue([options])](#vscp.rest.Client+clearQueue) ⇒ <code>object</code>
-  * [.createVar(options)](#vscp.rest.Client+createVar) ⇒ <code>object</code>
-  * [.readVar(options)](#vscp.rest.Client+readVar) ⇒ <code>object</code>
-  * [.writeVar(options)](#vscp.rest.Client+writeVar) ⇒ <code>object</code>
-  * [.removeVar(options)](#vscp.rest.Client+removeVar) ⇒ <code>object</code>
-  * [.listVar(options)](#vscp.rest.Client+listVar) ⇒ <code>object</code>
+* [.Client](#vscp_dot_rest_dot_Client)
+    * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
+    * [.baseUrl](#vscp_dot_rest_dot_Client_and_baseUrl) : <code>string</code>
+    * [.pathPrefix](#vscp_dot_rest_dot_Client_and_pathPrefix) : <code>string</code>
+    * [.apiVersion](#vscp_dot_rest_dot_Client_and_apiVersion) : <code>string</code>
+    * [.sessionKey](#vscp_dot_rest_dot_Client_and_sessionKey) : <code>string</code>
+    * [._buildUrl(path)](#vscp_dot_rest_dot_Client_and__buildUrl) ⇒
+    * [._makeRequest(options)](#vscp_dot_rest_dot_Client_and__makeRequest) ⇒ <code>object</code>
+    * [._abort(error, [onError])](#vscp_dot_rest_dot_Client_and__abort) ⇒ <code>object</code>
+    * [.openSession(options)](#vscp_dot_rest_dot_Client_and_openSession) ⇒ <code>object</code>
+    * [.closeSession([options])](#vscp_dot_rest_dot_Client_and_closeSession) ⇒ <code>object</code>
+    * [.getStatus([options])](#vscp_dot_rest_dot_Client_and_getStatus) ⇒ <code>object</code>
+    * [.sendEvent(options)](#vscp_dot_rest_dot_Client_and_sendEvent) ⇒ <code>object</code>
+    * [.readEvent([options])](#vscp_dot_rest_dot_Client_and_readEvent) ⇒ <code>object</code>
+    * [.setFilter(options)](#vscp_dot_rest_dot_Client_and_setFilter) ⇒ <code>object</code>
+    * [.clearQueue([options])](#vscp_dot_rest_dot_Client_and_clearQueue) ⇒ <code>object</code>
+    * [.createVar(options)](#vscp_dot_rest_dot_Client_and_createVar) ⇒ <code>object</code>
+    * [.readVar(options)](#vscp_dot_rest_dot_Client_and_readVar) ⇒ <code>object</code>
+    * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
+    * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
+    * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
 
-<a id="new_vscp.rest.Client_new"></a>
+<a id="new_vscp_dot_rest_dot_Client_new"></a>
+
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.
-The function interface uses jquery ajax call in the background and will
-return object with the jquery promise interface.
+The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn object with the jquery promise interface.
 
 
 | Param | Type | Description |
@@ -4189,44 +4352,48 @@ return object with the jquery promise interface.
 | [options.pathPrefix] | <code>string</code> | Path prefix (default: '/vscp'), which comes right after the base url. |
 | [options.apiVersion] | <code>string</code> | API version (for future use) |
 
-<a id="vscp.rest.Client+baseUrl"></a>
+<a id="vscp_dot_rest_dot_Client_and_baseUrl"></a>
+
 ##### client.baseUrl : <code>string</code>
 Base URL
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+pathPrefix"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_pathPrefix"></a>
+
 ##### client.pathPrefix : <code>string</code>
 Path prefix
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+apiVersion"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_apiVersion"></a>
+
 ##### client.apiVersion : <code>string</code>
 REST API version (future use)
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+sessionKey"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and_sessionKey"></a>
+
 ##### client.sessionKey : <code>string</code>
 Session key
 
-**Kind**: instance property of <code>[Client](#vscp.rest.Client)</code>  
-<a id="vscp.rest.Client+_buildUrl"></a>
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
+<a id="vscp_dot_rest_dot_Client_and__buildUrl"></a>
+
 ##### client._buildUrl(path) ⇒
 Build complete URL, including command path.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: URL  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | path | <code>string</code> | Relative command path, after REST API version. |
 
-<a id="vscp.rest.Client+_makeRequest"></a>
-##### client._makeRequest(options) ⇒ <code>object</code>
-Make a request to VSCP daemon via REST api.
-The onSuccess and onError function parameter are harmonized here.
-This makes it easier to process them further.
+<a id="vscp_dot_rest_dot_Client_and__makeRequest"></a>
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+##### client._makeRequest(options) ⇒ <code>object</code>
+Make a request to VSCP daemon via REST api.The onSuccess and onError function parameter are harmonized here.This makes it easier to process them further.
+
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4238,11 +4405,12 @@ This makes it easier to process them further.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+_abort"></a>
+<a id="vscp_dot_rest_dot_Client_and__abort"></a>
+
 ##### client._abort(error, [onError]) ⇒ <code>object</code>
 Prepare error object, call error callback and return rejected promise.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - Rejected jquery promise  
 
 | Param | Type | Description |
@@ -4250,11 +4418,12 @@ Prepare error object, call error callback and return rejected promise.
 | error | <code>string</code> | Error description |
 | [onError] | <code>function</code> | Callback |
 
-<a id="vscp.rest.Client+openSession"></a>
+<a id="vscp_dot_rest_dot_Client_and_openSession"></a>
+
 ##### client.openSession(options) ⇒ <code>object</code>
 Open a session.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4265,11 +4434,12 @@ Open a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+closeSession"></a>
+<a id="vscp_dot_rest_dot_Client_and_closeSession"></a>
+
 ##### client.closeSession([options]) ⇒ <code>object</code>
 Close a session.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4278,11 +4448,12 @@ Close a session.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+getStatus"></a>
+<a id="vscp_dot_rest_dot_Client_and_getStatus"></a>
+
 ##### client.getStatus([options]) ⇒ <code>object</code>
 Get status and how many events are in the queue.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4291,11 +4462,12 @@ Get status and how many events are in the queue.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+sendEvent"></a>
+<a id="vscp_dot_rest_dot_Client_and_sendEvent"></a>
+
 ##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4305,11 +4477,12 @@ Send a VSCP event.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+readEvent"></a>
+<a id="vscp_dot_rest_dot_Client_and_readEvent"></a>
+
 ##### client.readEvent([options]) ⇒ <code>object</code>
 Read one or more VSCP events.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4319,11 +4492,12 @@ Read one or more VSCP events.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+setFilter"></a>
+<a id="vscp_dot_rest_dot_Client_and_setFilter"></a>
+
 ##### client.setFilter(options) ⇒ <code>object</code>
 Set filter.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4332,19 +4506,20 @@ Set filter.
 | [options.filterPriority] | <code>number</code> | Priority filter |
 | [options.filterClass] | <code>number</code> | Class filter |
 | [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID filter |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
 | [options.maskPriority] | <code>number</code> | Priority mask |
 | [options.maskClass] | <code>number</code> | Class mask |
 | [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID mask |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+clearQueue"></a>
+<a id="vscp_dot_rest_dot_Client_and_clearQueue"></a>
+
 ##### client.clearQueue([options]) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4353,11 +4528,12 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Callback, which is called for successful request. |
 | [options.onError] | <code>function</code> | Callback, which is called for failed request. |
 
-<a id="vscp.rest.Client+createVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_createVar"></a>
+
 ##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4372,11 +4548,12 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+readVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_readVar"></a>
+
 ##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4386,11 +4563,12 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+writeVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_writeVar"></a>
+
 ##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4402,11 +4580,12 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+removeVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_removeVar"></a>
+
 ##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4416,11 +4595,12 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.rest.Client+listVar"></a>
+<a id="vscp_dot_rest_dot_Client_and_listVar"></a>
+
 ##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
-**Kind**: instance method of <code>[Client](#vscp.rest.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
 **Returns**: <code>object</code> - jquery promise (deferred object)  
 
 | Param | Type | Description |
@@ -4431,160 +4611,290 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws"></a>
+<a id="vscp_dot_ws"></a>
+
 ### vscp.ws : <code>object</code>
 VSCP websocket api functions
 
-**Kind**: static namespace of <code>[vscp](#vscp)</code>  
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
 
-* [.ws](#vscp.ws) : <code>object</code>
-  * [.Client](#vscp.ws.Client)
-    * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-    * _instance_
-      * [.states](#vscp.ws.Client+states) : <code>enum</code>
-      * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-      * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-      * [.url](#vscp.ws.Client+url) : <code>string</code>
-      * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-      * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-      * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-      * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-      * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-      * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-      * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-      * [.password](#vscp.ws.Client+password) : <code>string</code>
-      * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-      * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-      * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-      * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-      * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-      * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-      * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-      * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-      * [.state](#vscp.ws.Client+state) : <code>number</code>
-      * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-      * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-      * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-      * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-      * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-      * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-      * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-      * [.signalConnError()](#vscp.ws.Client+signalConnError)
-      * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-      * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-      * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-      * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-      * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-      * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-      * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-      * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-      * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-      * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-      * [.connect(options)](#vscp.ws.Client+connect)
-      * [.disconnect()](#vscp.ws.Client+disconnect)
-      * [.start(options)](#vscp.ws.Client+start)
-      * [.stop(options)](#vscp.ws.Client+stop)
-      * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-      * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-      * [.setFilter(options)](#vscp.ws.Client+setFilter)
-      * [.createVar(options)](#vscp.ws.Client+createVar)
-      * [.readVar(options)](#vscp.ws.Client+readVar)
-      * [.writeVar(options)](#vscp.ws.Client+writeVar)
-      * [.resetVar(options)](#vscp.ws.Client+resetVar)
-      * [.removeVar(options)](#vscp.ws.Client+removeVar)
-      * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-      * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-      * [.listVar(options)](#vscp.ws.Client+listVar)
-      * [.readTable(options)](#vscp.ws.Client+readTable)
-    * _inner_
-      * [~Command](#vscp.ws.Client..Command)
-        * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-        * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-        * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-        * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-      * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-      * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
+* [.ws](#vscp_dot_ws) : <code>object</code>
+    * [.Client](#vscp_dot_ws_dot_Client)
+        * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+        * _instance_
+            * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+            * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+            * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+            * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+            * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+            * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+            * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+            * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+            * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+            * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+            * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+            * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+            * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+            * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+            * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+            * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+            * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+            * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+            * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+            * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+            * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+            * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+            * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+            * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+            * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+            * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+            * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+            * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+            * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+            * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+            * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+            * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+            * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+            * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+            * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+            * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+            * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+            * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+            * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+        * _inner_
+            * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+                * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+                * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+                * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+                * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+            * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+            * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
 
-<a id="vscp.ws.Client"></a>
+<a id="vscp_dot_ws_dot_Client"></a>
+
 #### ws.Client
-**Kind**: static class of <code>[ws](#vscp.ws)</code>  
+**Kind**: static class of [<code>ws</code>](#vscp_dot_ws)  
 
-* [.Client](#vscp.ws.Client)
-  * [new vscp.ws.Client()](#new_vscp.ws.Client_new)
-  * _instance_
-    * [.states](#vscp.ws.Client+states) : <code>enum</code>
-    * [.substates](#vscp.ws.Client+substates) : <code>enum</code>
-    * [.socket](#vscp.ws.Client+socket) : <code>object</code>
-    * [.url](#vscp.ws.Client+url) : <code>string</code>
-    * [.userName](#vscp.ws.Client+userName) : <code>string</code>
-    * [.userId](#vscp.ws.Client+userId) : <code>number</code>
-    * [.userFullname](#vscp.ws.Client+userFullname) : <code>string</code>
-    * [.userRights](#vscp.ws.Client+userRights) : <code>array</code>
-    * [.userRemotes](#vscp.ws.Client+userRemotes) : <code>array</code>
-    * [.userEvents](#vscp.ws.Client+userEvents) : <code>array</code>
-    * [.userNote](#vscp.ws.Client+userNote) : <code>string</code>
-    * [.password](#vscp.ws.Client+password) : <code>string</code>
-    * [.vscpkey](#vscp.ws.Client+vscpkey) : <code>string</code>
-    * [.authdomain](#vscp.ws.Client+authdomain) : <code>string</code>
-    * [.passwordHash](#vscp.ws.Client+passwordHash) : <code>string</code>
-    * [.onConnError](#vscp.ws.Client+onConnError) : <code>function</code>
-    * [.onMessage](#vscp.ws.Client+onMessage) : <code>function</code>
-    * [.onEvent](#vscp.ws.Client+onEvent) : <code>Array.&lt;function()&gt;</code>
-    * [.onVariable](#vscp.ws.Client+onVariable) : <code>function</code>
-    * [.onTableRow](#vscp.ws.Client+onTableRow) : <code>function</code>
-    * [.state](#vscp.ws.Client+state) : <code>number</code>
-    * [.substate](#vscp.ws.Client+substate) : <code>number</code>
-    * [.webSocketMessages](#vscp.ws.Client+webSocketMessages) : <code>object</code>
-    * [.getPendingCommand(command)](#vscp.ws.Client+getPendingCommand) ⇒ <code>Command</code>
-    * [._sendCommand(options)](#vscp.ws.Client+_sendCommand)
-    * [._sendEvent(options)](#vscp.ws.Client+_sendEvent)
-    * [.signalSuccess(command, [obj])](#vscp.ws.Client+signalSuccess)
-    * [.signalError(command, [obj])](#vscp.ws.Client+signalError)
-    * [.signalConnError()](#vscp.ws.Client+signalConnError)
-    * [.signalMessage(msg)](#vscp.ws.Client+signalMessage) ⇒ <code>boolean</code>
-    * [.signalEvent(vscpEvent)](#vscp.ws.Client+signalEvent)
-    * [.signalVariable(variable)](#vscp.ws.Client+signalVariable)
-    * [.signalTableRow(row)](#vscp.ws.Client+signalTableRow)
-    * [.addEventListener(eventListener)](#vscp.ws.Client+addEventListener)
-    * [.removeEventListener(eventListener)](#vscp.ws.Client+removeEventListener)
-    * [.getAuthHash(userName, password, str_iv)](#vscp.ws.Client+getAuthHash) ⇒ <code>string</code>
-    * [.onWebSocketOpen()](#vscp.ws.Client+onWebSocketOpen)
-    * [.onWebSocketClose()](#vscp.ws.Client+onWebSocketClose)
-    * [.onWebSocketMessage(msg)](#vscp.ws.Client+onWebSocketMessage)
-    * [.connect(options)](#vscp.ws.Client+connect)
-    * [.disconnect()](#vscp.ws.Client+disconnect)
-    * [.start(options)](#vscp.ws.Client+start)
-    * [.stop(options)](#vscp.ws.Client+stop)
-    * [.clearQueue(options)](#vscp.ws.Client+clearQueue)
-    * [.sendEvent(options)](#vscp.ws.Client+sendEvent)
-    * [.setFilter(options)](#vscp.ws.Client+setFilter)
-    * [.createVar(options)](#vscp.ws.Client+createVar)
-    * [.readVar(options)](#vscp.ws.Client+readVar)
-    * [.writeVar(options)](#vscp.ws.Client+writeVar)
-    * [.resetVar(options)](#vscp.ws.Client+resetVar)
-    * [.removeVar(options)](#vscp.ws.Client+removeVar)
-    * [.lengthVar(options)](#vscp.ws.Client+lengthVar)
-    * [.lastChangeVar(options)](#vscp.ws.Client+lastChangeVar)
-    * [.listVar(options)](#vscp.ws.Client+listVar)
-    * [.readTable(options)](#vscp.ws.Client+readTable)
-  * _inner_
-    * [~Command](#vscp.ws.Client..Command)
-      * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-      * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-      * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-      * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
-    * [~cmdQueue](#vscp.ws.Client..cmdQueue) : <code>Array.&lt;Command&gt;</code>
-    * [~getPendingCommandIndex(command)](#vscp.ws.Client..getPendingCommandIndex) ⇒ <code>number</code>
+* [.Client](#vscp_dot_ws_dot_Client)
+    * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
+    * _instance_
+        * [.socket](#vscp_dot_ws_dot_Client_and_socket) : <code>object</code>
+        * [.url](#vscp_dot_ws_dot_Client_and_url) : <code>string</code>
+        * [.userName](#vscp_dot_ws_dot_Client_and_userName) : <code>string</code>
+        * [.userId](#vscp_dot_ws_dot_Client_and_userId) : <code>number</code>
+        * [.userFullname](#vscp_dot_ws_dot_Client_and_userFullname) : <code>string</code>
+        * [.userRights](#vscp_dot_ws_dot_Client_and_userRights) : <code>array</code>
+        * [.userRemotes](#vscp_dot_ws_dot_Client_and_userRemotes) : <code>array</code>
+        * [.userEvents](#vscp_dot_ws_dot_Client_and_userEvents) : <code>array</code>
+        * [.userNote](#vscp_dot_ws_dot_Client_and_userNote) : <code>string</code>
+        * [.password](#vscp_dot_ws_dot_Client_and_password) : <code>string</code>
+        * [.vscpkey](#vscp_dot_ws_dot_Client_and_vscpkey) : <code>string</code>
+        * [.authdomain](#vscp_dot_ws_dot_Client_and_authdomain) : <code>string</code>
+        * [.passwordHash](#vscp_dot_ws_dot_Client_and_passwordHash) : <code>string</code>
+        * [.onConnError](#vscp_dot_ws_dot_Client_and_onConnError) : <code>function</code>
+        * [.onMessage](#vscp_dot_ws_dot_Client_and_onMessage) : <code>function</code>
+        * [.onEvent](#vscp_dot_ws_dot_Client_and_onEvent) : <code>Array.&lt;function()&gt;</code>
+        * [.onVariable](#vscp_dot_ws_dot_Client_and_onVariable) : <code>function</code>
+        * [.onTableRow](#vscp_dot_ws_dot_Client_and_onTableRow) : <code>function</code>
+        * [.state](#vscp_dot_ws_dot_Client_and_state) : <code>number</code>
+        * [.substate](#vscp_dot_ws_dot_Client_and_substate) : <code>number</code>
+        * [.webSocketMessages](#vscp_dot_ws_dot_Client_and_webSocketMessages) : <code>object</code>
+        * [.states](#vscp_dot_ws_dot_Client_and_states) : <code>enum</code>
+        * [.substates](#vscp_dot_ws_dot_Client_and_substates) : <code>enum</code>
+        * [.getPendingCommand(command)](#vscp_dot_ws_dot_Client_and_getPendingCommand) ⇒ <code>Command</code>
+        * [._sendCommand(options)](#vscp_dot_ws_dot_Client_and__sendCommand)
+        * [._sendEvent(options)](#vscp_dot_ws_dot_Client_and__sendEvent)
+        * [.signalSuccess(command, [obj])](#vscp_dot_ws_dot_Client_and_signalSuccess)
+        * [.signalError(command, [obj])](#vscp_dot_ws_dot_Client_and_signalError)
+        * [.signalConnError()](#vscp_dot_ws_dot_Client_and_signalConnError)
+        * [.signalMessage(msg)](#vscp_dot_ws_dot_Client_and_signalMessage) ⇒ <code>boolean</code>
+        * [.signalEvent(vscpEvent)](#vscp_dot_ws_dot_Client_and_signalEvent)
+        * [.signalVariable(variable)](#vscp_dot_ws_dot_Client_and_signalVariable)
+        * [.signalTableRow(row)](#vscp_dot_ws_dot_Client_and_signalTableRow)
+        * [.addEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_addEventListener)
+        * [.removeEventListener(eventListener)](#vscp_dot_ws_dot_Client_and_removeEventListener)
+        * [.getAuthHash(userName, password, str_iv)](#vscp_dot_ws_dot_Client_and_getAuthHash) ⇒ <code>string</code>
+        * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
+        * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
+        * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
+        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
+        * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
+        * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
+        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
+        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
+        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
+        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
+        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
+        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
+        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
+        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
+        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
+        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
+        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
+        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
+        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+    * _inner_
+        * [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+            * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+            * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+            * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+            * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
+        * [~cmdQueue](#vscp_dot_ws_dot_Client_tilde_cmdQueue) : <code>Array.&lt;Command&gt;</code>
+        * [~getPendingCommandIndex(command)](#vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex) ⇒ <code>number</code>
 
-<a id="new_vscp.ws.Client_new"></a>
+<a id="new_vscp_dot_ws_dot_Client_new"></a>
+
 ##### new vscp.ws.Client()
 VSCP websocket client, used for connection establishment to a VSCP server.
 
-<a id="vscp.ws.Client+states"></a>
+<a id="vscp_dot_ws_dot_Client_and_socket"></a>
+
+##### client.socket : <code>object</code>
+Websocket
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_url"></a>
+
+##### client.url : <code>string</code>
+url used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userName"></a>
+
+##### client.userName : <code>string</code>
+User name used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userId"></a>
+
+##### client.userId : <code>number</code>
+User id from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userFullname"></a>
+
+##### client.userFullname : <code>string</code>
+User full name from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userRights"></a>
+
+##### client.userRights : <code>array</code>
+User rights from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userRemotes"></a>
+
+##### client.userRemotes : <code>array</code>
+User allowed remotes from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userEvents"></a>
+
+##### client.userEvents : <code>array</code>
+User allowed events from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_userNote"></a>
+
+##### client.userNote : <code>string</code>
+User note from authentication AUTH1
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_password"></a>
+
+##### client.password : <code>string</code>
+Password used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_vscpkey"></a>
+
+##### client.vscpkey : <code>string</code>
+Secret key used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_authdomain"></a>
+
+##### client.authdomain : <code>string</code>
+authdomain used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_passwordHash"></a>
+
+##### client.passwordHash : <code>string</code>
+Password hash used for connection establishment
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onConnError"></a>
+
+##### client.onConnError : <code>function</code>
+Callback called on any connection error
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onMessage"></a>
+
+##### client.onMessage : <code>function</code>
+Callback called on any received VSCP response message
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onEvent"></a>
+
+##### client.onEvent : <code>Array.&lt;function()&gt;</code>
+Callbacks called on any received VSCP event message
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onVariable"></a>
+
+##### client.onVariable : <code>function</code>
+Callback called on any received variable (see LSTVAR command)
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onTableRow"></a>
+
+##### client.onTableRow : <code>function</code>
+Callback called on any received table row (see GT command)
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_state"></a>
+
+##### client.state : <code>number</code>
+VSCP websocket is not connected right now
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_substate"></a>
+
+##### client.substate : <code>number</code>
+VSCP event traffic is closed
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_webSocketMessages"></a>
+
+##### client.webSocketMessages : <code>object</code>
+VSCP websocket command responses and unsolicited messages
+
+**Kind**: instance property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_states"></a>
+
 ##### client.states : <code>enum</code>
 States of the VSCP websocket
 
-**Kind**: instance enum property of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance enum of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -4593,11 +4903,12 @@ States of the VSCP websocket
 | CONNECTED | <code>number</code> | <code>1</code> | Standard websocket connection established |
 | AUTHENTICATED | <code>number</code> | <code>2</code> | Authentication with VSCP server successful |
 
-<a id="vscp.ws.Client+substates"></a>
+<a id="vscp_dot_ws_dot_Client_and_substates"></a>
+
 ##### client.substates : <code>enum</code>
 Substates of the VSCP websocket
 
-**Kind**: instance enum property of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance enum of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Properties**
 
 | Name | Type | Default | Description |
@@ -4605,127 +4916,24 @@ Substates of the VSCP websocket
 | CLOSED | <code>number</code> | <code>0</code> | No events sent from server |
 | OPEN | <code>number</code> | <code>1</code> | Events sent from server |
 
-<a id="vscp.ws.Client+socket"></a>
-##### client.socket : <code>object</code>
-Websocket
+<a id="vscp_dot_ws_dot_Client_and_getPendingCommand"></a>
 
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+url"></a>
-##### client.url : <code>string</code>
-url used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userName"></a>
-##### client.userName : <code>string</code>
-User name used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userId"></a>
-##### client.userId : <code>number</code>
-User id from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userFullname"></a>
-##### client.userFullname : <code>string</code>
-User full name from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userRights"></a>
-##### client.userRights : <code>array</code>
-User rights from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userRemotes"></a>
-##### client.userRemotes : <code>array</code>
-User allowed remotes from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userEvents"></a>
-##### client.userEvents : <code>array</code>
-User allowed events from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+userNote"></a>
-##### client.userNote : <code>string</code>
-User note from authentication AUTH1
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+password"></a>
-##### client.password : <code>string</code>
-Password used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+vscpkey"></a>
-##### client.vscpkey : <code>string</code>
-Secret key used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+authdomain"></a>
-##### client.authdomain : <code>string</code>
-authdomain used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+passwordHash"></a>
-##### client.passwordHash : <code>string</code>
-Password hash used for connection establishment
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onConnError"></a>
-##### client.onConnError : <code>function</code>
-Callback called on any connection error
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onMessage"></a>
-##### client.onMessage : <code>function</code>
-Callback called on any received VSCP response message
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onEvent"></a>
-##### client.onEvent : <code>Array.&lt;function()&gt;</code>
-Callbacks called on any received VSCP event message
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onVariable"></a>
-##### client.onVariable : <code>function</code>
-Callback called on any received variable (see LSTVAR command)
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onTableRow"></a>
-##### client.onTableRow : <code>function</code>
-Callback called on any received table row (see GT command)
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+state"></a>
-##### client.state : <code>number</code>
-VSCP websocket is not connected right now
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+substate"></a>
-##### client.substate : <code>number</code>
-VSCP event traffic is closed
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+webSocketMessages"></a>
-##### client.webSocketMessages : <code>object</code>
-VSCP websocket command responses and unsolicited messages
-
-**Kind**: instance property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+getPendingCommand"></a>
 ##### client.getPendingCommand(command) ⇒ <code>Command</code>
 Get command from queue with pending commands.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>Command</code> - Command object  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a id="vscp.ws.Client+_sendCommand"></a>
+<a id="vscp_dot_ws_dot_Client_and__sendCommand"></a>
+
 ##### client._sendCommand(options)
 Send command to VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4736,11 +4944,12 @@ Send command to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a id="vscp.ws.Client+_sendEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and__sendEvent"></a>
+
 ##### client._sendEvent(options)
 Send event to VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4749,62 +4958,68 @@ Send event to VSCP server.
 | options.onSuccess | <code>function</code> | Callback on success |
 | options.onError | <code>function</code> | Callback on error |
 
-<a id="vscp.ws.Client+signalSuccess"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalSuccess"></a>
+
 ##### client.signalSuccess(command, [obj])
 Signal success of the current asynchronous operation.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on success callback |
 
-<a id="vscp.ws.Client+signalError"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalError"></a>
+
 ##### client.signalError(command, [obj])
 Signal failed of the current asynchronous operation.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 | [obj] | <code>object</code> | Options for on error callback |
 
-<a id="vscp.ws.Client+signalConnError"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalConnError"></a>
+
 ##### client.signalConnError()
 Signal a connection error.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+signalMessage"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_signalMessage"></a>
+
 ##### client.signalMessage(msg) ⇒ <code>boolean</code>
 Signal a received VSCP response message.
 If the message is handled by the application, the application will return
 true, which means no further actions shall take place in this object.
 Otherwise the message is handled by the standard onMessage handler here.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>boolean</code> - Message is handled (true) or not (false).  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a id="vscp.ws.Client+signalEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalEvent"></a>
+
 ##### client.signalEvent(vscpEvent)
 Signal a received VSCP event.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| vscpEvent | <code>[Event](#vscp.Event)</code> | VSCP event |
+| vscpEvent | [<code>Event</code>](#vscp_dot_Event) | VSCP event |
 
-<a id="vscp.ws.Client+signalVariable"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalVariable"></a>
+
 ##### client.signalVariable(variable)
 Signal a received variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4815,11 +5030,12 @@ Signal a received variable.
 | variable.persistency | <code>boolean</code> | Variable is persistent (true) or not (false) |
 | variable.value | <code>string</code> | Variable value |
 
-<a id="vscp.ws.Client+signalTableRow"></a>
+<a id="vscp_dot_ws_dot_Client_and_signalTableRow"></a>
+
 ##### client.signalTableRow(row)
 Signal a received table row.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4827,31 +5043,34 @@ Signal a received table row.
 | row.date | <code>string</code> | Date and time |
 | row.value | <code>string</code> | Value |
 
-<a id="vscp.ws.Client+addEventListener"></a>
+<a id="vscp_dot_ws_dot_Client_and_addEventListener"></a>
+
 ##### client.addEventListener(eventListener)
 Add a event listener.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a id="vscp.ws.Client+removeEventListener"></a>
+<a id="vscp_dot_ws_dot_Client_and_removeEventListener"></a>
+
 ##### client.removeEventListener(eventListener)
 Remove a event listener.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | eventListener | <code>function</code> | Event listener function |
 
-<a id="vscp.ws.Client+getAuthHash"></a>
+<a id="vscp_dot_ws_dot_Client_and_getAuthHash"></a>
+
 ##### client.getAuthHash(userName, password, str_iv) ⇒ <code>string</code>
 Calculates the VSCP server websocket authentication hash.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>string</code> - Authentication ("encrypted user:password")  
 
 | Param | Type | Description |
@@ -4860,32 +5079,36 @@ Calculates the VSCP server websocket authentication hash.
 | password | <code>string</code> | Password |
 | str_iv | <code>string</code> | 16 random byte iv in hex form |
 
-<a id="vscp.ws.Client+onWebSocketOpen"></a>
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketOpen"></a>
+
 ##### client.onWebSocketOpen()
 This function is called by the websocket in case the connection is established.
 It will initiate the authentication with the VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onWebSocketClose"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketClose"></a>
+
 ##### client.onWebSocketClose()
 This function is called by the websocket in case that the connection is closed.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+onWebSocketMessage"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_onWebSocketMessage"></a>
+
 ##### client.onWebSocketMessage(msg)
 This function is called for any websocket message (VSCP server response message).
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | msg | <code>string</code> | VSCP server response message |
 
-<a id="vscp.ws.Client+connect"></a>
+<a id="vscp_dot_ws_dot_Client_and_connect"></a>
+
 ##### client.connect(options)
 Connect to a VSCP server with the given URL.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4898,16 +5121,18 @@ Connect to a VSCP server with the given URL.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful connection establishment. |
 | [options.onError] | <code>function</code> | Function which is called on a failed connection establishment or in case the connection is lost during the session. |
 
-<a id="vscp.ws.Client+disconnect"></a>
+<a id="vscp_dot_ws_dot_Client_and_disconnect"></a>
+
 ##### client.disconnect()
 Disconnect from a VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client+start"></a>
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_and_start"></a>
+
 ##### client.start(options)
 Start receiving events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4915,11 +5140,12 @@ Start receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+stop"></a>
+<a id="vscp_dot_ws_dot_Client_and_stop"></a>
+
 ##### client.stop(options)
 Stop receiving events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4927,11 +5153,12 @@ Stop receiving events.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+clearQueue"></a>
+<a id="vscp_dot_ws_dot_Client_and_clearQueue"></a>
+
 ##### client.clearQueue(options)
 Clear the VSCP event queue on the server side.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4939,24 +5166,26 @@ Clear the VSCP event queue on the server side.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+sendEvent"></a>
+<a id="vscp_dot_ws_dot_Client_and_sendEvent"></a>
+
 ##### client.sendEvent(options)
 Send a VSCP event to the VSCP server.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | Options |
-| options.event | <code>[Event](#vscp.Event)</code> | VSCP event to send |
+| options.event | [<code>Event</code>](#vscp_dot_Event) | VSCP event to send |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+setFilter"></a>
+<a id="vscp_dot_ws_dot_Client_and_setFilter"></a>
+
 ##### client.setFilter(options)
 Set a filter in the VSCP server for VSCP events.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4964,19 +5193,20 @@ Set a filter in the VSCP server for VSCP events.
 | [options.filterPriority] | <code>number</code> | Priority filter |
 | [options.filterClass] | <code>number</code> | Class filter |
 | [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID filter |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
 | [options.maskPriority] | <code>number</code> | Priority mask |
 | [options.maskClass] | <code>number</code> | Class mask |
 | [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> &#124; <code>string</code> | GUID mask |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+createVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_createVar"></a>
+
 ##### client.createVar(options)
 Create a a VSCP remote variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4990,11 +5220,12 @@ Create a a VSCP remote variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+readVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_readVar"></a>
+
 ##### client.readVar(options)
 Read a value from a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5003,11 +5234,12 @@ Read a value from a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+writeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_writeVar"></a>
+
 ##### client.writeVar(options)
 Write a value to a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5018,11 +5250,12 @@ Write a value to a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+resetVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_resetVar"></a>
+
 ##### client.resetVar(options)
 Reset a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5031,11 +5264,12 @@ Reset a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+removeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_removeVar"></a>
+
 ##### client.removeVar(options)
 Remove a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5044,11 +5278,12 @@ Remove a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+lengthVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_lengthVar"></a>
+
 ##### client.lengthVar(options)
 Get a VSCP server variable length.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5057,11 +5292,12 @@ Get a VSCP server variable length.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+lastChangeVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_lastChangeVar"></a>
+
 ##### client.lastChangeVar(options)
 Get last change of a VSCP server variable.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5070,11 +5306,12 @@ Get last change of a VSCP server variable.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+listVar"></a>
+<a id="vscp_dot_ws_dot_Client_and_listVar"></a>
+
 ##### client.listVar(options)
 List all VSCP server variables.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5084,12 +5321,13 @@ List all VSCP server variables.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client+readTable"></a>
+<a id="vscp_dot_ws_dot_Client_and_readTable"></a>
+
 ##### client.readTable(options)
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
 
-**Kind**: instance method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -5101,17 +5339,19 @@ If "begin" and "end" are omitted, the whole table is returned.
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
-<a id="vscp.ws.Client..Command"></a>
+<a id="vscp_dot_ws_dot_Client_tilde_Command"></a>
+
 ##### Client~Command
-**Kind**: inner class of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: inner class of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 
-  * [~Command](#vscp.ws.Client..Command)
-    * [new Command(command, onSuccess, onerror)](#new_vscp.ws.Client..Command_new)
-    * [.command](#vscp.ws.Client..Command+command) : <code>string</code>
-    * [.onSuccess](#vscp.ws.Client..Command+onSuccess) : <code>function</code>
-    * [.onError](#vscp.ws.Client..Command+onError) : <code>function</code>
+* [~Command](#vscp_dot_ws_dot_Client_tilde_Command)
+    * [new Command(command, onSuccess, onerror)](#new_vscp_dot_ws_dot_Client_tilde_Command_new)
+    * [.command](#vscp_dot_ws_dot_Client_tilde_Command_and_command) : <code>string</code>
+    * [.onSuccess](#vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess) : <code>function</code>
+    * [.onError](#vscp_dot_ws_dot_Client_tilde_Command_and_onError) : <code>function</code>
 
-<a id="new_vscp.ws.Client..Command_new"></a>
+<a id="new_vscp_dot_ws_dot_Client_tilde_Command_new"></a>
+
 ###### new Command(command, onSuccess, onerror)
 VSCP server command
 
@@ -5122,119 +5362,132 @@ VSCP server command
 | onSuccess | <code>function</code> | Function which is called on successful operation |
 | onerror | <code>function</code> | Function which is called on failed operation |
 
-<a id="vscp.ws.Client..Command+command"></a>
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_command"></a>
+
 ###### command.command : <code>string</code>
 Server command string
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..Command+onSuccess"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onSuccess"></a>
+
 ###### command.onSuccess : <code>function</code>
 Function which is called on successful operation
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..Command+onError"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_Command_and_onError"></a>
+
 ###### command.onError : <code>function</code>
 Function which is called on failed operation
 
-**Kind**: instance property of <code>[Command](#vscp.ws.Client..Command)</code>  
-<a id="vscp.ws.Client..cmdQueue"></a>
+**Kind**: instance property of [<code>Command</code>](#vscp_dot_ws_dot_Client_tilde_Command)  
+<a id="vscp_dot_ws_dot_Client_tilde_cmdQueue"></a>
+
 ##### Client~cmdQueue : <code>Array.&lt;Command&gt;</code>
 Queue contains all pending VSCP server commands
 
-**Kind**: inner property of <code>[Client](#vscp.ws.Client)</code>  
-<a id="vscp.ws.Client..getPendingCommandIndex"></a>
+**Kind**: inner property of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+<a id="vscp_dot_ws_dot_Client_tilde_getPendingCommandIndex"></a>
+
 ##### Client~getPendingCommandIndex(command) ⇒ <code>number</code>
 Get the index of a command in the queue.
 
-**Kind**: inner method of <code>[Client](#vscp.ws.Client)</code>  
+**Kind**: inner method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
 **Returns**: <code>number</code> - Index of command in the queue. If index is < 0, the command was not found.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | command | <code>string</code> | Server command string |
 
-<a id="vscp._createNS"></a>
+<a id="vscp_dot__createNS"></a>
+
 ### vscp._createNS(namespace)
 Create a general purpose namespace method. This will allow us to create
 namespace a bit easier.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | namespace | <code>string</code> | Complete namespace, e.g. "a.b.c.d" |
 
-<a id="vscp.getVarTypeName"></a>
+<a id="vscp_dot_getVarTypeName"></a>
+
 ### vscp.getVarTypeName(n) ⇒ <code>string</code>
 Get variable type name as string by numerical code.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Variable type name  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | n | <code>number</code> | Numerical code |
 
-<a id="vscp.getVarTypeNumerical"></a>
+<a id="vscp_dot_getVarTypeNumerical"></a>
+
 ### vscp.getVarTypeNumerical(str) ⇒ <code>number</code>
 Get numerical code of variable type from string.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>number</code> - Variable type numerical code  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Variable type name |
 
-<a id="vscp.getEditorModeFromType"></a>
+<a id="vscp_dot_getEditorModeFromType"></a>
+
 ### vscp.getEditorModeFromType(n) ⇒ <code>string</code>
 Get ace editor formation mode string from numerical variable type code.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Ace editro formation mode string  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | n | <code>number</code> | Variable type numerical code |
 
-<a id="vscp.b64EncodeUnicode"></a>
+<a id="vscp_dot_b64EncodeUnicode"></a>
+
 ### vscp.b64EncodeUnicode(str) ⇒ <code>string</code>
 Encode base64 unicode safe.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Base64  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Unicode string |
 
-<a id="vscp.b64DecodeUnicode"></a>
+<a id="vscp_dot_b64DecodeUnicode"></a>
+
 ### vscp.b64DecodeUnicode(str) ⇒ <code>string</code>
 Decode base64 unicode safe.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Unicode string  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | str | <code>string</code> | Base64 |
 
-<a id="vscp.isBase64Type"></a>
+<a id="vscp_dot_isBase64Type"></a>
+
 ### vscp.isBase64Type(type) ⇒ <code>bool</code>
 Determine whether the given variable type is a type stored base64 encoded or not.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>bool</code> - Stored base64 encoded (true) or not (false).  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>number</code> | Variable type numerical code |
 
-<a id="vscp.decodeValueIfBase64"></a>
+<a id="vscp_dot_decodeValueIfBase64"></a>
+
 ### vscp.decodeValueIfBase64(type, value) ⇒ <code>string</code>
 Decode the value if its base64 encoded.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Decoded value if type is base64 encoded type otherwise original value.  
 
 | Param | Type | Description |
@@ -5242,11 +5495,12 @@ Decode the value if its base64 encoded.
 | type | <code>number</code> | Variable type numerical code |
 | value | <code>string</code> | Value |
 
-<a id="vscp.encodeValueIfBase64"></a>
+<a id="vscp_dot_encodeValueIfBase64"></a>
+
 ### vscp.encodeValueIfBase64(type, value) ⇒ <code>string</code>
 Encode the value if its stored in base64.
 
-**Kind**: static method of <code>[vscp](#vscp)</code>  
+**Kind**: static method of [<code>vscp</code>](#vscp)  
 **Returns**: <code>string</code> - Encoded value if type is base64 encoded type otherwise original value.  
 
 | Param | Type | Description |

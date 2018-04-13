@@ -7,4 +7,4 @@
 
 ## API
 
-* [API](api.md)
+* [Reference](api.md)

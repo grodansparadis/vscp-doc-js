@@ -1,4 +1,3 @@
-# API
 ## Objects
 <dl>
 <dt><a href="#vscp">vscp</a> : <code>object</code></dt>

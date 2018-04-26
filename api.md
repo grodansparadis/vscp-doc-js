@@ -40,6 +40,95 @@ Namespace for all functionality of the VSCP provided libraries.
         * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
         * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
         * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
+    * [.mdf](#vscp_dot_mdf) : <code>object</code>
+        * [.Register](#vscp_dot_mdf_dot_Register)
+            * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+            * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+            * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+            * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+            * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+            * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+            * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+            * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+            * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+        * [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+            * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+            * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+            * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+            * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+            * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+            * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+            * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+            * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+            * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+            * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+            * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+            * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+        * [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+            * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+            * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+            * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+            * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+        * [.timeout](#vscp_dot_mdf_dot_timeout) : <code>number</code>
+        * [.load(options)](#vscp_dot_mdf_dot_load)
+        * [.loadLocal(options)](#vscp_dot_mdf_dot_loadLocal)
+        * [.readAbstractValue(options)](#vscp_dot_mdf_dot_readAbstractValue)
+        * [.writeAbstractValue(options)](#vscp_dot_mdf_dot_writeAbstractValue)
+        * [.writeAbstractBits(options)](#vscp_dot_mdf_dot_writeAbstractBits)
+        * [.getRegisters(options)](#vscp_dot_mdf_dot_getRegisters) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+        * [.getAbstractions(options)](#vscp_dot_mdf_dot_getAbstractions) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+    * [.measurement](#vscp_dot_measurement) : <code>object</code>
+        * [.Decoder](#vscp_dot_measurement_dot_Decoder)
+            * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+            * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+            * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+            * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+        * [.constants](#vscp_dot_measurement_dot_constants) : <code>object</code>
+            * [.units](#vscp_dot_measurement_dot_constants_dot_units) : <code>Array.&lt;string&gt;</code>
+        * [.timeout](#vscp_dot_measurement_dot_timeout) : <code>number</code>
+        * [.toFixed(value, precision)](#vscp_dot_measurement_dot_toFixed) ⇒ <code>number</code>
+        * [.varInteger2Float(data)](#vscp_dot_measurement_dot_varInteger2Float) ⇒ <code>number</code>
+        * [.getDataCoding(data)](#vscp_dot_measurement_dot_getDataCoding) ⇒ <code>number</code>
+        * [.getUnitFromDataCoding(data)](#vscp_dot_measurement_dot_getUnitFromDataCoding) ⇒ <code>number</code>
+        * [.getSensorIndexFromDataCoding(data)](#vscp_dot_measurement_dot_getSensorIndexFromDataCoding) ⇒ <code>number</code>
+        * [.decodeClass10(data)](#vscp_dot_measurement_dot_decodeClass10) ⇒ <code>number</code>
+        * [.decodeClass60Number(data)](#vscp_dot_measurement_dot_decodeClass60Number) ⇒ <code>number</code>
+        * [.decodeClass65Number(data)](#vscp_dot_measurement_dot_decodeClass65Number) ⇒ <code>number</code>
+        * [.convertFahrenheitToKelvin(value)](#vscp_dot_measurement_dot_convertFahrenheitToKelvin) ⇒ <code>number</code>
+        * [.convertFahrenheitToCelsius(value)](#vscp_dot_measurement_dot_convertFahrenheitToCelsius) ⇒ <code>number</code>
+        * [.convertCelsiusToFahrenheit(value)](#vscp_dot_measurement_dot_convertCelsiusToFahrenheit) ⇒ <code>number</code>
+        * [.convertKelvinToCelsius(value)](#vscp_dot_measurement_dot_convertKelvinToCelsius) ⇒ <code>number</code>
+        * [.convertCelsiusToKelvin(value)](#vscp_dot_measurement_dot_convertCelsiusToKelvin) ⇒ <code>number</code>
+        * [.convertKelvinToFahrenheit(value)](#vscp_dot_measurement_dot_convertKelvinToFahrenheit) ⇒ <code>number</code>
+        * [.convertMeterToFeet(value)](#vscp_dot_measurement_dot_convertMeterToFeet) ⇒ <code>number</code>
+        * [.convertFeetToMeter(value)](#vscp_dot_measurement_dot_convertFeetToMeter) ⇒ <code>number</code>
+        * [.convertMeterToInch(value)](#vscp_dot_measurement_dot_convertMeterToInch) ⇒ <code>number</code>
+        * [.convertInchToMeter(value)](#vscp_dot_measurement_dot_convertInchToMeter) ⇒ <code>number</code>
+    * [.register](#vscp_dot_register) : <code>object</code>
+        * [.constants](#vscp_dot_register_dot_constants) : <code>enum</code>
+        * [.timeout](#vscp_dot_register_dot_timeout) : <code>number</code>
+        * [.read(options)](#vscp_dot_register_dot_read)
+        * [.write(options)](#vscp_dot_register_dot_write)
+        * [.writeBits(options)](#vscp_dot_register_dot_writeBits)
+        * [.readAlarmStatus(options)](#vscp_dot_register_dot_readAlarmStatus)
+        * [.readVscpVersion(options)](#vscp_dot_register_dot_readVscpVersion)
+        * [.readNodeControlFlags(options)](#vscp_dot_register_dot_readNodeControlFlags)
+        * [.readUserId(options)](#vscp_dot_register_dot_readUserId)
+        * [.readManufacturerDevId(options)](#vscp_dot_register_dot_readManufacturerDevId)
+        * [.readManufacturerSubDevId(options)](#vscp_dot_register_dot_readManufacturerSubDevId)
+        * [.readNicknameId(options)](#vscp_dot_register_dot_readNicknameId)
+        * [.readSelectedPage(options)](#vscp_dot_register_dot_readSelectedPage)
+        * [.readFirmwareVersion(options)](#vscp_dot_register_dot_readFirmwareVersion)
+        * [.readBootloaderAlgorithm(options)](#vscp_dot_register_dot_readBootloaderAlgorithm)
+        * [.readUsedPages(options)](#vscp_dot_register_dot_readUsedPages)
+        * [.readStdDevFamCode(options)](#vscp_dot_register_dot_readStdDevFamCode)
+        * [.readStdDevType(options)](#vscp_dot_register_dot_readStdDevType)
+        * [.readGUID(options)](#vscp_dot_register_dot_readGUID)
+        * [.readMdfUrl(options)](#vscp_dot_register_dot_readMdfUrl)
     * [.rest](#vscp_dot_rest) : <code>object</code>
         * [.Client](#vscp_dot_rest_dot_Client)
             * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
@@ -59,6 +148,83 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
             * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
             * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.service](#vscp_dot_service) : <code>object</code>
+        * [.Container](#vscp_dot_service_dot_Container)
+            * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+            * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+            * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+            * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+            * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+            * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+            * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+            * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+        * [.timeout](#vscp_dot_service_dot_timeout) : <code>number</code>
+        * [.whoIsThere(options)](#vscp_dot_service_dot_whoIsThere)
+        * [.scan(options)](#vscp_dot_service_dot_scan)
+    * [.widget](#vscp_dot_widget) : <code>object</code>
+        * [.Button](#vscp_dot_widget_dot_Button)
+            * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+            * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+            * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+        * [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+            * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+            * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+            * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+        * [.generateUUID()](#vscp_dot_widget_dot_generateUUID) ⇒ <code>string</code>
+        * [.Image(options)](#vscp_dot_widget_dot_Image)
+    * [.wizard](#vscp_dot_wizard) : <code>object</code>
+        * [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+            * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+            * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+            * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+            * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+            * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+            * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+            * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+            * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+        * [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+            * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+            * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+            * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+            * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+            * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+        * [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+            * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+            * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+            * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+            * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+            * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+        * [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+            * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+            * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+            * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+        * [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+            * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+            * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+            * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+            * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+        * [.Recipe](#vscp_dot_wizard_dot_Recipe)
+            * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+            * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+            * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+            * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+            * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+            * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+            * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+            * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+            * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+            * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+            * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+        * [.getRecipes(options)](#vscp_dot_wizard_dot_getRecipes) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
     * [.ws](#vscp_dot_ws) : <code>object</code>
         * [.Client](#vscp_dot_ws_dot_Client)
             * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
@@ -618,6 +784,7 @@ VSCP class types
 | VSCP_TYPE_INFORMATION_WEEKDAY | <code>number</code> | <code>74</code> | 
 | VSCP_TYPE_INFORMATION_LOCK | <code>number</code> | <code>75</code> | 
 | VSCP_TYPE_INFORMATION_UNLOCK | <code>number</code> | <code>76</code> | 
+| VSCP_TYPE_INFORMATION_DATETIME | <code>number</code> | <code>77</code> | 
 | VSCP_TYPE_CONTROL_GENERAL | <code>number</code> | <code>0</code> | 
 | VSCP_TYPE_CONTROL_MUTE | <code>number</code> | <code>1</code> | 
 | VSCP_TYPE_CONTROL_ALL_LAMPS | <code>number</code> | <code>2</code> | 
@@ -1503,6 +1670,1124 @@ Get node id from a node GUID string.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
+<a id="vscp_dot_mdf"></a>
+
+### vscp.mdf : <code>object</code>
+VSCP module description file handling functionality
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.mdf](#vscp_dot_mdf) : <code>object</code>
+    * [.Register](#vscp_dot_mdf_dot_Register)
+        * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+        * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+        * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+        * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+        * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+        * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+        * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+        * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+        * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+    * [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+        * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+        * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+        * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+        * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+        * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+        * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+        * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+        * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+        * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+        * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+        * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+        * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+    * [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+        * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+        * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+        * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+        * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+    * [.timeout](#vscp_dot_mdf_dot_timeout) : <code>number</code>
+    * [.load(options)](#vscp_dot_mdf_dot_load)
+    * [.loadLocal(options)](#vscp_dot_mdf_dot_loadLocal)
+    * [.readAbstractValue(options)](#vscp_dot_mdf_dot_readAbstractValue)
+    * [.writeAbstractValue(options)](#vscp_dot_mdf_dot_writeAbstractValue)
+    * [.writeAbstractBits(options)](#vscp_dot_mdf_dot_writeAbstractBits)
+    * [.getRegisters(options)](#vscp_dot_mdf_dot_getRegisters) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+    * [.getAbstractions(options)](#vscp_dot_mdf_dot_getAbstractions) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+
+<a id="vscp_dot_mdf_dot_Register"></a>
+
+#### mdf.Register
+**Kind**: static class of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.Register](#vscp_dot_mdf_dot_Register)
+    * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+    * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+    * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+    * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+    * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+    * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+    * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+    * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+    * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+
+<a id="new_vscp_dot_mdf_dot_Register_new"></a>
+
+##### new vscp.mdf.Register()
+MDF register with all parameters.
+
+<a id="vscp_dot_mdf_dot_Register_and_name"></a>
+
+##### register.name : <code>string</code>
+Register name
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_description"></a>
+
+##### register.description : <code>string</code>
+Register description
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_readAccess"></a>
+
+##### register.readAccess : <code>boolean</code>
+Read access to the register allowed or not
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_writeAccess"></a>
+
+##### register.writeAccess : <code>boolean</code>
+Write access to the register allowed or not
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_page"></a>
+
+##### register.page : <code>number</code>
+Page where the register is located
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_offset"></a>
+
+##### register.offset : <code>number</code>
+Offset where the register is located on the page
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_value"></a>
+
+##### register.value : <code>number</code>
+Register value
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_dirty"></a>
+
+##### register.dirty : <code>number</code>
+Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_userData"></a>
+
+##### register.userData : <code>object</code>
+User specific data
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_setValue"></a>
+
+##### register.setValue(value)
+This function set a register value and marks it dirty.
+
+**Kind**: instance method of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | New value |
+
+<a id="vscp_dot_mdf_dot_Abstraction"></a>
+
+#### mdf.Abstraction
+**Kind**: static class of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+    * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+    * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+    * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+    * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+    * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+    * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+    * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+    * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+    * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+    * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+    * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+    * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+
+<a id="new_vscp_dot_mdf_dot_Abstraction_new"></a>
+
+##### new vscp.mdf.Abstraction()
+MDF abstraction with all parameters.
+
+<a id="vscp_dot_mdf_dot_Abstraction_and_name"></a>
+
+##### abstraction.name : <code>string</code>
+Abstraction name
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_description"></a>
+
+##### abstraction.description : <code>string</code>
+Abstraction description
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_readAccess"></a>
+
+##### abstraction.readAccess : <code>boolean</code>
+Read access to the abstraction allowed or not
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_writeAccess"></a>
+
+##### abstraction.writeAccess : <code>boolean</code>
+Write access to the abstraction allowed or not
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_id"></a>
+
+##### abstraction.id : <code>string</code>
+Abstraction id
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_page"></a>
+
+##### abstraction.page : <code>number</code>
+Page where the abstraction is located
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_offset"></a>
+
+##### abstraction.offset : <code>number</code>
+Offset where the abstraction is located
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_value"></a>
+
+##### abstraction.value : <code>number</code>
+Abstraction value
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_type"></a>
+
+##### abstraction.type : <code>string</code>
+Abstraction type
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_defValue"></a>
+
+##### abstraction.defValue : <code>number</code>
+Abstraction default value
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_dirty"></a>
+
+##### abstraction.dirty : <code>number</code>
+Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_userData"></a>
+
+##### abstraction.userData : <code>object</code>
+User specific data
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_setValue"></a>
+
+##### abstraction.setValue(value)
+This function set a abstraction value and marks it dirty.
+
+**Kind**: instance method of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | New value |
+
+<a id="vscp_dot_mdf_dot_constants"></a>
+
+#### mdf.constants : <code>object</code>
+MDF specific constants
+
+**Kind**: static namespace of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+    * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+    * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+    * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+    * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+
+<a id="vscp_dot_mdf_dot_constants_dot_TYPE_SIZES"></a>
+
+##### constants.TYPE_SIZES : <code>enum</code>
+MDF type sizes in bytes
+
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+**Properties**
+
+| Name | Type | Default |
+| --- | --- | --- |
+| string | <code>number</code> | <code>0</code> | 
+| bitfield | <code>number</code> | <code>1</code> | 
+| bool | <code>number</code> | <code>1</code> | 
+| int8_t | <code>number</code> | <code>1</code> | 
+| uint8_t | <code>number</code> | <code>1</code> | 
+| int16_t | <code>number</code> | <code>2</code> | 
+| uint16_t | <code>number</code> | <code>2</code> | 
+| int32_t | <code>number</code> | <code>4</code> | 
+| uint32_t | <code>number</code> | <code>4</code> | 
+| int64_t | <code>number</code> | <code>8</code> | 
+| uint64_t | <code>number</code> | <code>8</code> | 
+| float | <code>number</code> | <code>4</code> | 
+| double | <code>number</code> | <code>8</code> | 
+| date | <code>number</code> | <code>4</code> | 
+| time | <code>number</code> | <code>4</code> | 
+| guid | <code>number</code> | <code>16</code> | 
+| char | <code>number</code> | <code>1</code> | 
+| byte | <code>number</code> | <code>1</code> | 
+| short | <code>number</code> | <code>2</code> | 
+| integer | <code>number</code> | <code>2</code> | 
+| long | <code>number</code> | <code>4</code> | 
+
+<a id="vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL"></a>
+
+##### constants.CONVERSION_FROM_DECIMAL
+Conversion functions from decimal
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL"></a>
+
+##### constants.CONVERSION_TO_DECIMAL
+Conversion functions to decimal
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_constants_dot_RANGE"></a>
+
+##### constants.RANGE
+Type ranges
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_timeout"></a>
+
+#### mdf.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>mdf</code>](#vscp_dot_mdf)  
+<a id="vscp_dot_mdf_dot_load"></a>
+
+#### mdf.load(options)
+Get the MDF as xml document from a URL.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.url | <code>function</code> | URL to MDF file |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_loadLocal"></a>
+
+#### mdf.loadLocal(options)
+Get the MDF as xml document from local file system.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.fileRef | <code>function</code> | File reference to MDF file |
+| options.onSuccess | <code>function</code> | If the xml file is successful loaded, this function will be called. |
+| [options.onError] | <code>function</code> | If loading the xml file failed, this function will be called. |
+
+<a id="vscp_dot_mdf_dot_readAbstractValue"></a>
+
+#### mdf.readAbstractValue(options)
+Read a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_writeAbstractValue"></a>
+
+#### mdf.writeAbstractValue(options)
+Write a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.value | <code>string</code> | Abstract value |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_writeAbstractBits"></a>
+
+#### mdf.writeAbstractBits(options)
+Change some bits in a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.pos | <code>number</code> | Bit position |
+| options.width | <code>number</code> | Bit width |
+| options.value | <code>string</code> | Abstract value |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_getRegisters"></a>
+
+#### mdf.getRegisters(options) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+This function retrieves all register informations from a mdf.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+**Returns**: [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register) - Array of MDF registers  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | MDF as jquery object |
+
+<a id="vscp_dot_mdf_dot_getAbstractions"></a>
+
+#### mdf.getAbstractions(options) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+This function retrieves all abstraction informations from a mdf.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+**Returns**: [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction) - Array of MDF abstractions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | MDF as jquery object |
+
+<a id="vscp_dot_measurement"></a>
+
+### vscp.measurement : <code>object</code>
+VSCP measurement stuff
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.measurement](#vscp_dot_measurement) : <code>object</code>
+    * [.Decoder](#vscp_dot_measurement_dot_Decoder)
+        * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+        * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+        * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+        * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+    * [.constants](#vscp_dot_measurement_dot_constants) : <code>object</code>
+        * [.units](#vscp_dot_measurement_dot_constants_dot_units) : <code>Array.&lt;string&gt;</code>
+    * [.timeout](#vscp_dot_measurement_dot_timeout) : <code>number</code>
+    * [.toFixed(value, precision)](#vscp_dot_measurement_dot_toFixed) ⇒ <code>number</code>
+    * [.varInteger2Float(data)](#vscp_dot_measurement_dot_varInteger2Float) ⇒ <code>number</code>
+    * [.getDataCoding(data)](#vscp_dot_measurement_dot_getDataCoding) ⇒ <code>number</code>
+    * [.getUnitFromDataCoding(data)](#vscp_dot_measurement_dot_getUnitFromDataCoding) ⇒ <code>number</code>
+    * [.getSensorIndexFromDataCoding(data)](#vscp_dot_measurement_dot_getSensorIndexFromDataCoding) ⇒ <code>number</code>
+    * [.decodeClass10(data)](#vscp_dot_measurement_dot_decodeClass10) ⇒ <code>number</code>
+    * [.decodeClass60Number(data)](#vscp_dot_measurement_dot_decodeClass60Number) ⇒ <code>number</code>
+    * [.decodeClass65Number(data)](#vscp_dot_measurement_dot_decodeClass65Number) ⇒ <code>number</code>
+    * [.convertFahrenheitToKelvin(value)](#vscp_dot_measurement_dot_convertFahrenheitToKelvin) ⇒ <code>number</code>
+    * [.convertFahrenheitToCelsius(value)](#vscp_dot_measurement_dot_convertFahrenheitToCelsius) ⇒ <code>number</code>
+    * [.convertCelsiusToFahrenheit(value)](#vscp_dot_measurement_dot_convertCelsiusToFahrenheit) ⇒ <code>number</code>
+    * [.convertKelvinToCelsius(value)](#vscp_dot_measurement_dot_convertKelvinToCelsius) ⇒ <code>number</code>
+    * [.convertCelsiusToKelvin(value)](#vscp_dot_measurement_dot_convertCelsiusToKelvin) ⇒ <code>number</code>
+    * [.convertKelvinToFahrenheit(value)](#vscp_dot_measurement_dot_convertKelvinToFahrenheit) ⇒ <code>number</code>
+    * [.convertMeterToFeet(value)](#vscp_dot_measurement_dot_convertMeterToFeet) ⇒ <code>number</code>
+    * [.convertFeetToMeter(value)](#vscp_dot_measurement_dot_convertFeetToMeter) ⇒ <code>number</code>
+    * [.convertMeterToInch(value)](#vscp_dot_measurement_dot_convertMeterToInch) ⇒ <code>number</code>
+    * [.convertInchToMeter(value)](#vscp_dot_measurement_dot_convertInchToMeter) ⇒ <code>number</code>
+
+<a id="vscp_dot_measurement_dot_Decoder"></a>
+
+#### measurement.Decoder
+**Kind**: static class of [<code>measurement</code>](#vscp_dot_measurement)  
+
+* [.Decoder](#vscp_dot_measurement_dot_Decoder)
+    * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+    * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+    * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+    * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+
+<a id="new_vscp_dot_measurement_dot_Decoder_new"></a>
+
+##### new vscp.measurement.Decoder(options)
+Measurement decoder
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.onValue | <code>function</code> | Function which will be called for every received measurement value. |
+| options.filter | <code>object</code> | Filter |
+| options.filter.vscpGuid | <code>string</code> | Node GUID string |
+| options.filter.vscpClass | <code>number</code> | VSCP class |
+| options.filter.vscpType | <code>number</code> | VSCP type |
+| options.filter.sensorIndex | <code>number</code> | Sensor index |
+| options.filter.zone | <code>number</code> | Zone |
+| options.filter.subZone | <code>number</code> | Sub-zone |
+
+<a id="vscp_dot_measurement_dot_Decoder_and_client"></a>
+
+##### decoder.client : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+VSCP websocket client
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+<a id="vscp_dot_measurement_dot_Decoder_and_onValue"></a>
+
+##### decoder.onValue : <code>function</code>
+Callback which will be called for every received value.
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+<a id="vscp_dot_measurement_dot_Decoder_and_filter"></a>
+
+##### decoder.filter : <code>object</code>
+Filter
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| vscpGuid | <code>string</code> | Node GUID string |
+| vscpClass | <code>number</code> | VSCP class |
+| vscpType | <code>number</code> | VSCP type |
+| datetime | <code>date</code> | datetime |
+| sensorIndex | <code>number</code> | Sensor index |
+| zone | <code>number</code> | Zone |
+| subZone | <code>number</code> | Sub-zone |
+
+<a id="vscp_dot_measurement_dot_constants"></a>
+
+#### measurement.constants : <code>object</code>
+Measurement specific constants
+
+**Kind**: static namespace of [<code>measurement</code>](#vscp_dot_measurement)  
+<a id="vscp_dot_measurement_dot_constants_dot_units"></a>
+
+##### constants.units : <code>Array.&lt;string&gt;</code>
+VSCP units
+
+**Kind**: static property of [<code>constants</code>](#vscp_dot_measurement_dot_constants)  
+<a id="vscp_dot_measurement_dot_timeout"></a>
+
+#### measurement.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>measurement</code>](#vscp_dot_measurement)  
+<a id="vscp_dot_measurement_dot_toFixed"></a>
+
+#### measurement.toFixed(value, precision) ⇒ <code>number</code>
+Round value to a fixed precision.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Rounded value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | Value |
+| precision | <code>number</code> | Precision |
+
+<a id="vscp_dot_measurement_dot_varInteger2Float"></a>
+
+#### measurement.varInteger2Float(data) ⇒ <code>number</code>
+Convert a integer value to float
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Float value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;number&gt;</code> | Byte array |
+
+<a id="vscp_dot_measurement_dot_getDataCoding"></a>
+
+#### measurement.getDataCoding(data) ⇒ <code>number</code>
+Get data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Coding  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_getUnitFromDataCoding"></a>
+
+#### measurement.getUnitFromDataCoding(data) ⇒ <code>number</code>
+Get unit from data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Unit  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data coding |
+
+<a id="vscp_dot_measurement_dot_getSensorIndexFromDataCoding"></a>
+
+#### measurement.getSensorIndexFromDataCoding(data) ⇒ <code>number</code>
+Get sensor index from data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Sensor index  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data coding |
+
+<a id="vscp_dot_measurement_dot_decodeClass10"></a>
+
+#### measurement.decodeClass10(data) ⇒ <code>number</code>
+Decode a class 10 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;number&gt;</code> | Data (event data array where first data byte is the data coding) |
+
+<a id="vscp_dot_measurement_dot_decodeClass60Number"></a>
+
+#### measurement.decodeClass60Number(data) ⇒ <code>number</code>
+Decode a class 60 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_decodeClass65Number"></a>
+
+#### measurement.decodeClass65Number(data) ⇒ <code>number</code>
+Decode a class 65 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_convertFahrenheitToKelvin"></a>
+
+#### measurement.convertFahrenheitToKelvin(value) ⇒ <code>number</code>
+Convert from unit fahrenheit to unit kelvin.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertFahrenheitToCelsius"></a>
+
+#### measurement.convertFahrenheitToCelsius(value) ⇒ <code>number</code>
+Convert from unit fahrenheit to unit celsius.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertCelsiusToFahrenheit"></a>
+
+#### measurement.convertCelsiusToFahrenheit(value) ⇒ <code>number</code>
+Convert from unit celsius to unit fahrenheit.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertKelvinToCelsius"></a>
+
+#### measurement.convertKelvinToCelsius(value) ⇒ <code>number</code>
+Convert from unit kelvin to unit celsius.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertCelsiusToKelvin"></a>
+
+#### measurement.convertCelsiusToKelvin(value) ⇒ <code>number</code>
+Convert from unit celsius to unit kelvin.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertKelvinToFahrenheit"></a>
+
+#### measurement.convertKelvinToFahrenheit(value) ⇒ <code>number</code>
+Convert from unit kelvin to unit fahrenheit.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertMeterToFeet"></a>
+
+#### measurement.convertMeterToFeet(value) ⇒ <code>number</code>
+Convert from unit meter to unit feet.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertFeetToMeter"></a>
+
+#### measurement.convertFeetToMeter(value) ⇒ <code>number</code>
+Convert from unit feet to unit meter.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertMeterToInch"></a>
+
+#### measurement.convertMeterToInch(value) ⇒ <code>number</code>
+Convert from unit meter to unit inch.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertInchToMeter"></a>
+
+#### measurement.convertInchToMeter(value) ⇒ <code>number</code>
+Convert from unit inch to unit meter.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_register"></a>
+
+### vscp.register : <code>object</code>
+VSCP register access functions
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.register](#vscp_dot_register) : <code>object</code>
+    * [.constants](#vscp_dot_register_dot_constants) : <code>enum</code>
+    * [.timeout](#vscp_dot_register_dot_timeout) : <code>number</code>
+    * [.read(options)](#vscp_dot_register_dot_read)
+    * [.write(options)](#vscp_dot_register_dot_write)
+    * [.writeBits(options)](#vscp_dot_register_dot_writeBits)
+    * [.readAlarmStatus(options)](#vscp_dot_register_dot_readAlarmStatus)
+    * [.readVscpVersion(options)](#vscp_dot_register_dot_readVscpVersion)
+    * [.readNodeControlFlags(options)](#vscp_dot_register_dot_readNodeControlFlags)
+    * [.readUserId(options)](#vscp_dot_register_dot_readUserId)
+    * [.readManufacturerDevId(options)](#vscp_dot_register_dot_readManufacturerDevId)
+    * [.readManufacturerSubDevId(options)](#vscp_dot_register_dot_readManufacturerSubDevId)
+    * [.readNicknameId(options)](#vscp_dot_register_dot_readNicknameId)
+    * [.readSelectedPage(options)](#vscp_dot_register_dot_readSelectedPage)
+    * [.readFirmwareVersion(options)](#vscp_dot_register_dot_readFirmwareVersion)
+    * [.readBootloaderAlgorithm(options)](#vscp_dot_register_dot_readBootloaderAlgorithm)
+    * [.readUsedPages(options)](#vscp_dot_register_dot_readUsedPages)
+    * [.readStdDevFamCode(options)](#vscp_dot_register_dot_readStdDevFamCode)
+    * [.readStdDevType(options)](#vscp_dot_register_dot_readStdDevType)
+    * [.readGUID(options)](#vscp_dot_register_dot_readGUID)
+    * [.readMdfUrl(options)](#vscp_dot_register_dot_readMdfUrl)
+
+<a id="vscp_dot_register_dot_constants"></a>
+
+#### register.constants : <code>enum</code>
+VSCP registers
+
+**Kind**: static enum of [<code>register</code>](#vscp_dot_register)  
+**Properties**
+
+| Name | Type | Default |
+| --- | --- | --- |
+| ALARM_STATUS | <code>number</code> | <code>128</code> | 
+| VSCP_VERSION_MAJOR | <code>number</code> | <code>129</code> | 
+| VSCP_VERSION_MINOR | <code>number</code> | <code>130</code> | 
+| NODE_CONTROL_FLAGS | <code>number</code> | <code>131</code> | 
+| USER_ID_0 | <code>number</code> | <code>132</code> | 
+| USER_ID_1 | <code>number</code> | <code>133</code> | 
+| USER_ID_2 | <code>number</code> | <code>134</code> | 
+| USER_ID_3 | <code>number</code> | <code>135</code> | 
+| USER_ID_4 | <code>number</code> | <code>136</code> | 
+| MANUFACTURER_DEV_ID_0 | <code>number</code> | <code>137</code> | 
+| MANUFACTURER_DEV_ID_1 | <code>number</code> | <code>138</code> | 
+| MANUFACTURER_DEV_ID_2 | <code>number</code> | <code>139</code> | 
+| MANUFACTURER_DEV_ID_3 | <code>number</code> | <code>140</code> | 
+| MANUFACTURER_SUB_DEV_ID_0 | <code>number</code> | <code>141</code> | 
+| MANUFACTURER_SUB_DEV_ID_1 | <code>number</code> | <code>142</code> | 
+| MANUFACTURER_SUB_DEV_ID_2 | <code>number</code> | <code>143</code> | 
+| MANUFACTURER_SUB_DEV_ID_3 | <code>number</code> | <code>144</code> | 
+| NICKNAME_ID | <code>number</code> | <code>145</code> | 
+| PAGE_SELECT_MSB | <code>number</code> | <code>146</code> | 
+| PAGE_SELECT_LSB | <code>number</code> | <code>147</code> | 
+| FIRMWARE_VERSION_MAJOR | <code>number</code> | <code>148</code> | 
+| FIRMWARE_VERSION_MINOR | <code>number</code> | <code>149</code> | 
+| FIRMWARE_VERSION_SUB_MINOR | <code>number</code> | <code>150</code> | 
+| BOOT_LOADER_ALGORITHM | <code>number</code> | <code>151</code> | 
+| BUFFER_SIZE | <code>number</code> | <code>152</code> | 
+| PAGES_USED | <code>number</code> | <code>153</code> | 
+| STD_DEV_FAMILY_CODE_3 | <code>number</code> | <code>154</code> | 
+| STD_DEV_FAMILY_CODE_2 | <code>number</code> | <code>155</code> | 
+| STD_DEV_FAMILY_CODE_1 | <code>number</code> | <code>156</code> | 
+| STD_DEV_FAMILY_CODE_0 | <code>number</code> | <code>157</code> | 
+| STD_DEV_TYPE_3 | <code>number</code> | <code>158</code> | 
+| STD_DEV_TYPE_2 | <code>number</code> | <code>159</code> | 
+| STD_DEV_TYPE_1 | <code>number</code> | <code>160</code> | 
+| STD_DEV_TYPE_0 | <code>number</code> | <code>161</code> | 
+| RESTORE_STD_CFG | <code>number</code> | <code>162</code> | 
+| GUID | <code>number</code> | <code>208</code> | 
+| MDF_URL | <code>number</code> | <code>224</code> | 
+
+<a id="vscp_dot_register_dot_timeout"></a>
+
+#### register.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>register</code>](#vscp_dot_register)  
+<a id="vscp_dot_register_dot_read"></a>
+
+#### register.read(options)
+Read one or more register values.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| [options.page] | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.count | <code>number</code> | Number of registers to read |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_write"></a>
+
+#### register.write(options)
+Write one or more register values.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.page | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.data | <code>Array.&lt;number&gt;</code> | Data array |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_writeBits"></a>
+
+#### register.writeBits(options)
+Change some bits of a register.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP connection |
+| options.nodeId | <code>number</code> | Node id |
+| options.page | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.pos | <code>number</code> | Bit position |
+| options.width | <code>number</code> | Bit width |
+| options.data | <code>Array.&lt;number&gt;</code> | Data array |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readAlarmStatus"></a>
+
+#### register.readAlarmStatus(options)
+Read the alarm status from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readVscpVersion"></a>
+
+#### register.readVscpVersion(options)
+Read the supported VSCP version from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readNodeControlFlags"></a>
+
+#### register.readNodeControlFlags(options)
+Read the node control flags from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readUserId"></a>
+
+#### register.readUserId(options)
+Read the user id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readManufacturerDevId"></a>
+
+#### register.readManufacturerDevId(options)
+Read the manufacturer device id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readManufacturerSubDevId"></a>
+
+#### register.readManufacturerSubDevId(options)
+Read the manufacturer sub device id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readNicknameId"></a>
+
+#### register.readNicknameId(options)
+Read the nickname id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readSelectedPage"></a>
+
+#### register.readSelectedPage(options)
+Read the current selected page from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readFirmwareVersion"></a>
+
+#### register.readFirmwareVersion(options)
+Read the firmware version from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readBootloaderAlgorithm"></a>
+
+#### register.readBootloaderAlgorithm(options)
+Read the bootloader algorithm from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readUsedPages"></a>
+
+#### register.readUsedPages(options)
+Read the number of used pages from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readStdDevFamCode"></a>
+
+#### register.readStdDevFamCode(options)
+Read the standard device family code from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readStdDevType"></a>
+
+#### register.readStdDevType(options)
+Read the standard device type from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readGUID"></a>
+
+#### register.readGUID(options)
+Read the GUID from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readMdfUrl"></a>
+
+#### register.readMdfUrl(options)
+Read the MDF URL from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
 <a id="vscp_dot_rest"></a>
 
 ### vscp.rest : <code>object</code>
@@ -1783,6 +3068,802 @@ List all VSCP server variables.
 | [options.regex] | <code>string</code> | Regular expression to filter variables |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_service"></a>
+
+### vscp.service : <code>object</code>
+VSCP service supporting functions
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.service](#vscp_dot_service) : <code>object</code>
+    * [.Container](#vscp_dot_service_dot_Container)
+        * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+        * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+        * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+        * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+        * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+        * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+        * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+        * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+    * [.timeout](#vscp_dot_service_dot_timeout) : <code>number</code>
+    * [.whoIsThere(options)](#vscp_dot_service_dot_whoIsThere)
+    * [.scan(options)](#vscp_dot_service_dot_scan)
+
+<a id="vscp_dot_service_dot_Container"></a>
+
+#### service.Container
+**Kind**: static class of [<code>service</code>](#vscp_dot_service)  
+
+* [.Container](#vscp_dot_service_dot_Container)
+    * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+    * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+    * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+    * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+    * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+    * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+    * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+    * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+
+<a id="new_vscp_dot_service_dot_Container_new"></a>
+
+##### new vscp.service.Container(options)
+The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.name | <code>string</code> | Container name |
+
+<a id="vscp_dot_service_dot_Container_and_client"></a>
+
+##### container.client : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+VSCP websocket client
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_name"></a>
+
+##### container.name : <code>string</code>
+Complete container name (prefix + user defined name)
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_data"></a>
+
+##### container.data : <code>Array.&lt;object&gt;</code>
+Data container itself
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_separator"></a>
+
+##### container.separator : <code>Array.&lt;object&gt;</code>
+Data element separator
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_create"></a>
+
+##### container.create(options)
+Create a container at the daemon.
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_Container_and_write"></a>
+
+##### container.write(options)
+Write the container to a daemon variable.The container must exist at the daemon!
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_Container_and_read"></a>
+
+##### container.read(options)
+Read the container from the daemon variable.
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_timeout"></a>
+
+#### service.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>service</code>](#vscp_dot_service)  
+<a id="vscp_dot_service_dot_whoIsThere"></a>
+
+#### service.whoIsThere(options)
+Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+
+**Kind**: static method of [<code>service</code>](#vscp_dot_service)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_scan"></a>
+
+#### service.scan(options)
+Scan for nodes.
+
+**Kind**: static method of [<code>service</code>](#vscp_dot_service)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.begin | <code>number</code> | Node id where to start scanning |
+| options.end | <code>number</code> | Node id where to stop scanning |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_widget"></a>
+
+### vscp.widget : <code>object</code>
+VSCP widgets
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.widget](#vscp_dot_widget) : <code>object</code>
+    * [.Button](#vscp_dot_widget_dot_Button)
+        * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+        * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+        * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+    * [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+        * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+        * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+        * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+    * [.generateUUID()](#vscp_dot_widget_dot_generateUUID) ⇒ <code>string</code>
+    * [.Image(options)](#vscp_dot_widget_dot_Image)
+
+<a id="vscp_dot_widget_dot_Button"></a>
+
+#### widget.Button
+**Kind**: static class of [<code>widget</code>](#vscp_dot_widget)  
+
+* [.Button](#vscp_dot_widget_dot_Button)
+    * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+    * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+    * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+
+<a id="new_vscp_dot_widget_dot_Button_new"></a>
+
+##### new vscp.widget.Button(options)
+A button widget.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.offImageUrl | <code>number</code> | URL to button which is in off state |
+| options.onImageUrl | <code>number</code> | URL to button which is in on state |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+| [options.scale] | <code>number</code> | Scale factor applied to the button image (default: 1.0) |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client, used for event communication |
+| [options.bindToRemoteState] | <code>boolean</code> | Bind the button state to the remote state or not (default: false) |
+| [options.receiveZone] | <code>number</code> | Zone where state events will come from (default: 255) |
+| [options.receiveSubZone] | <code>number</code> | Sub-zone where state events will come from (default: 255) |
+| [options.transmitZone] | <code>number</code> | Zone where button event will be sent to (default: 255) |
+| [options.transmitSubZone] | <code>number</code> | Sub-zone where button event will be sent to (default: 255) |
+| [options.index] | <code>number</code> | Button index (instance number)  (default: 0) |
+| [options.enable] | <code>boolean</code> | Enable or disable button  (default: false) |
+
+<a id="vscp_dot_widget_dot_Button_and_draw"></a>
+
+##### button.draw()
+Draw the button depended on its current state.
+
+**Kind**: instance method of [<code>Button</code>](#vscp_dot_widget_dot_Button)  
+<a id="vscp_dot_widget_dot_Button_and_setEnabled"></a>
+
+##### button.setEnabled(value)
+Enable or disable the button.
+
+**Kind**: instance method of [<code>Button</code>](#vscp_dot_widget_dot_Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>boolean</code> | Enable (true) or disable (false) it |
+
+<a id="vscp_dot_widget_dot_Thermometer"></a>
+
+#### widget.Thermometer
+**Kind**: static class of [<code>widget</code>](#vscp_dot_widget)  
+
+* [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+    * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+    * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+    * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+
+<a id="new_vscp_dot_widget_dot_Thermometer_new"></a>
+
+##### new vscp.widget.Thermometer(options)
+A thermometer widget.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.imageUrl | <code>number</code> | URL to thermometer image |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+| options.data | <code>object</code> | Thermometer data |
+| options.data.maxT | <code>number</code> | Max. temperature in degree celsius |
+| options.data.minT | <code>number</code> | Min. temperature in degree celsius |
+| options.data.x | <code>number</code> | x position of the lower left begin of the thermometer column in image |
+| options.data.y | <code>number</code> | y position of the lower left begin of the thermometer column in image |
+| options.data.height | <code>number</code> | Thermometer column height (only between numbers) |
+| options.data.width | <code>number</code> | Thermometer column width |
+| options.data.yOffset | <code>number</code> | Thermometer column height offset from the begin to the first number |
+| options.data.color | <code>string</code> | HTML color, e.g. '#8A0000' |
+| [options.scale] | <code>number</code> | Scale factor applied to the thermometer image (default: 1.0) |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client, used for event communication |
+| [options.receiveZone] | <code>number</code> | Zone where state events will come from (default: 255) |
+| [options.receiveSubZone] | <code>number</code> | Sub-zone where state events will come from (default: 255) |
+| [options.sensorIndex] | <code>number</code> | Sensor index (default: 0) |
+| [options.vscpClass] | <code>number</code> | VSCP measurement class (default: CLASS1.MEASUREMENT) |
+| [options.vscpType] | <code>number</code> | VSCP measurement type (default: CLASS1.MEASUREMENT.TERMPERATURE) |
+| [options.enable] | <code>boolean</code> | Enable or disable thermometer (default: true) |
+
+<a id="vscp_dot_widget_dot_Thermometer_and_draw"></a>
+
+##### thermometer.draw()
+Draw the thermometer depended on its current state.
+
+**Kind**: instance method of [<code>Thermometer</code>](#vscp_dot_widget_dot_Thermometer)  
+<a id="vscp_dot_widget_dot_Thermometer_and_setEnabled"></a>
+
+##### thermometer.setEnabled(value)
+Enable or disable the thermometer.
+
+**Kind**: instance method of [<code>Thermometer</code>](#vscp_dot_widget_dot_Thermometer)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>boolean</code> | Enable (true) or disable (false) it |
+
+<a id="vscp_dot_widget_dot_generateUUID"></a>
+
+#### widget.generateUUID() ⇒ <code>string</code>
+Generate a UUID.
+
+**Kind**: static method of [<code>widget</code>](#vscp_dot_widget)  
+**Returns**: <code>string</code> - UUID  
+<a id="vscp_dot_widget_dot_Image"></a>
+
+#### widget.Image(options)
+Add a image to the canvas.
+
+**Kind**: static method of [<code>widget</code>](#vscp_dot_widget)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.url | <code>string</code> | Path to the image |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+
+<a id="vscp_dot_wizard"></a>
+
+### vscp.wizard : <code>object</code>
+VSCP wizard functionality based on a MDF
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.wizard](#vscp_dot_wizard) : <code>object</code>
+    * [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+        * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+        * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+        * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+        * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+        * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+        * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+        * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+        * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+    * [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+        * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+        * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+        * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+        * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+        * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+    * [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+        * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+        * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+        * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+        * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+        * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+    * [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+        * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+        * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+        * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+    * [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+        * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+        * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+        * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+        * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+    * [.Recipe](#vscp_dot_wizard_dot_Recipe)
+        * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+        * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+        * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+        * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+        * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+        * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+        * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+        * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+        * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+        * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+        * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+    * [.getRecipes(options)](#vscp_dot_wizard_dot_getRecipes) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
+
+<a id="vscp_dot_wizard_dot_MessageBox"></a>
+
+#### wizard.MessageBox
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+    * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+    * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+    * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+    * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+    * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+    * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+    * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+    * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_MessageBox_new"></a>
+
+##### new vscp.wizard.MessageBox(options)
+A message box.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.messageBox | <code>object</code> | Messagebox as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_MessageBox_and_func"></a>
+
+##### messageBox.func : <code>string</code>
+Function input or output
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_head"></a>
+
+##### messageBox.head : <code>string</code>
+Head
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_description"></a>
+
+##### messageBox.description : <code>string</code>
+Description
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableType"></a>
+
+##### messageBox.variableType : <code>string</code>
+Variable type
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableName"></a>
+
+##### messageBox.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableValue"></a>
+
+##### messageBox.variableValue : <code>string</code>
+Variable value
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_parse"></a>
+
+##### messageBox.parse($messageBox)
+Parse a messagebox object.
+
+**Kind**: instance method of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $messageBox | <code>object</code> | Messagebox as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInReg"></a>
+
+#### wizard.WriteBitInReg
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+    * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+    * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+    * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+    * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+    * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteBitInReg_new"></a>
+
+##### new vscp.wizard.WriteBitInReg(options)
+Bit in register access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeBitInReg | <code>object</code> | write-bit-in-reg as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_pos"></a>
+
+##### writeBitInReg.pos : <code>number</code>
+Bit position
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_page"></a>
+
+##### writeBitInReg.page : <code>number</code>
+Register page
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_offset"></a>
+
+##### writeBitInReg.offset : <code>number</code>
+Register offset
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_width"></a>
+
+##### writeBitInReg.width : <code>number</code>
+Bit width
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_value"></a>
+
+##### writeBitInReg.value : <code>number</code>
+Value of bit width
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_variableName"></a>
+
+##### writeBitInReg.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_parse"></a>
+
+##### writeBitInReg.parse(writeBitInReg)
+Parse a bit in register access method object.
+
+**Kind**: instance method of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| writeBitInReg | <code>object</code> | write-bit-in-reg as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction"></a>
+
+#### wizard.WriteBitInAbstraction
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+    * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+    * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+    * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+    * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+    * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteBitInAbstraction_new"></a>
+
+##### new vscp.wizard.WriteBitInAbstraction(options)
+Bit in abstraction access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeBitInAbstraction | <code>object</code> | write-bit-in-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_id"></a>
+
+##### writeBitInAbstraction.id : <code>string</code>
+Abstract value id
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos"></a>
+
+##### writeBitInAbstraction.pos : <code>number</code>
+Bit position
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_width"></a>
+
+##### writeBitInAbstraction.width : <code>number</code>
+Bit width
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_value"></a>
+
+##### writeBitInAbstraction.value : <code>number</code>
+Value of bit width
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName"></a>
+
+##### writeBitInAbstraction.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse"></a>
+
+##### writeBitInAbstraction.parse($writeBitInAbstraction)
+Parse a bit in abstraction access method object.
+
+**Kind**: instance method of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeBitInAbstraction | <code>object</code> | write-bit-in-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteRegister"></a>
+
+#### wizard.WriteRegister
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+    * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+    * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+    * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteRegister_new"></a>
+
+##### new vscp.wizard.WriteRegister(options)
+Register access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeRegister | <code>object</code> | write-register as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteRegister_and_page"></a>
+
+##### writeRegister.page : <code>number</code>
+Register page
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_offset"></a>
+
+##### writeRegister.offset : <code>number</code>
+Register offset
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_value"></a>
+
+##### writeRegister.value : <code>number</code>
+Register value
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_variableName"></a>
+
+##### writeRegister.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_parse"></a>
+
+##### writeRegister.parse($writeRegister)
+Parse a register access method object.
+
+**Kind**: instance method of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeRegister | <code>object</code> | write-register as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteAbstraction"></a>
+
+#### wizard.WriteAbstraction
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+    * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+    * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+    * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+    * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteAbstraction_new"></a>
+
+##### new vscp.wizard.WriteAbstraction(options)
+Abstraction access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeAbstraction | <code>object</code> | write-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_id"></a>
+
+##### writeAbstraction.id : <code>string</code>
+Abstract value id
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_value"></a>
+
+##### writeAbstraction.value : <code>number</code>
+Abstract value
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_variableName"></a>
+
+##### writeAbstraction.variableName : <code>number</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_parse"></a>
+
+##### writeAbstraction.parse($writeAbstraction)
+Parse a abstraction access method object.
+
+**Kind**: instance method of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeAbstraction | <code>object</code> | write-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe"></a>
+
+#### wizard.Recipe
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.Recipe](#vscp_dot_wizard_dot_Recipe)
+    * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+    * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+    * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+    * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+    * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+    * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+    * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+    * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+    * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+    * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+    * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+
+<a id="new_vscp_dot_wizard_dot_Recipe_new"></a>
+
+##### new vscp.wizard.Recipe(options)
+A recipe.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.recipe | <code>object</code> | Recipe as jquery xml object |
+| options.mdf | <code>object</code> | MDF as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe_and_name"></a>
+
+##### recipe.name : <code>string</code>
+Recipe name
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_description"></a>
+
+##### recipe.description : <code>string</code>
+Recipe description
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeBitInRegs"></a>
+
+##### recipe.writeBitInRegs : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+Bit access methods in registers
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions"></a>
+
+##### recipe.writeBitInAbstractions : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+Bit access methods in abstract value
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeRegisters"></a>
+
+##### recipe.writeRegisters : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+Register access methods
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeAbstractions"></a>
+
+##### recipe.writeAbstractions : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+Abstract access methods
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_messageBoxes"></a>
+
+##### recipe.messageBoxes : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+Messageboxes
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_mdf"></a>
+
+##### recipe.mdf : <code>object</code>
+MDF
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_parse"></a>
+
+##### recipe.parse($recipe)
+Parse a recipe object.
+
+**Kind**: instance method of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $recipe | <code>object</code> | Recipe as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe_and_write"></a>
+
+##### recipe.write(options)
+Write a recipe.
+
+**Kind**: instance method of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+
+<a id="vscp_dot_wizard_dot_getRecipes"></a>
+
+#### wizard.getRecipes(options) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
+Get recipes from a MDF in JSON format.
+
+**Kind**: static method of [<code>wizard</code>](#vscp_dot_wizard)  
+**Returns**: [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe) - Recipe array  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | The mdf as jquery xml object |
 
 <a id="vscp_dot_ws"></a>
 
@@ -2479,6 +4560,95 @@ Namespace for all functionality of the VSCP provided libraries.
         * [.guidToStr(guid)](#vscp_dot_utility_dot_guidToStr) ⇒ <code>string</code>
         * [.strToGuid(guid)](#vscp_dot_utility_dot_strToGuid) ⇒ <code>Array.&lt;number&gt;</code>
         * [.getNodeId(guid)](#vscp_dot_utility_dot_getNodeId) ⇒ <code>number</code>
+    * [.mdf](#vscp_dot_mdf) : <code>object</code>
+        * [.Register](#vscp_dot_mdf_dot_Register)
+            * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+            * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+            * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+            * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+            * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+            * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+            * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+            * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+            * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+        * [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+            * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+            * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+            * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+            * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+            * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+            * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+            * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+            * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+            * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+            * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+            * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+            * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+        * [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+            * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+            * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+            * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+            * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+        * [.timeout](#vscp_dot_mdf_dot_timeout) : <code>number</code>
+        * [.load(options)](#vscp_dot_mdf_dot_load)
+        * [.loadLocal(options)](#vscp_dot_mdf_dot_loadLocal)
+        * [.readAbstractValue(options)](#vscp_dot_mdf_dot_readAbstractValue)
+        * [.writeAbstractValue(options)](#vscp_dot_mdf_dot_writeAbstractValue)
+        * [.writeAbstractBits(options)](#vscp_dot_mdf_dot_writeAbstractBits)
+        * [.getRegisters(options)](#vscp_dot_mdf_dot_getRegisters) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+        * [.getAbstractions(options)](#vscp_dot_mdf_dot_getAbstractions) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+    * [.measurement](#vscp_dot_measurement) : <code>object</code>
+        * [.Decoder](#vscp_dot_measurement_dot_Decoder)
+            * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+            * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+            * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+            * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+        * [.constants](#vscp_dot_measurement_dot_constants) : <code>object</code>
+            * [.units](#vscp_dot_measurement_dot_constants_dot_units) : <code>Array.&lt;string&gt;</code>
+        * [.timeout](#vscp_dot_measurement_dot_timeout) : <code>number</code>
+        * [.toFixed(value, precision)](#vscp_dot_measurement_dot_toFixed) ⇒ <code>number</code>
+        * [.varInteger2Float(data)](#vscp_dot_measurement_dot_varInteger2Float) ⇒ <code>number</code>
+        * [.getDataCoding(data)](#vscp_dot_measurement_dot_getDataCoding) ⇒ <code>number</code>
+        * [.getUnitFromDataCoding(data)](#vscp_dot_measurement_dot_getUnitFromDataCoding) ⇒ <code>number</code>
+        * [.getSensorIndexFromDataCoding(data)](#vscp_dot_measurement_dot_getSensorIndexFromDataCoding) ⇒ <code>number</code>
+        * [.decodeClass10(data)](#vscp_dot_measurement_dot_decodeClass10) ⇒ <code>number</code>
+        * [.decodeClass60Number(data)](#vscp_dot_measurement_dot_decodeClass60Number) ⇒ <code>number</code>
+        * [.decodeClass65Number(data)](#vscp_dot_measurement_dot_decodeClass65Number) ⇒ <code>number</code>
+        * [.convertFahrenheitToKelvin(value)](#vscp_dot_measurement_dot_convertFahrenheitToKelvin) ⇒ <code>number</code>
+        * [.convertFahrenheitToCelsius(value)](#vscp_dot_measurement_dot_convertFahrenheitToCelsius) ⇒ <code>number</code>
+        * [.convertCelsiusToFahrenheit(value)](#vscp_dot_measurement_dot_convertCelsiusToFahrenheit) ⇒ <code>number</code>
+        * [.convertKelvinToCelsius(value)](#vscp_dot_measurement_dot_convertKelvinToCelsius) ⇒ <code>number</code>
+        * [.convertCelsiusToKelvin(value)](#vscp_dot_measurement_dot_convertCelsiusToKelvin) ⇒ <code>number</code>
+        * [.convertKelvinToFahrenheit(value)](#vscp_dot_measurement_dot_convertKelvinToFahrenheit) ⇒ <code>number</code>
+        * [.convertMeterToFeet(value)](#vscp_dot_measurement_dot_convertMeterToFeet) ⇒ <code>number</code>
+        * [.convertFeetToMeter(value)](#vscp_dot_measurement_dot_convertFeetToMeter) ⇒ <code>number</code>
+        * [.convertMeterToInch(value)](#vscp_dot_measurement_dot_convertMeterToInch) ⇒ <code>number</code>
+        * [.convertInchToMeter(value)](#vscp_dot_measurement_dot_convertInchToMeter) ⇒ <code>number</code>
+    * [.register](#vscp_dot_register) : <code>object</code>
+        * [.constants](#vscp_dot_register_dot_constants) : <code>enum</code>
+        * [.timeout](#vscp_dot_register_dot_timeout) : <code>number</code>
+        * [.read(options)](#vscp_dot_register_dot_read)
+        * [.write(options)](#vscp_dot_register_dot_write)
+        * [.writeBits(options)](#vscp_dot_register_dot_writeBits)
+        * [.readAlarmStatus(options)](#vscp_dot_register_dot_readAlarmStatus)
+        * [.readVscpVersion(options)](#vscp_dot_register_dot_readVscpVersion)
+        * [.readNodeControlFlags(options)](#vscp_dot_register_dot_readNodeControlFlags)
+        * [.readUserId(options)](#vscp_dot_register_dot_readUserId)
+        * [.readManufacturerDevId(options)](#vscp_dot_register_dot_readManufacturerDevId)
+        * [.readManufacturerSubDevId(options)](#vscp_dot_register_dot_readManufacturerSubDevId)
+        * [.readNicknameId(options)](#vscp_dot_register_dot_readNicknameId)
+        * [.readSelectedPage(options)](#vscp_dot_register_dot_readSelectedPage)
+        * [.readFirmwareVersion(options)](#vscp_dot_register_dot_readFirmwareVersion)
+        * [.readBootloaderAlgorithm(options)](#vscp_dot_register_dot_readBootloaderAlgorithm)
+        * [.readUsedPages(options)](#vscp_dot_register_dot_readUsedPages)
+        * [.readStdDevFamCode(options)](#vscp_dot_register_dot_readStdDevFamCode)
+        * [.readStdDevType(options)](#vscp_dot_register_dot_readStdDevType)
+        * [.readGUID(options)](#vscp_dot_register_dot_readGUID)
+        * [.readMdfUrl(options)](#vscp_dot_register_dot_readMdfUrl)
     * [.rest](#vscp_dot_rest) : <code>object</code>
         * [.Client](#vscp_dot_rest_dot_Client)
             * [new vscp.rest.Client(config)](#new_vscp_dot_rest_dot_Client_new)
@@ -2498,6 +4668,83 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.writeVar(options)](#vscp_dot_rest_dot_Client_and_writeVar) ⇒ <code>object</code>
             * [.removeVar(options)](#vscp_dot_rest_dot_Client_and_removeVar) ⇒ <code>object</code>
             * [.listVar(options)](#vscp_dot_rest_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.service](#vscp_dot_service) : <code>object</code>
+        * [.Container](#vscp_dot_service_dot_Container)
+            * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+            * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+            * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+            * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+            * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+            * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+            * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+            * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+        * [.timeout](#vscp_dot_service_dot_timeout) : <code>number</code>
+        * [.whoIsThere(options)](#vscp_dot_service_dot_whoIsThere)
+        * [.scan(options)](#vscp_dot_service_dot_scan)
+    * [.widget](#vscp_dot_widget) : <code>object</code>
+        * [.Button](#vscp_dot_widget_dot_Button)
+            * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+            * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+            * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+        * [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+            * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+            * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+            * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+        * [.generateUUID()](#vscp_dot_widget_dot_generateUUID) ⇒ <code>string</code>
+        * [.Image(options)](#vscp_dot_widget_dot_Image)
+    * [.wizard](#vscp_dot_wizard) : <code>object</code>
+        * [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+            * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+            * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+            * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+            * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+            * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+            * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+            * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+            * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+        * [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+            * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+            * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+            * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+            * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+            * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+        * [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+            * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+            * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+            * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+            * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+            * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+        * [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+            * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+            * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+            * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+            * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+            * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+        * [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+            * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+            * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+            * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+            * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+            * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+        * [.Recipe](#vscp_dot_wizard_dot_Recipe)
+            * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+            * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+            * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+            * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+            * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+            * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+            * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+            * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+            * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+            * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+            * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+        * [.getRecipes(options)](#vscp_dot_wizard_dot_getRecipes) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
     * [.ws](#vscp_dot_ws) : <code>object</code>
         * [.Client](#vscp_dot_ws_dot_Client)
             * [new vscp.ws.Client()](#new_vscp_dot_ws_dot_Client_new)
@@ -3057,6 +5304,7 @@ VSCP class types
 | VSCP_TYPE_INFORMATION_WEEKDAY | <code>number</code> | <code>74</code> | 
 | VSCP_TYPE_INFORMATION_LOCK | <code>number</code> | <code>75</code> | 
 | VSCP_TYPE_INFORMATION_UNLOCK | <code>number</code> | <code>76</code> | 
+| VSCP_TYPE_INFORMATION_DATETIME | <code>number</code> | <code>77</code> | 
 | VSCP_TYPE_CONTROL_GENERAL | <code>number</code> | <code>0</code> | 
 | VSCP_TYPE_CONTROL_MUTE | <code>number</code> | <code>1</code> | 
 | VSCP_TYPE_CONTROL_ALL_LAMPS | <code>number</code> | <code>2</code> | 
@@ -3942,6 +6190,1124 @@ Get node id from a node GUID string.
 | --- | --- | --- |
 | guid | <code>string</code> | GUID string, e.g. 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 |
 
+<a id="vscp_dot_mdf"></a>
+
+### vscp.mdf : <code>object</code>
+VSCP module description file handling functionality
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.mdf](#vscp_dot_mdf) : <code>object</code>
+    * [.Register](#vscp_dot_mdf_dot_Register)
+        * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+        * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+        * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+        * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+        * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+        * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+        * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+        * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+        * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+    * [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+        * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+        * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+        * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+        * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+        * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+        * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+        * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+        * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+        * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+        * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+        * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+        * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+    * [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+        * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+        * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+        * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+        * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+    * [.timeout](#vscp_dot_mdf_dot_timeout) : <code>number</code>
+    * [.load(options)](#vscp_dot_mdf_dot_load)
+    * [.loadLocal(options)](#vscp_dot_mdf_dot_loadLocal)
+    * [.readAbstractValue(options)](#vscp_dot_mdf_dot_readAbstractValue)
+    * [.writeAbstractValue(options)](#vscp_dot_mdf_dot_writeAbstractValue)
+    * [.writeAbstractBits(options)](#vscp_dot_mdf_dot_writeAbstractBits)
+    * [.getRegisters(options)](#vscp_dot_mdf_dot_getRegisters) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+    * [.getAbstractions(options)](#vscp_dot_mdf_dot_getAbstractions) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+
+<a id="vscp_dot_mdf_dot_Register"></a>
+
+#### mdf.Register
+**Kind**: static class of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.Register](#vscp_dot_mdf_dot_Register)
+    * [new vscp.mdf.Register()](#new_vscp_dot_mdf_dot_Register_new)
+    * [.name](#vscp_dot_mdf_dot_Register_and_name) : <code>string</code>
+    * [.description](#vscp_dot_mdf_dot_Register_and_description) : <code>string</code>
+    * [.readAccess](#vscp_dot_mdf_dot_Register_and_readAccess) : <code>boolean</code>
+    * [.writeAccess](#vscp_dot_mdf_dot_Register_and_writeAccess) : <code>boolean</code>
+    * [.page](#vscp_dot_mdf_dot_Register_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_mdf_dot_Register_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_mdf_dot_Register_and_value) : <code>number</code>
+    * [.dirty](#vscp_dot_mdf_dot_Register_and_dirty) : <code>number</code>
+    * [.userData](#vscp_dot_mdf_dot_Register_and_userData) : <code>object</code>
+    * [.setValue(value)](#vscp_dot_mdf_dot_Register_and_setValue)
+
+<a id="new_vscp_dot_mdf_dot_Register_new"></a>
+
+##### new vscp.mdf.Register()
+MDF register with all parameters.
+
+<a id="vscp_dot_mdf_dot_Register_and_name"></a>
+
+##### register.name : <code>string</code>
+Register name
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_description"></a>
+
+##### register.description : <code>string</code>
+Register description
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_readAccess"></a>
+
+##### register.readAccess : <code>boolean</code>
+Read access to the register allowed or not
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_writeAccess"></a>
+
+##### register.writeAccess : <code>boolean</code>
+Write access to the register allowed or not
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_page"></a>
+
+##### register.page : <code>number</code>
+Page where the register is located
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_offset"></a>
+
+##### register.offset : <code>number</code>
+Offset where the register is located on the page
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_value"></a>
+
+##### register.value : <code>number</code>
+Register value
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_dirty"></a>
+
+##### register.dirty : <code>number</code>
+Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_userData"></a>
+
+##### register.userData : <code>object</code>
+User specific data
+
+**Kind**: instance property of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+<a id="vscp_dot_mdf_dot_Register_and_setValue"></a>
+
+##### register.setValue(value)
+This function set a register value and marks it dirty.
+
+**Kind**: instance method of [<code>Register</code>](#vscp_dot_mdf_dot_Register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | New value |
+
+<a id="vscp_dot_mdf_dot_Abstraction"></a>
+
+#### mdf.Abstraction
+**Kind**: static class of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.Abstraction](#vscp_dot_mdf_dot_Abstraction)
+    * [new vscp.mdf.Abstraction()](#new_vscp_dot_mdf_dot_Abstraction_new)
+    * [.name](#vscp_dot_mdf_dot_Abstraction_and_name) : <code>string</code>
+    * [.description](#vscp_dot_mdf_dot_Abstraction_and_description) : <code>string</code>
+    * [.readAccess](#vscp_dot_mdf_dot_Abstraction_and_readAccess) : <code>boolean</code>
+    * [.writeAccess](#vscp_dot_mdf_dot_Abstraction_and_writeAccess) : <code>boolean</code>
+    * [.id](#vscp_dot_mdf_dot_Abstraction_and_id) : <code>string</code>
+    * [.page](#vscp_dot_mdf_dot_Abstraction_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_mdf_dot_Abstraction_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_mdf_dot_Abstraction_and_value) : <code>number</code>
+    * [.type](#vscp_dot_mdf_dot_Abstraction_and_type) : <code>string</code>
+    * [.defValue](#vscp_dot_mdf_dot_Abstraction_and_defValue) : <code>number</code>
+    * [.dirty](#vscp_dot_mdf_dot_Abstraction_and_dirty) : <code>number</code>
+    * [.userData](#vscp_dot_mdf_dot_Abstraction_and_userData) : <code>object</code>
+    * [.setValue(value)](#vscp_dot_mdf_dot_Abstraction_and_setValue)
+
+<a id="new_vscp_dot_mdf_dot_Abstraction_new"></a>
+
+##### new vscp.mdf.Abstraction()
+MDF abstraction with all parameters.
+
+<a id="vscp_dot_mdf_dot_Abstraction_and_name"></a>
+
+##### abstraction.name : <code>string</code>
+Abstraction name
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_description"></a>
+
+##### abstraction.description : <code>string</code>
+Abstraction description
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_readAccess"></a>
+
+##### abstraction.readAccess : <code>boolean</code>
+Read access to the abstraction allowed or not
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_writeAccess"></a>
+
+##### abstraction.writeAccess : <code>boolean</code>
+Write access to the abstraction allowed or not
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_id"></a>
+
+##### abstraction.id : <code>string</code>
+Abstraction id
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_page"></a>
+
+##### abstraction.page : <code>number</code>
+Page where the abstraction is located
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_offset"></a>
+
+##### abstraction.offset : <code>number</code>
+Offset where the abstraction is located
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_value"></a>
+
+##### abstraction.value : <code>number</code>
+Abstraction value
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_type"></a>
+
+##### abstraction.type : <code>string</code>
+Abstraction type
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_defValue"></a>
+
+##### abstraction.defValue : <code>number</code>
+Abstraction default value
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_dirty"></a>
+
+##### abstraction.dirty : <code>number</code>
+Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_userData"></a>
+
+##### abstraction.userData : <code>object</code>
+User specific data
+
+**Kind**: instance property of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+<a id="vscp_dot_mdf_dot_Abstraction_and_setValue"></a>
+
+##### abstraction.setValue(value)
+This function set a abstraction value and marks it dirty.
+
+**Kind**: instance method of [<code>Abstraction</code>](#vscp_dot_mdf_dot_Abstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | New value |
+
+<a id="vscp_dot_mdf_dot_constants"></a>
+
+#### mdf.constants : <code>object</code>
+MDF specific constants
+
+**Kind**: static namespace of [<code>mdf</code>](#vscp_dot_mdf)  
+
+* [.constants](#vscp_dot_mdf_dot_constants) : <code>object</code>
+    * [.TYPE_SIZES](#vscp_dot_mdf_dot_constants_dot_TYPE_SIZES) : <code>enum</code>
+    * [.CONVERSION_FROM_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL)
+    * [.CONVERSION_TO_DECIMAL](#vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL)
+    * [.RANGE](#vscp_dot_mdf_dot_constants_dot_RANGE)
+
+<a id="vscp_dot_mdf_dot_constants_dot_TYPE_SIZES"></a>
+
+##### constants.TYPE_SIZES : <code>enum</code>
+MDF type sizes in bytes
+
+**Kind**: static enum of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+**Properties**
+
+| Name | Type | Default |
+| --- | --- | --- |
+| string | <code>number</code> | <code>0</code> | 
+| bitfield | <code>number</code> | <code>1</code> | 
+| bool | <code>number</code> | <code>1</code> | 
+| int8_t | <code>number</code> | <code>1</code> | 
+| uint8_t | <code>number</code> | <code>1</code> | 
+| int16_t | <code>number</code> | <code>2</code> | 
+| uint16_t | <code>number</code> | <code>2</code> | 
+| int32_t | <code>number</code> | <code>4</code> | 
+| uint32_t | <code>number</code> | <code>4</code> | 
+| int64_t | <code>number</code> | <code>8</code> | 
+| uint64_t | <code>number</code> | <code>8</code> | 
+| float | <code>number</code> | <code>4</code> | 
+| double | <code>number</code> | <code>8</code> | 
+| date | <code>number</code> | <code>4</code> | 
+| time | <code>number</code> | <code>4</code> | 
+| guid | <code>number</code> | <code>16</code> | 
+| char | <code>number</code> | <code>1</code> | 
+| byte | <code>number</code> | <code>1</code> | 
+| short | <code>number</code> | <code>2</code> | 
+| integer | <code>number</code> | <code>2</code> | 
+| long | <code>number</code> | <code>4</code> | 
+
+<a id="vscp_dot_mdf_dot_constants_dot_CONVERSION_FROM_DECIMAL"></a>
+
+##### constants.CONVERSION_FROM_DECIMAL
+Conversion functions from decimal
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_constants_dot_CONVERSION_TO_DECIMAL"></a>
+
+##### constants.CONVERSION_TO_DECIMAL
+Conversion functions to decimal
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_constants_dot_RANGE"></a>
+
+##### constants.RANGE
+Type ranges
+
+**Kind**: static constant of [<code>constants</code>](#vscp_dot_mdf_dot_constants)  
+<a id="vscp_dot_mdf_dot_timeout"></a>
+
+#### mdf.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>mdf</code>](#vscp_dot_mdf)  
+<a id="vscp_dot_mdf_dot_load"></a>
+
+#### mdf.load(options)
+Get the MDF as xml document from a URL.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.url | <code>function</code> | URL to MDF file |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_loadLocal"></a>
+
+#### mdf.loadLocal(options)
+Get the MDF as xml document from local file system.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.fileRef | <code>function</code> | File reference to MDF file |
+| options.onSuccess | <code>function</code> | If the xml file is successful loaded, this function will be called. |
+| [options.onError] | <code>function</code> | If loading the xml file failed, this function will be called. |
+
+<a id="vscp_dot_mdf_dot_readAbstractValue"></a>
+
+#### mdf.readAbstractValue(options)
+Read a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_writeAbstractValue"></a>
+
+#### mdf.writeAbstractValue(options)
+Write a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.value | <code>string</code> | Abstract value |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_writeAbstractBits"></a>
+
+#### mdf.writeAbstractBits(options)
+Change some bits in a abstract value.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.mdf | <code>object</code> | MDF as xml jquery object |
+| options.id | <code>number</code> | Abstract value id |
+| options.pos | <code>number</code> | Bit position |
+| options.width | <code>number</code> | Bit width |
+| options.value | <code>string</code> | Abstract value |
+| options.onSuccess | <code>function</code> | Function which is called on a successful operation |
+| [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_mdf_dot_getRegisters"></a>
+
+#### mdf.getRegisters(options) ⇒ [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register)
+This function retrieves all register informations from a mdf.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+**Returns**: [<code>Array.&lt;Register&gt;</code>](#vscp_dot_mdf_dot_Register) - Array of MDF registers  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | MDF as jquery object |
+
+<a id="vscp_dot_mdf_dot_getAbstractions"></a>
+
+#### mdf.getAbstractions(options) ⇒ [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction)
+This function retrieves all abstraction informations from a mdf.
+
+**Kind**: static method of [<code>mdf</code>](#vscp_dot_mdf)  
+**Returns**: [<code>Array.&lt;Abstraction&gt;</code>](#vscp_dot_mdf_dot_Abstraction) - Array of MDF abstractions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | MDF as jquery object |
+
+<a id="vscp_dot_measurement"></a>
+
+### vscp.measurement : <code>object</code>
+VSCP measurement stuff
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.measurement](#vscp_dot_measurement) : <code>object</code>
+    * [.Decoder](#vscp_dot_measurement_dot_Decoder)
+        * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+        * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+        * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+        * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+    * [.constants](#vscp_dot_measurement_dot_constants) : <code>object</code>
+        * [.units](#vscp_dot_measurement_dot_constants_dot_units) : <code>Array.&lt;string&gt;</code>
+    * [.timeout](#vscp_dot_measurement_dot_timeout) : <code>number</code>
+    * [.toFixed(value, precision)](#vscp_dot_measurement_dot_toFixed) ⇒ <code>number</code>
+    * [.varInteger2Float(data)](#vscp_dot_measurement_dot_varInteger2Float) ⇒ <code>number</code>
+    * [.getDataCoding(data)](#vscp_dot_measurement_dot_getDataCoding) ⇒ <code>number</code>
+    * [.getUnitFromDataCoding(data)](#vscp_dot_measurement_dot_getUnitFromDataCoding) ⇒ <code>number</code>
+    * [.getSensorIndexFromDataCoding(data)](#vscp_dot_measurement_dot_getSensorIndexFromDataCoding) ⇒ <code>number</code>
+    * [.decodeClass10(data)](#vscp_dot_measurement_dot_decodeClass10) ⇒ <code>number</code>
+    * [.decodeClass60Number(data)](#vscp_dot_measurement_dot_decodeClass60Number) ⇒ <code>number</code>
+    * [.decodeClass65Number(data)](#vscp_dot_measurement_dot_decodeClass65Number) ⇒ <code>number</code>
+    * [.convertFahrenheitToKelvin(value)](#vscp_dot_measurement_dot_convertFahrenheitToKelvin) ⇒ <code>number</code>
+    * [.convertFahrenheitToCelsius(value)](#vscp_dot_measurement_dot_convertFahrenheitToCelsius) ⇒ <code>number</code>
+    * [.convertCelsiusToFahrenheit(value)](#vscp_dot_measurement_dot_convertCelsiusToFahrenheit) ⇒ <code>number</code>
+    * [.convertKelvinToCelsius(value)](#vscp_dot_measurement_dot_convertKelvinToCelsius) ⇒ <code>number</code>
+    * [.convertCelsiusToKelvin(value)](#vscp_dot_measurement_dot_convertCelsiusToKelvin) ⇒ <code>number</code>
+    * [.convertKelvinToFahrenheit(value)](#vscp_dot_measurement_dot_convertKelvinToFahrenheit) ⇒ <code>number</code>
+    * [.convertMeterToFeet(value)](#vscp_dot_measurement_dot_convertMeterToFeet) ⇒ <code>number</code>
+    * [.convertFeetToMeter(value)](#vscp_dot_measurement_dot_convertFeetToMeter) ⇒ <code>number</code>
+    * [.convertMeterToInch(value)](#vscp_dot_measurement_dot_convertMeterToInch) ⇒ <code>number</code>
+    * [.convertInchToMeter(value)](#vscp_dot_measurement_dot_convertInchToMeter) ⇒ <code>number</code>
+
+<a id="vscp_dot_measurement_dot_Decoder"></a>
+
+#### measurement.Decoder
+**Kind**: static class of [<code>measurement</code>](#vscp_dot_measurement)  
+
+* [.Decoder](#vscp_dot_measurement_dot_Decoder)
+    * [new vscp.measurement.Decoder(options)](#new_vscp_dot_measurement_dot_Decoder_new)
+    * [.client](#vscp_dot_measurement_dot_Decoder_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+    * [.onValue](#vscp_dot_measurement_dot_Decoder_and_onValue) : <code>function</code>
+    * [.filter](#vscp_dot_measurement_dot_Decoder_and_filter) : <code>object</code>
+
+<a id="new_vscp_dot_measurement_dot_Decoder_new"></a>
+
+##### new vscp.measurement.Decoder(options)
+Measurement decoder
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.onValue | <code>function</code> | Function which will be called for every received measurement value. |
+| options.filter | <code>object</code> | Filter |
+| options.filter.vscpGuid | <code>string</code> | Node GUID string |
+| options.filter.vscpClass | <code>number</code> | VSCP class |
+| options.filter.vscpType | <code>number</code> | VSCP type |
+| options.filter.sensorIndex | <code>number</code> | Sensor index |
+| options.filter.zone | <code>number</code> | Zone |
+| options.filter.subZone | <code>number</code> | Sub-zone |
+
+<a id="vscp_dot_measurement_dot_Decoder_and_client"></a>
+
+##### decoder.client : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+VSCP websocket client
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+<a id="vscp_dot_measurement_dot_Decoder_and_onValue"></a>
+
+##### decoder.onValue : <code>function</code>
+Callback which will be called for every received value.
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+<a id="vscp_dot_measurement_dot_Decoder_and_filter"></a>
+
+##### decoder.filter : <code>object</code>
+Filter
+
+**Kind**: instance property of [<code>Decoder</code>](#vscp_dot_measurement_dot_Decoder)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| vscpGuid | <code>string</code> | Node GUID string |
+| vscpClass | <code>number</code> | VSCP class |
+| vscpType | <code>number</code> | VSCP type |
+| datetime | <code>date</code> | datetime |
+| sensorIndex | <code>number</code> | Sensor index |
+| zone | <code>number</code> | Zone |
+| subZone | <code>number</code> | Sub-zone |
+
+<a id="vscp_dot_measurement_dot_constants"></a>
+
+#### measurement.constants : <code>object</code>
+Measurement specific constants
+
+**Kind**: static namespace of [<code>measurement</code>](#vscp_dot_measurement)  
+<a id="vscp_dot_measurement_dot_constants_dot_units"></a>
+
+##### constants.units : <code>Array.&lt;string&gt;</code>
+VSCP units
+
+**Kind**: static property of [<code>constants</code>](#vscp_dot_measurement_dot_constants)  
+<a id="vscp_dot_measurement_dot_timeout"></a>
+
+#### measurement.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>measurement</code>](#vscp_dot_measurement)  
+<a id="vscp_dot_measurement_dot_toFixed"></a>
+
+#### measurement.toFixed(value, precision) ⇒ <code>number</code>
+Round value to a fixed precision.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Rounded value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | Value |
+| precision | <code>number</code> | Precision |
+
+<a id="vscp_dot_measurement_dot_varInteger2Float"></a>
+
+#### measurement.varInteger2Float(data) ⇒ <code>number</code>
+Convert a integer value to float
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Float value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;number&gt;</code> | Byte array |
+
+<a id="vscp_dot_measurement_dot_getDataCoding"></a>
+
+#### measurement.getDataCoding(data) ⇒ <code>number</code>
+Get data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Coding  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_getUnitFromDataCoding"></a>
+
+#### measurement.getUnitFromDataCoding(data) ⇒ <code>number</code>
+Get unit from data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Unit  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data coding |
+
+<a id="vscp_dot_measurement_dot_getSensorIndexFromDataCoding"></a>
+
+#### measurement.getSensorIndexFromDataCoding(data) ⇒ <code>number</code>
+Get sensor index from data coding.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Sensor index  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data coding |
+
+<a id="vscp_dot_measurement_dot_decodeClass10"></a>
+
+#### measurement.decodeClass10(data) ⇒ <code>number</code>
+Decode a class 10 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>Array.&lt;number&gt;</code> | Data (event data array where first data byte is the data coding) |
+
+<a id="vscp_dot_measurement_dot_decodeClass60Number"></a>
+
+#### measurement.decodeClass60Number(data) ⇒ <code>number</code>
+Decode a class 60 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_decodeClass65Number"></a>
+
+#### measurement.decodeClass65Number(data) ⇒ <code>number</code>
+Decode a class 65 measurement.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Value as float  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>number</code> | Data |
+
+<a id="vscp_dot_measurement_dot_convertFahrenheitToKelvin"></a>
+
+#### measurement.convertFahrenheitToKelvin(value) ⇒ <code>number</code>
+Convert from unit fahrenheit to unit kelvin.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertFahrenheitToCelsius"></a>
+
+#### measurement.convertFahrenheitToCelsius(value) ⇒ <code>number</code>
+Convert from unit fahrenheit to unit celsius.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertCelsiusToFahrenheit"></a>
+
+#### measurement.convertCelsiusToFahrenheit(value) ⇒ <code>number</code>
+Convert from unit celsius to unit fahrenheit.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertKelvinToCelsius"></a>
+
+#### measurement.convertKelvinToCelsius(value) ⇒ <code>number</code>
+Convert from unit kelvin to unit celsius.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertCelsiusToKelvin"></a>
+
+#### measurement.convertCelsiusToKelvin(value) ⇒ <code>number</code>
+Convert from unit celsius to unit kelvin.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertKelvinToFahrenheit"></a>
+
+#### measurement.convertKelvinToFahrenheit(value) ⇒ <code>number</code>
+Convert from unit kelvin to unit fahrenheit.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertMeterToFeet"></a>
+
+#### measurement.convertMeterToFeet(value) ⇒ <code>number</code>
+Convert from unit meter to unit feet.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertFeetToMeter"></a>
+
+#### measurement.convertFeetToMeter(value) ⇒ <code>number</code>
+Convert from unit feet to unit meter.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertMeterToInch"></a>
+
+#### measurement.convertMeterToInch(value) ⇒ <code>number</code>
+Convert from unit meter to unit inch.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_measurement_dot_convertInchToMeter"></a>
+
+#### measurement.convertInchToMeter(value) ⇒ <code>number</code>
+Convert from unit inch to unit meter.
+
+**Kind**: static method of [<code>measurement</code>](#vscp_dot_measurement)  
+**Returns**: <code>number</code> - Converted value  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>string</code> \| <code>number</code> | Value |
+
+<a id="vscp_dot_register"></a>
+
+### vscp.register : <code>object</code>
+VSCP register access functions
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.register](#vscp_dot_register) : <code>object</code>
+    * [.constants](#vscp_dot_register_dot_constants) : <code>enum</code>
+    * [.timeout](#vscp_dot_register_dot_timeout) : <code>number</code>
+    * [.read(options)](#vscp_dot_register_dot_read)
+    * [.write(options)](#vscp_dot_register_dot_write)
+    * [.writeBits(options)](#vscp_dot_register_dot_writeBits)
+    * [.readAlarmStatus(options)](#vscp_dot_register_dot_readAlarmStatus)
+    * [.readVscpVersion(options)](#vscp_dot_register_dot_readVscpVersion)
+    * [.readNodeControlFlags(options)](#vscp_dot_register_dot_readNodeControlFlags)
+    * [.readUserId(options)](#vscp_dot_register_dot_readUserId)
+    * [.readManufacturerDevId(options)](#vscp_dot_register_dot_readManufacturerDevId)
+    * [.readManufacturerSubDevId(options)](#vscp_dot_register_dot_readManufacturerSubDevId)
+    * [.readNicknameId(options)](#vscp_dot_register_dot_readNicknameId)
+    * [.readSelectedPage(options)](#vscp_dot_register_dot_readSelectedPage)
+    * [.readFirmwareVersion(options)](#vscp_dot_register_dot_readFirmwareVersion)
+    * [.readBootloaderAlgorithm(options)](#vscp_dot_register_dot_readBootloaderAlgorithm)
+    * [.readUsedPages(options)](#vscp_dot_register_dot_readUsedPages)
+    * [.readStdDevFamCode(options)](#vscp_dot_register_dot_readStdDevFamCode)
+    * [.readStdDevType(options)](#vscp_dot_register_dot_readStdDevType)
+    * [.readGUID(options)](#vscp_dot_register_dot_readGUID)
+    * [.readMdfUrl(options)](#vscp_dot_register_dot_readMdfUrl)
+
+<a id="vscp_dot_register_dot_constants"></a>
+
+#### register.constants : <code>enum</code>
+VSCP registers
+
+**Kind**: static enum of [<code>register</code>](#vscp_dot_register)  
+**Properties**
+
+| Name | Type | Default |
+| --- | --- | --- |
+| ALARM_STATUS | <code>number</code> | <code>128</code> | 
+| VSCP_VERSION_MAJOR | <code>number</code> | <code>129</code> | 
+| VSCP_VERSION_MINOR | <code>number</code> | <code>130</code> | 
+| NODE_CONTROL_FLAGS | <code>number</code> | <code>131</code> | 
+| USER_ID_0 | <code>number</code> | <code>132</code> | 
+| USER_ID_1 | <code>number</code> | <code>133</code> | 
+| USER_ID_2 | <code>number</code> | <code>134</code> | 
+| USER_ID_3 | <code>number</code> | <code>135</code> | 
+| USER_ID_4 | <code>number</code> | <code>136</code> | 
+| MANUFACTURER_DEV_ID_0 | <code>number</code> | <code>137</code> | 
+| MANUFACTURER_DEV_ID_1 | <code>number</code> | <code>138</code> | 
+| MANUFACTURER_DEV_ID_2 | <code>number</code> | <code>139</code> | 
+| MANUFACTURER_DEV_ID_3 | <code>number</code> | <code>140</code> | 
+| MANUFACTURER_SUB_DEV_ID_0 | <code>number</code> | <code>141</code> | 
+| MANUFACTURER_SUB_DEV_ID_1 | <code>number</code> | <code>142</code> | 
+| MANUFACTURER_SUB_DEV_ID_2 | <code>number</code> | <code>143</code> | 
+| MANUFACTURER_SUB_DEV_ID_3 | <code>number</code> | <code>144</code> | 
+| NICKNAME_ID | <code>number</code> | <code>145</code> | 
+| PAGE_SELECT_MSB | <code>number</code> | <code>146</code> | 
+| PAGE_SELECT_LSB | <code>number</code> | <code>147</code> | 
+| FIRMWARE_VERSION_MAJOR | <code>number</code> | <code>148</code> | 
+| FIRMWARE_VERSION_MINOR | <code>number</code> | <code>149</code> | 
+| FIRMWARE_VERSION_SUB_MINOR | <code>number</code> | <code>150</code> | 
+| BOOT_LOADER_ALGORITHM | <code>number</code> | <code>151</code> | 
+| BUFFER_SIZE | <code>number</code> | <code>152</code> | 
+| PAGES_USED | <code>number</code> | <code>153</code> | 
+| STD_DEV_FAMILY_CODE_3 | <code>number</code> | <code>154</code> | 
+| STD_DEV_FAMILY_CODE_2 | <code>number</code> | <code>155</code> | 
+| STD_DEV_FAMILY_CODE_1 | <code>number</code> | <code>156</code> | 
+| STD_DEV_FAMILY_CODE_0 | <code>number</code> | <code>157</code> | 
+| STD_DEV_TYPE_3 | <code>number</code> | <code>158</code> | 
+| STD_DEV_TYPE_2 | <code>number</code> | <code>159</code> | 
+| STD_DEV_TYPE_1 | <code>number</code> | <code>160</code> | 
+| STD_DEV_TYPE_0 | <code>number</code> | <code>161</code> | 
+| RESTORE_STD_CFG | <code>number</code> | <code>162</code> | 
+| GUID | <code>number</code> | <code>208</code> | 
+| MDF_URL | <code>number</code> | <code>224</code> | 
+
+<a id="vscp_dot_register_dot_timeout"></a>
+
+#### register.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>register</code>](#vscp_dot_register)  
+<a id="vscp_dot_register_dot_read"></a>
+
+#### register.read(options)
+Read one or more register values.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| [options.page] | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.count | <code>number</code> | Number of registers to read |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_write"></a>
+
+#### register.write(options)
+Write one or more register values.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.page | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.data | <code>Array.&lt;number&gt;</code> | Data array |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_writeBits"></a>
+
+#### register.writeBits(options)
+Change some bits of a register.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP connection |
+| options.nodeId | <code>number</code> | Node id |
+| options.page | <code>number</code> | Register page |
+| options.offset | <code>number</code> | Register page offset |
+| options.pos | <code>number</code> | Bit position |
+| options.width | <code>number</code> | Bit width |
+| options.data | <code>Array.&lt;number&gt;</code> | Data array |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readAlarmStatus"></a>
+
+#### register.readAlarmStatus(options)
+Read the alarm status from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readVscpVersion"></a>
+
+#### register.readVscpVersion(options)
+Read the supported VSCP version from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readNodeControlFlags"></a>
+
+#### register.readNodeControlFlags(options)
+Read the node control flags from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readUserId"></a>
+
+#### register.readUserId(options)
+Read the user id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readManufacturerDevId"></a>
+
+#### register.readManufacturerDevId(options)
+Read the manufacturer device id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readManufacturerSubDevId"></a>
+
+#### register.readManufacturerSubDevId(options)
+Read the manufacturer sub device id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readNicknameId"></a>
+
+#### register.readNicknameId(options)
+Read the nickname id from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readSelectedPage"></a>
+
+#### register.readSelectedPage(options)
+Read the current selected page from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readFirmwareVersion"></a>
+
+#### register.readFirmwareVersion(options)
+Read the firmware version from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readBootloaderAlgorithm"></a>
+
+#### register.readBootloaderAlgorithm(options)
+Read the bootloader algorithm from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readUsedPages"></a>
+
+#### register.readUsedPages(options)
+Read the number of used pages from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readStdDevFamCode"></a>
+
+#### register.readStdDevFamCode(options)
+Read the standard device family code from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readStdDevType"></a>
+
+#### register.readStdDevType(options)
+Read the standard device type from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readGUID"></a>
+
+#### register.readGUID(options)
+Read the GUID from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_register_dot_readMdfUrl"></a>
+
+#### register.readMdfUrl(options)
+Read the MDF URL from a node.
+
+**Kind**: static method of [<code>register</code>](#vscp_dot_register)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
 <a id="vscp_dot_rest"></a>
 
 ### vscp.rest : <code>object</code>
@@ -4222,6 +7588,802 @@ List all VSCP server variables.
 | [options.regex] | <code>string</code> | Regular expression to filter variables |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
+
+<a id="vscp_dot_service"></a>
+
+### vscp.service : <code>object</code>
+VSCP service supporting functions
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.service](#vscp_dot_service) : <code>object</code>
+    * [.Container](#vscp_dot_service_dot_Container)
+        * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+        * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+        * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+        * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+        * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+        * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+        * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+        * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+    * [.timeout](#vscp_dot_service_dot_timeout) : <code>number</code>
+    * [.whoIsThere(options)](#vscp_dot_service_dot_whoIsThere)
+    * [.scan(options)](#vscp_dot_service_dot_scan)
+
+<a id="vscp_dot_service_dot_Container"></a>
+
+#### service.Container
+**Kind**: static class of [<code>service</code>](#vscp_dot_service)  
+
+* [.Container](#vscp_dot_service_dot_Container)
+    * [new vscp.service.Container(options)](#new_vscp_dot_service_dot_Container_new)
+    * [.client](#vscp_dot_service_dot_Container_and_client) : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+    * [.name](#vscp_dot_service_dot_Container_and_name) : <code>string</code>
+    * [.data](#vscp_dot_service_dot_Container_and_data) : <code>Array.&lt;object&gt;</code>
+    * [.separator](#vscp_dot_service_dot_Container_and_separator) : <code>Array.&lt;object&gt;</code>
+    * [.create(options)](#vscp_dot_service_dot_Container_and_create)
+    * [.write(options)](#vscp_dot_service_dot_Container_and_write)
+    * [.read(options)](#vscp_dot_service_dot_Container_and_read)
+
+<a id="new_vscp_dot_service_dot_Container_new"></a>
+
+##### new vscp.service.Container(options)
+The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.name | <code>string</code> | Container name |
+
+<a id="vscp_dot_service_dot_Container_and_client"></a>
+
+##### container.client : [<code>Client</code>](#vscp_dot_ws_dot_Client)
+VSCP websocket client
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_name"></a>
+
+##### container.name : <code>string</code>
+Complete container name (prefix + user defined name)
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_data"></a>
+
+##### container.data : <code>Array.&lt;object&gt;</code>
+Data container itself
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_separator"></a>
+
+##### container.separator : <code>Array.&lt;object&gt;</code>
+Data element separator
+
+**Kind**: instance property of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+<a id="vscp_dot_service_dot_Container_and_create"></a>
+
+##### container.create(options)
+Create a container at the daemon.
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_Container_and_write"></a>
+
+##### container.write(options)
+Write the container to a daemon variable.The container must exist at the daemon!
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_Container_and_read"></a>
+
+##### container.read(options)
+Read the container from the daemon variable.
+
+**Kind**: instance method of [<code>Container</code>](#vscp_dot_service_dot_Container)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_timeout"></a>
+
+#### service.timeout : <code>number</code>
+VSCP response timeout in ms
+
+**Kind**: static constant of [<code>service</code>](#vscp_dot_service)  
+<a id="vscp_dot_service_dot_whoIsThere"></a>
+
+#### service.whoIsThere(options)
+Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+
+**Kind**: static method of [<code>service</code>](#vscp_dot_service)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_service_dot_scan"></a>
+
+#### service.scan(options)
+Scan for nodes.
+
+**Kind**: static method of [<code>service</code>](#vscp_dot_service)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.begin | <code>number</code> | Node id where to start scanning |
+| options.end | <code>number</code> | Node id where to stop scanning |
+| options.onSuccess | <code>function</code> | Callback which is called on successful operation |
+| [options.onError] | <code>function</code> | Callback which is called on failed operation |
+
+<a id="vscp_dot_widget"></a>
+
+### vscp.widget : <code>object</code>
+VSCP widgets
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.widget](#vscp_dot_widget) : <code>object</code>
+    * [.Button](#vscp_dot_widget_dot_Button)
+        * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+        * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+        * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+    * [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+        * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+        * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+        * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+    * [.generateUUID()](#vscp_dot_widget_dot_generateUUID) ⇒ <code>string</code>
+    * [.Image(options)](#vscp_dot_widget_dot_Image)
+
+<a id="vscp_dot_widget_dot_Button"></a>
+
+#### widget.Button
+**Kind**: static class of [<code>widget</code>](#vscp_dot_widget)  
+
+* [.Button](#vscp_dot_widget_dot_Button)
+    * [new vscp.widget.Button(options)](#new_vscp_dot_widget_dot_Button_new)
+    * [.draw()](#vscp_dot_widget_dot_Button_and_draw)
+    * [.setEnabled(value)](#vscp_dot_widget_dot_Button_and_setEnabled)
+
+<a id="new_vscp_dot_widget_dot_Button_new"></a>
+
+##### new vscp.widget.Button(options)
+A button widget.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.offImageUrl | <code>number</code> | URL to button which is in off state |
+| options.onImageUrl | <code>number</code> | URL to button which is in on state |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+| [options.scale] | <code>number</code> | Scale factor applied to the button image (default: 1.0) |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client, used for event communication |
+| [options.bindToRemoteState] | <code>boolean</code> | Bind the button state to the remote state or not (default: false) |
+| [options.receiveZone] | <code>number</code> | Zone where state events will come from (default: 255) |
+| [options.receiveSubZone] | <code>number</code> | Sub-zone where state events will come from (default: 255) |
+| [options.transmitZone] | <code>number</code> | Zone where button event will be sent to (default: 255) |
+| [options.transmitSubZone] | <code>number</code> | Sub-zone where button event will be sent to (default: 255) |
+| [options.index] | <code>number</code> | Button index (instance number)  (default: 0) |
+| [options.enable] | <code>boolean</code> | Enable or disable button  (default: false) |
+
+<a id="vscp_dot_widget_dot_Button_and_draw"></a>
+
+##### button.draw()
+Draw the button depended on its current state.
+
+**Kind**: instance method of [<code>Button</code>](#vscp_dot_widget_dot_Button)  
+<a id="vscp_dot_widget_dot_Button_and_setEnabled"></a>
+
+##### button.setEnabled(value)
+Enable or disable the button.
+
+**Kind**: instance method of [<code>Button</code>](#vscp_dot_widget_dot_Button)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>boolean</code> | Enable (true) or disable (false) it |
+
+<a id="vscp_dot_widget_dot_Thermometer"></a>
+
+#### widget.Thermometer
+**Kind**: static class of [<code>widget</code>](#vscp_dot_widget)  
+
+* [.Thermometer](#vscp_dot_widget_dot_Thermometer)
+    * [new vscp.widget.Thermometer(options)](#new_vscp_dot_widget_dot_Thermometer_new)
+    * [.draw()](#vscp_dot_widget_dot_Thermometer_and_draw)
+    * [.setEnabled(value)](#vscp_dot_widget_dot_Thermometer_and_setEnabled)
+
+<a id="new_vscp_dot_widget_dot_Thermometer_new"></a>
+
+##### new vscp.widget.Thermometer(options)
+A thermometer widget.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.imageUrl | <code>number</code> | URL to thermometer image |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+| options.data | <code>object</code> | Thermometer data |
+| options.data.maxT | <code>number</code> | Max. temperature in degree celsius |
+| options.data.minT | <code>number</code> | Min. temperature in degree celsius |
+| options.data.x | <code>number</code> | x position of the lower left begin of the thermometer column in image |
+| options.data.y | <code>number</code> | y position of the lower left begin of the thermometer column in image |
+| options.data.height | <code>number</code> | Thermometer column height (only between numbers) |
+| options.data.width | <code>number</code> | Thermometer column width |
+| options.data.yOffset | <code>number</code> | Thermometer column height offset from the begin to the first number |
+| options.data.color | <code>string</code> | HTML color, e.g. '#8A0000' |
+| [options.scale] | <code>number</code> | Scale factor applied to the thermometer image (default: 1.0) |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client, used for event communication |
+| [options.receiveZone] | <code>number</code> | Zone where state events will come from (default: 255) |
+| [options.receiveSubZone] | <code>number</code> | Sub-zone where state events will come from (default: 255) |
+| [options.sensorIndex] | <code>number</code> | Sensor index (default: 0) |
+| [options.vscpClass] | <code>number</code> | VSCP measurement class (default: CLASS1.MEASUREMENT) |
+| [options.vscpType] | <code>number</code> | VSCP measurement type (default: CLASS1.MEASUREMENT.TERMPERATURE) |
+| [options.enable] | <code>boolean</code> | Enable or disable thermometer (default: true) |
+
+<a id="vscp_dot_widget_dot_Thermometer_and_draw"></a>
+
+##### thermometer.draw()
+Draw the thermometer depended on its current state.
+
+**Kind**: instance method of [<code>Thermometer</code>](#vscp_dot_widget_dot_Thermometer)  
+<a id="vscp_dot_widget_dot_Thermometer_and_setEnabled"></a>
+
+##### thermometer.setEnabled(value)
+Enable or disable the thermometer.
+
+**Kind**: instance method of [<code>Thermometer</code>](#vscp_dot_widget_dot_Thermometer)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>boolean</code> | Enable (true) or disable (false) it |
+
+<a id="vscp_dot_widget_dot_generateUUID"></a>
+
+#### widget.generateUUID() ⇒ <code>string</code>
+Generate a UUID.
+
+**Kind**: static method of [<code>widget</code>](#vscp_dot_widget)  
+**Returns**: <code>string</code> - UUID  
+<a id="vscp_dot_widget_dot_Image"></a>
+
+#### widget.Image(options)
+Add a image to the canvas.
+
+**Kind**: static method of [<code>widget</code>](#vscp_dot_widget)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.canvasName | <code>string</code> | Name of the canvas, normally the canvas id |
+| options.url | <code>string</code> | Path to the image |
+| options.x | <code>number</code> | x position of the image in the canvas |
+| options.y | <code>number</code> | y position of the image in the canvas |
+
+<a id="vscp_dot_wizard"></a>
+
+### vscp.wizard : <code>object</code>
+VSCP wizard functionality based on a MDF
+
+**Kind**: static namespace of [<code>vscp</code>](#vscp)  
+
+* [.wizard](#vscp_dot_wizard) : <code>object</code>
+    * [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+        * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+        * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+        * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+        * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+        * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+        * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+        * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+        * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+    * [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+        * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+        * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+        * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+        * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+        * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+    * [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+        * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+        * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+        * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+        * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+        * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+    * [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+        * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+        * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+        * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+        * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+        * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+    * [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+        * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+        * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+        * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+        * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+        * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+    * [.Recipe](#vscp_dot_wizard_dot_Recipe)
+        * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+        * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+        * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+        * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+        * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+        * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+        * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+        * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+        * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+        * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+        * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+    * [.getRecipes(options)](#vscp_dot_wizard_dot_getRecipes) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
+
+<a id="vscp_dot_wizard_dot_MessageBox"></a>
+
+#### wizard.MessageBox
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.MessageBox](#vscp_dot_wizard_dot_MessageBox)
+    * [new vscp.wizard.MessageBox(options)](#new_vscp_dot_wizard_dot_MessageBox_new)
+    * [.func](#vscp_dot_wizard_dot_MessageBox_and_func) : <code>string</code>
+    * [.head](#vscp_dot_wizard_dot_MessageBox_and_head) : <code>string</code>
+    * [.description](#vscp_dot_wizard_dot_MessageBox_and_description) : <code>string</code>
+    * [.variableType](#vscp_dot_wizard_dot_MessageBox_and_variableType) : <code>string</code>
+    * [.variableName](#vscp_dot_wizard_dot_MessageBox_and_variableName) : <code>string</code>
+    * [.variableValue](#vscp_dot_wizard_dot_MessageBox_and_variableValue) : <code>string</code>
+    * [.parse($messageBox)](#vscp_dot_wizard_dot_MessageBox_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_MessageBox_new"></a>
+
+##### new vscp.wizard.MessageBox(options)
+A message box.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.messageBox | <code>object</code> | Messagebox as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_MessageBox_and_func"></a>
+
+##### messageBox.func : <code>string</code>
+Function input or output
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_head"></a>
+
+##### messageBox.head : <code>string</code>
+Head
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_description"></a>
+
+##### messageBox.description : <code>string</code>
+Description
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableType"></a>
+
+##### messageBox.variableType : <code>string</code>
+Variable type
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableName"></a>
+
+##### messageBox.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_variableValue"></a>
+
+##### messageBox.variableValue : <code>string</code>
+Variable value
+
+**Kind**: instance property of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+<a id="vscp_dot_wizard_dot_MessageBox_and_parse"></a>
+
+##### messageBox.parse($messageBox)
+Parse a messagebox object.
+
+**Kind**: instance method of [<code>MessageBox</code>](#vscp_dot_wizard_dot_MessageBox)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $messageBox | <code>object</code> | Messagebox as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInReg"></a>
+
+#### wizard.WriteBitInReg
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteBitInReg](#vscp_dot_wizard_dot_WriteBitInReg)
+    * [new vscp.wizard.WriteBitInReg(options)](#new_vscp_dot_wizard_dot_WriteBitInReg_new)
+    * [.pos](#vscp_dot_wizard_dot_WriteBitInReg_and_pos) : <code>number</code>
+    * [.page](#vscp_dot_wizard_dot_WriteBitInReg_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_wizard_dot_WriteBitInReg_and_offset) : <code>number</code>
+    * [.width](#vscp_dot_wizard_dot_WriteBitInReg_and_width) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteBitInReg_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteBitInReg_and_variableName) : <code>string</code>
+    * [.parse(writeBitInReg)](#vscp_dot_wizard_dot_WriteBitInReg_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteBitInReg_new"></a>
+
+##### new vscp.wizard.WriteBitInReg(options)
+Bit in register access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeBitInReg | <code>object</code> | write-bit-in-reg as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_pos"></a>
+
+##### writeBitInReg.pos : <code>number</code>
+Bit position
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_page"></a>
+
+##### writeBitInReg.page : <code>number</code>
+Register page
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_offset"></a>
+
+##### writeBitInReg.offset : <code>number</code>
+Register offset
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_width"></a>
+
+##### writeBitInReg.width : <code>number</code>
+Bit width
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_value"></a>
+
+##### writeBitInReg.value : <code>number</code>
+Value of bit width
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_variableName"></a>
+
+##### writeBitInReg.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+<a id="vscp_dot_wizard_dot_WriteBitInReg_and_parse"></a>
+
+##### writeBitInReg.parse(writeBitInReg)
+Parse a bit in register access method object.
+
+**Kind**: instance method of [<code>WriteBitInReg</code>](#vscp_dot_wizard_dot_WriteBitInReg)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| writeBitInReg | <code>object</code> | write-bit-in-reg as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction"></a>
+
+#### wizard.WriteBitInAbstraction
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteBitInAbstraction](#vscp_dot_wizard_dot_WriteBitInAbstraction)
+    * [new vscp.wizard.WriteBitInAbstraction(options)](#new_vscp_dot_wizard_dot_WriteBitInAbstraction_new)
+    * [.id](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_id) : <code>string</code>
+    * [.pos](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos) : <code>number</code>
+    * [.width](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_width) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName) : <code>string</code>
+    * [.parse($writeBitInAbstraction)](#vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteBitInAbstraction_new"></a>
+
+##### new vscp.wizard.WriteBitInAbstraction(options)
+Bit in abstraction access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeBitInAbstraction | <code>object</code> | write-bit-in-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_id"></a>
+
+##### writeBitInAbstraction.id : <code>string</code>
+Abstract value id
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_pos"></a>
+
+##### writeBitInAbstraction.pos : <code>number</code>
+Bit position
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_width"></a>
+
+##### writeBitInAbstraction.width : <code>number</code>
+Bit width
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_value"></a>
+
+##### writeBitInAbstraction.value : <code>number</code>
+Value of bit width
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_variableName"></a>
+
+##### writeBitInAbstraction.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteBitInAbstraction_and_parse"></a>
+
+##### writeBitInAbstraction.parse($writeBitInAbstraction)
+Parse a bit in abstraction access method object.
+
+**Kind**: instance method of [<code>WriteBitInAbstraction</code>](#vscp_dot_wizard_dot_WriteBitInAbstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeBitInAbstraction | <code>object</code> | write-bit-in-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteRegister"></a>
+
+#### wizard.WriteRegister
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteRegister](#vscp_dot_wizard_dot_WriteRegister)
+    * [new vscp.wizard.WriteRegister(options)](#new_vscp_dot_wizard_dot_WriteRegister_new)
+    * [.page](#vscp_dot_wizard_dot_WriteRegister_and_page) : <code>number</code>
+    * [.offset](#vscp_dot_wizard_dot_WriteRegister_and_offset) : <code>number</code>
+    * [.value](#vscp_dot_wizard_dot_WriteRegister_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteRegister_and_variableName) : <code>string</code>
+    * [.parse($writeRegister)](#vscp_dot_wizard_dot_WriteRegister_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteRegister_new"></a>
+
+##### new vscp.wizard.WriteRegister(options)
+Register access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeRegister | <code>object</code> | write-register as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteRegister_and_page"></a>
+
+##### writeRegister.page : <code>number</code>
+Register page
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_offset"></a>
+
+##### writeRegister.offset : <code>number</code>
+Register offset
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_value"></a>
+
+##### writeRegister.value : <code>number</code>
+Register value
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_variableName"></a>
+
+##### writeRegister.variableName : <code>string</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+<a id="vscp_dot_wizard_dot_WriteRegister_and_parse"></a>
+
+##### writeRegister.parse($writeRegister)
+Parse a register access method object.
+
+**Kind**: instance method of [<code>WriteRegister</code>](#vscp_dot_wizard_dot_WriteRegister)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeRegister | <code>object</code> | write-register as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteAbstraction"></a>
+
+#### wizard.WriteAbstraction
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.WriteAbstraction](#vscp_dot_wizard_dot_WriteAbstraction)
+    * [new vscp.wizard.WriteAbstraction(options)](#new_vscp_dot_wizard_dot_WriteAbstraction_new)
+    * [.id](#vscp_dot_wizard_dot_WriteAbstraction_and_id) : <code>string</code>
+    * [.value](#vscp_dot_wizard_dot_WriteAbstraction_and_value) : <code>number</code>
+    * [.variableName](#vscp_dot_wizard_dot_WriteAbstraction_and_variableName) : <code>number</code>
+    * [.parse($writeAbstraction)](#vscp_dot_wizard_dot_WriteAbstraction_and_parse)
+
+<a id="new_vscp_dot_wizard_dot_WriteAbstraction_new"></a>
+
+##### new vscp.wizard.WriteAbstraction(options)
+Abstraction access method.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.writeAbstraction | <code>object</code> | write-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_id"></a>
+
+##### writeAbstraction.id : <code>string</code>
+Abstract value id
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_value"></a>
+
+##### writeAbstraction.value : <code>number</code>
+Abstract value
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_variableName"></a>
+
+##### writeAbstraction.variableName : <code>number</code>
+Variable name
+
+**Kind**: instance property of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+<a id="vscp_dot_wizard_dot_WriteAbstraction_and_parse"></a>
+
+##### writeAbstraction.parse($writeAbstraction)
+Parse a abstraction access method object.
+
+**Kind**: instance method of [<code>WriteAbstraction</code>](#vscp_dot_wizard_dot_WriteAbstraction)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $writeAbstraction | <code>object</code> | write-abstraction as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe"></a>
+
+#### wizard.Recipe
+**Kind**: static class of [<code>wizard</code>](#vscp_dot_wizard)  
+
+* [.Recipe](#vscp_dot_wizard_dot_Recipe)
+    * [new vscp.wizard.Recipe(options)](#new_vscp_dot_wizard_dot_Recipe_new)
+    * [.name](#vscp_dot_wizard_dot_Recipe_and_name) : <code>string</code>
+    * [.description](#vscp_dot_wizard_dot_Recipe_and_description) : <code>string</code>
+    * [.writeBitInRegs](#vscp_dot_wizard_dot_Recipe_and_writeBitInRegs) : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+    * [.writeBitInAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions) : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+    * [.writeRegisters](#vscp_dot_wizard_dot_Recipe_and_writeRegisters) : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+    * [.writeAbstractions](#vscp_dot_wizard_dot_Recipe_and_writeAbstractions) : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+    * [.messageBoxes](#vscp_dot_wizard_dot_Recipe_and_messageBoxes) : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+    * [.mdf](#vscp_dot_wizard_dot_Recipe_and_mdf) : <code>object</code>
+    * [.parse($recipe)](#vscp_dot_wizard_dot_Recipe_and_parse)
+    * [.write(options)](#vscp_dot_wizard_dot_Recipe_and_write)
+
+<a id="new_vscp_dot_wizard_dot_Recipe_new"></a>
+
+##### new vscp.wizard.Recipe(options)
+A recipe.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.recipe | <code>object</code> | Recipe as jquery xml object |
+| options.mdf | <code>object</code> | MDF as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe_and_name"></a>
+
+##### recipe.name : <code>string</code>
+Recipe name
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_description"></a>
+
+##### recipe.description : <code>string</code>
+Recipe description
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeBitInRegs"></a>
+
+##### recipe.writeBitInRegs : [<code>Array.&lt;WriteBitInReg&gt;</code>](#vscp_dot_wizard_dot_WriteBitInReg)
+Bit access methods in registers
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeBitInAbstractions"></a>
+
+##### recipe.writeBitInAbstractions : <code>Array.&lt;vscp.wizard.WriteBitAbstractions&gt;</code>
+Bit access methods in abstract value
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeRegisters"></a>
+
+##### recipe.writeRegisters : [<code>Array.&lt;WriteRegister&gt;</code>](#vscp_dot_wizard_dot_WriteRegister)
+Register access methods
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_writeAbstractions"></a>
+
+##### recipe.writeAbstractions : [<code>Array.&lt;WriteAbstraction&gt;</code>](#vscp_dot_wizard_dot_WriteAbstraction)
+Abstract access methods
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_messageBoxes"></a>
+
+##### recipe.messageBoxes : [<code>Array.&lt;MessageBox&gt;</code>](#vscp_dot_wizard_dot_MessageBox)
+Messageboxes
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_mdf"></a>
+
+##### recipe.mdf : <code>object</code>
+MDF
+
+**Kind**: instance property of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+<a id="vscp_dot_wizard_dot_Recipe_and_parse"></a>
+
+##### recipe.parse($recipe)
+Parse a recipe object.
+
+**Kind**: instance method of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| $recipe | <code>object</code> | Recipe as jquery xml object |
+
+<a id="vscp_dot_wizard_dot_Recipe_and_write"></a>
+
+##### recipe.write(options)
+Write a recipe.
+
+**Kind**: instance method of [<code>Recipe</code>](#vscp_dot_wizard_dot_Recipe)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.client | [<code>Client</code>](#vscp_dot_ws_dot_Client) | VSCP websocket client |
+| options.nodeId | <code>number</code> | Node id |
+
+<a id="vscp_dot_wizard_dot_getRecipes"></a>
+
+#### wizard.getRecipes(options) ⇒ [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe)
+Get recipes from a MDF in JSON format.
+
+**Kind**: static method of [<code>wizard</code>](#vscp_dot_wizard)  
+**Returns**: [<code>Array.&lt;Recipe&gt;</code>](#vscp_dot_wizard_dot_Recipe) - Recipe array  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| options.mdf | <code>object</code> | The mdf as jquery xml object |
 
 <a id="vscp_dot_ws"></a>
 

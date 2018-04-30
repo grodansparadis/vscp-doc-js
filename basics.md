@@ -21,7 +21,7 @@ Include the following javascript files to your HTML:
 <script type="text/javascript" src="js/vscp-js/vscpws.js"></script>
 ```
 
-The websocket API supports only callbacks to master the asynchronous communication. If you like jquery promises, you have to wrap them around by yourself. jquery promises may be supported in the future as well, similar to the REST API.
+The websocket API supports only callbacks to master the asynchronous communication. If you like native promises, you have to wrap them around by yourself. Promises may be supported in the future as well, similar to the REST API.
 
 #### Open connection
 
@@ -43,7 +43,7 @@ vscpClient.connect({
 });
 ```
 
-Note, the websocket API doesn't support jquery promises yet, as the REST client API.
+Note, the websocket API doesn't support native promises yet, as the REST client API.
 
 #### Close connection
 
@@ -108,7 +108,7 @@ vscpClient.start({
 
 Include the following javascript files to your HTML:
 ```js
-<!-- jQuery used for ajax calls and promises -->
+<!-- jQuery used for ajax calls -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- VSCP common core library -->
 <script type="text/javascript" src="js/vscp-js/vscp.js"></script>
@@ -116,7 +116,7 @@ Include the following javascript files to your HTML:
 <script type="text/javascript" src="js/vscp-js/vscprest.js"></script>
 ```
 
-The REST API supports callbacks and jquery promises to master the asynchronous communication.
+The REST API supports callbacks and native promises to master the asynchronous communication.
 Only the first two of the following examples will shows both possibilities. All others continoue using promises.
 
 #### Open connection
@@ -140,7 +140,7 @@ vscpClient.openSession({
 });
 ```
 
-Example using jquery promises:
+Example using native promises:
 
 ```js
 var vscpClient = new vscp.rest.Client({
@@ -151,10 +151,10 @@ vscpClient.openSession({
     user: "admin",
     password: "secret"
 })
-.done(function(){
+.then(function(){
     // Implement your code here ...
 })
-.fail(function(){
+.catch(function(){
     // Implement your code here ...
 });
 
@@ -175,14 +175,14 @@ vscpClient.closeSession({
 });
 ```
 
-Example using jquery promises:
+Example using native promises:
 
 ```js
 vscpClient.closeSession()
-.done(function(){
+.then(function(){
     // Implement your code here ...
 })
-.fail(function() {
+.catch(function() {
     // Implement your code here ...
 });
 ```
@@ -198,10 +198,10 @@ vscpRestClient.sendEvent({
         vscpData:       [ 138, 0, 255 ]
     })
 })
-.done(function(data) {
+.then(function(data) {
     // Implement your code here ...
 })
-.fail(function(data) {
+.catch(function(data) {
     // Implement your code here ...
 });
 ```
@@ -212,7 +212,7 @@ Reading a single event:
 
 ```js
 vscpClient.readEvent()
-.done(function(data) {
+.then(function(data) {
 
     // Event received?
     if (0 < data.response.count) {
@@ -221,7 +221,7 @@ vscpClient.readEvent()
         // Implement your code here ...
     }
 })
-.fail(function(data) {
+.catch(function(data) {
     // Implement your code here ...
 })
 ```
@@ -232,7 +232,7 @@ Reading 10 events:
 vscpClient.readEvent({
     count: 10
 })
-.done(function(data) {
+.then(function(data) {
 
     var index = 0;
     var evt = null;
@@ -247,7 +247,7 @@ vscpClient.readEvent({
         }
     }
 })
-.fail(function(data) {
+.catch(function(data) {
     // Implement your code here ...
 })
 ```

@@ -71,7 +71,11 @@ vscpClient.connect({
 Example using callbacks:
 
 ``` js
-vscpClient.disconnect();
+vscpClient.disconnect({
+    onSuccess: function(client) {
+        // Implement your code here ...
+    }
+});
 ```
 
 Example using native promises:

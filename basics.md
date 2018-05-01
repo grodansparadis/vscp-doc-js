@@ -21,11 +21,14 @@ Include the following javascript files to your HTML:
 <script type="text/javascript" src="js/vscp-js/vscpws.js"></script>
 ```
 
-The websocket API supports only callbacks to master the asynchronous communication. If you like native promises, you have to wrap them around by yourself. Promises may be supported in the future as well, similar to the REST API.
+The websocket API supports callbacks and Promise to handle the asynchronous communication.
+Only the first two of the following examples will shows both possibilities. All others continoue using promises.
 
 #### Open connection
 
-```js
+Example using callbacks:
+
+``` js
 var vscpClient = new vscp.ws.Client();
 
 vscpClient.connect({
@@ -43,33 +46,66 @@ vscpClient.connect({
 });
 ```
 
-Note, the websocket API doesn't support native promises yet, as the REST client API.
+Example using native promises:
+
+``` js
+var vscpClient = new vscp.ws.Client();
+
+vscpClient.connect({
+    url: "ws://localhost:8884/ws1",
+    userName: "admin",
+    password: "secret",
+    vscpkey: "A4A86F7D7E119BA3F0CD06881E371B989B33B6D606A863B633EF529D64544F8E",
+    authdomain: "mydomain.com"
+})
+.then(function() {
+    // Implement your code here ...
+})
+.catch(function() {
+    // Implement your code here ...
+});
+```
 
 #### Close connection
 
-```js
+Example using callbacks:
+
+``` js
 vscpClient.disconnect();
+```
+
+Example using native promises:
+
+``` js
+vscpClient.disconnect()
+.then(function() {
+    // Implement your code here ...
+})
+.catch(function() {
+    // Implement your code here ...
+});
 ```
 
 #### Send events
 
-```js
+``` js
 vscpClient.sendEvent({
     event: new vscp.Event({
         vscpClass:      vscp.constants.classes.VSCP_CLASS1_CONTROL,
         vscpType:       vscp.constants.types.VSCP_TYPE_CONTROL_TURNON,
         vscpPriority:   vscp.constants.priorities.PRIORITY_3_NORMAL,
         vscpData:       [ 0, 1, 12 ]
-    }),
+    })
+})
+.then(function() {
+    console.info("TURNON event sent.");
 
-    onSuccess: function(client) {
-        console.info("TURNON event sent.");
-    },
+    // Implement your code here ...
+})
+.catch(function() {
+    console.error("Failed to send TURNON event.");
 
-    onError: function(client) {
-        console.error("Failed to send TURNON event.");
-    }
-
+    // Implement your code here ...
 });
 ```
 
@@ -77,7 +113,7 @@ vscpClient.sendEvent({
 
 First add a event listener to the client.
 
-```js
+``` js
 
 // Catch all events and show them in the trace tab.
 var eventListener = function(client, evt) {
@@ -90,24 +126,25 @@ vscpClient.addEventListener(eventListener);
 
 In the second step, start listening.
 
-```js
+``` js
 // Start receiving VSCP events
-vscpClient.start({
+vscpClient.start()
+.then(function() {
+    console.info("Receiving VSCP events started.");
 
-    onSuccess: function(client) {
-        console.info("Receiving VSCP events started.");
-    },
+    // Implement your code here ...
+})
+.catch(function() {
+    console.error("Failed to start receiving VSCP events.");
 
-    onError: function(client) {
-        console.error("Failed to start receiving VSCP events.");
-    }
+    // Implement your code here ...
 });
 ```
 
 ### REST interface
 
 Include the following javascript files to your HTML:
-```js
+``` js
 <!-- jQuery used for ajax calls -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- VSCP common core library -->
@@ -116,14 +153,14 @@ Include the following javascript files to your HTML:
 <script type="text/javascript" src="js/vscp-js/vscprest.js"></script>
 ```
 
-The REST API supports callbacks and native promises to master the asynchronous communication.
+The websocket API supports callbacks and Promise to handle the asynchronous communication.
 Only the first two of the following examples will shows both possibilities. All others continoue using promises.
 
 #### Open connection
 
 Example using callbacks:
 
-```js
+``` js
 var vscpClient = new vscp.rest.Client({
     baseUrl: "http://localhost:8884"
 });
@@ -142,7 +179,7 @@ vscpClient.openSession({
 
 Example using native promises:
 
-```js
+``` js
 var vscpClient = new vscp.rest.Client({
     baseUrl: "http://localhost:8884"
 });
@@ -164,7 +201,7 @@ vscpClient.openSession({
 
 Example using callbacks:
 
-```js
+``` js
 vscpClient.closeSession({
     onSuccess: function() {
         // Implement your code here ...
@@ -177,7 +214,7 @@ vscpClient.closeSession({
 
 Example using native promises:
 
-```js
+``` js
 vscpClient.closeSession()
 .then(function(){
     // Implement your code here ...
@@ -189,7 +226,7 @@ vscpClient.closeSession()
 
 #### Send events
 
-```js
+``` js
 vscpRestClient.sendEvent({
     event: new vscp.Event({
         vscpClass:      vscp.constants.classes.VSCP_CLASS1_INFORMATION,
@@ -210,7 +247,7 @@ vscpRestClient.sendEvent({
 
 Reading a single event:
 
-```js
+``` js
 vscpClient.readEvent()
 .then(function(data) {
 
@@ -228,7 +265,7 @@ vscpClient.readEvent()
 
 Reading 10 events:
 
-```js
+``` js
 vscpClient.readEvent({
     count: 10
 })

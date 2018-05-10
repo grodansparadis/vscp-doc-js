@@ -9,5 +9,5 @@
 
 * [Reference](api.md)
     * [Event](api.md#vscp_dot_Event)
-    * [REST interface](api.md#vscp_dot_ws)
-    * [Websocket interface](api.md#vscp_dot_rest)
+    * [REST interface](api.md#vscp_dot_rest)
+    * [Websocket interface](api.md#vscp_dot_ws)

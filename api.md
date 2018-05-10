@@ -256,22 +256,22 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
             * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
             * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+            * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
     * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
     * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
     * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
@@ -2842,7 +2842,7 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn object with the jquery promise interface.
+The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
 
 
 | Param | Type | Description |
@@ -2882,7 +2882,7 @@ Session key
 Open a session.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2898,7 +2898,7 @@ Open a session.
 Close a session.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2912,7 +2912,7 @@ Close a session.
 Get status and how many events are in the queue.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2926,7 +2926,7 @@ Get status and how many events are in the queue.
 Send a VSCP event.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2941,7 +2941,7 @@ Send a VSCP event.
 Read one or more VSCP events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2956,7 +2956,7 @@ Read one or more VSCP events.
 Set filter.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2978,7 +2978,7 @@ Set filter.
 Clear the VSCP event queue on the server side.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2992,7 +2992,7 @@ Clear the VSCP event queue on the server side.
 Create a a VSCP remote variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -3012,7 +3012,7 @@ Create a a VSCP remote variable.
 Read a value from a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -3027,7 +3027,7 @@ Read a value from a VSCP server variable.
 Write a value to a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -3044,7 +3044,7 @@ Write a value to a VSCP server variable.
 Remove a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -3059,7 +3059,7 @@ Remove a VSCP server variable.
 List all VSCP server variables.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -3903,22 +3903,22 @@ VSCP websocket api functions
         * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
         * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
         * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-        * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-        * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+        * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+        * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
 
 <a id="vscp_dot_ws_dot_Client"></a>
 
@@ -3955,22 +3955,22 @@ VSCP websocket api functions
     * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
     * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
     * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-    * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-    * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+    * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+    * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
 
 <a id="new_vscp_dot_ws_dot_Client_new"></a>
 
@@ -4186,10 +4186,11 @@ This function is called for any websocket message (VSCP server response message)
 
 <a id="vscp_dot_ws_dot_Client_and_connect"></a>
 
-##### client.connect(options)
+##### client.connect(options) ⇒ <code>object</code>
 Connect to a VSCP server with the given URL.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4204,16 +4205,24 @@ Connect to a VSCP server with the given URL.
 
 <a id="vscp_dot_ws_dot_Client_and_disconnect"></a>
 
-##### client.disconnect()
+##### client.disconnect(options) ⇒ <code>object</code>
 Disconnect from a VSCP server.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| [options.onSuccess] | <code>function</code> | Function which is called on a successful disconnection. |
+
 <a id="vscp_dot_ws_dot_Client_and_start"></a>
 
-##### client.start(options)
+##### client.start(options) ⇒ <code>object</code>
 Start receiving events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4223,10 +4232,11 @@ Start receiving events.
 
 <a id="vscp_dot_ws_dot_Client_and_stop"></a>
 
-##### client.stop(options)
+##### client.stop(options) ⇒ <code>object</code>
 Stop receiving events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4236,10 +4246,11 @@ Stop receiving events.
 
 <a id="vscp_dot_ws_dot_Client_and_clearQueue"></a>
 
-##### client.clearQueue(options)
+##### client.clearQueue(options) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4249,10 +4260,11 @@ Clear the VSCP event queue on the server side.
 
 <a id="vscp_dot_ws_dot_Client_and_sendEvent"></a>
 
-##### client.sendEvent(options)
+##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event to the VSCP server.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4263,31 +4275,33 @@ Send a VSCP event to the VSCP server.
 
 <a id="vscp_dot_ws_dot_Client_and_setFilter"></a>
 
-##### client.setFilter(options)
+##### client.setFilter(options) ⇒ <code>object</code>
 Set a filter in the VSCP server for VSCP events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | Options |
-| [options.filterPriority] | <code>number</code> | Priority filter |
-| [options.filterClass] | <code>number</code> | Class filter |
-| [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
-| [options.maskPriority] | <code>number</code> | Priority mask |
-| [options.maskClass] | <code>number</code> | Class mask |
-| [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
+| [options.filterPriority] | <code>number</code> | Priority filter (default: 0) |
+| [options.filterClass] | <code>number</code> | Class filter (default: 0) |
+| [options.filterType] | <code>number</code> | Type filter (default: 0) |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter (default: 0) |
+| [options.maskPriority] | <code>number</code> | Priority mask (default: 0) |
+| [options.maskClass] | <code>number</code> | Class mask (default: 0xffff) |
+| [options.maskType] | <code>number</code> | Type mask (default: 0xffff) |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask (default: 0) |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
 <a id="vscp_dot_ws_dot_Client_and_createVar"></a>
 
-##### client.createVar(options)
+##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4303,10 +4317,11 @@ Create a a VSCP remote variable.
 
 <a id="vscp_dot_ws_dot_Client_and_readVar"></a>
 
-##### client.readVar(options)
+##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4317,10 +4332,11 @@ Read a value from a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_writeVar"></a>
 
-##### client.writeVar(options)
+##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4333,10 +4349,11 @@ Write a value to a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_resetVar"></a>
 
-##### client.resetVar(options)
+##### client.resetVar(options) ⇒ <code>object</code>
 Reset a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4347,10 +4364,11 @@ Reset a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_removeVar"></a>
 
-##### client.removeVar(options)
+##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4361,10 +4379,11 @@ Remove a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_lengthVar"></a>
 
-##### client.lengthVar(options)
+##### client.lengthVar(options) ⇒ <code>object</code>
 Get a VSCP server variable length.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4375,10 +4394,11 @@ Get a VSCP server variable length.
 
 <a id="vscp_dot_ws_dot_Client_and_lastChangeVar"></a>
 
-##### client.lastChangeVar(options)
+##### client.lastChangeVar(options) ⇒ <code>object</code>
 Get last change of a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4389,10 +4409,11 @@ Get last change of a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_listVar"></a>
 
-##### client.listVar(options)
+##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4404,11 +4425,12 @@ List all VSCP server variables.
 
 <a id="vscp_dot_ws_dot_Client_and_readTable"></a>
 
-##### client.readTable(options)
+##### client.readTable(options) ⇒ <code>object</code>
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -4776,22 +4798,22 @@ Namespace for all functionality of the VSCP provided libraries.
             * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
             * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
             * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-            * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-            * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+            * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+            * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+            * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+            * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+            * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+            * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+            * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+            * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+            * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+            * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+            * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+            * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+            * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+            * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+            * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+            * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
     * [.getVarTypeName(n)](#vscp_dot_getVarTypeName) ⇒ <code>string</code>
     * [.getVarTypeNumerical(str)](#vscp_dot_getVarTypeNumerical) ⇒ <code>number</code>
     * [.getEditorModeFromType(n)](#vscp_dot_getEditorModeFromType) ⇒ <code>string</code>
@@ -7362,7 +7384,7 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn object with the jquery promise interface.
+The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
 
 
 | Param | Type | Description |
@@ -7402,7 +7424,7 @@ Session key
 Open a session.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7418,7 +7440,7 @@ Open a session.
 Close a session.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7432,7 +7454,7 @@ Close a session.
 Get status and how many events are in the queue.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7446,7 +7468,7 @@ Get status and how many events are in the queue.
 Send a VSCP event.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7461,7 +7483,7 @@ Send a VSCP event.
 Read one or more VSCP events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7476,7 +7498,7 @@ Read one or more VSCP events.
 Set filter.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7498,7 +7520,7 @@ Set filter.
 Clear the VSCP event queue on the server side.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7512,7 +7534,7 @@ Clear the VSCP event queue on the server side.
 Create a a VSCP remote variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7532,7 +7554,7 @@ Create a a VSCP remote variable.
 Read a value from a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7547,7 +7569,7 @@ Read a value from a VSCP server variable.
 Write a value to a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7564,7 +7586,7 @@ Write a value to a VSCP server variable.
 Remove a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -7579,7 +7601,7 @@ Remove a VSCP server variable.
 List all VSCP server variables.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_rest_dot_Client)  
-**Returns**: <code>object</code> - jquery promise (deferred object)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8423,22 +8445,22 @@ VSCP websocket api functions
         * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
         * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
         * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-        * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-        * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+        * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+        * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+        * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+        * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+        * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+        * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+        * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+        * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+        * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+        * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+        * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+        * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+        * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+        * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+        * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+        * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
 
 <a id="vscp_dot_ws_dot_Client"></a>
 
@@ -8475,22 +8497,22 @@ VSCP websocket api functions
     * [.onWebSocketOpen()](#vscp_dot_ws_dot_Client_and_onWebSocketOpen)
     * [.onWebSocketClose()](#vscp_dot_ws_dot_Client_and_onWebSocketClose)
     * [.onWebSocketMessage(msg)](#vscp_dot_ws_dot_Client_and_onWebSocketMessage)
-    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect)
-    * [.disconnect()](#vscp_dot_ws_dot_Client_and_disconnect)
-    * [.start(options)](#vscp_dot_ws_dot_Client_and_start)
-    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop)
-    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue)
-    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent)
-    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter)
-    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar)
-    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar)
-    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar)
-    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar)
-    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar)
-    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar)
-    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar)
-    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar)
-    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable)
+    * [.connect(options)](#vscp_dot_ws_dot_Client_and_connect) ⇒ <code>object</code>
+    * [.disconnect(options)](#vscp_dot_ws_dot_Client_and_disconnect) ⇒ <code>object</code>
+    * [.start(options)](#vscp_dot_ws_dot_Client_and_start) ⇒ <code>object</code>
+    * [.stop(options)](#vscp_dot_ws_dot_Client_and_stop) ⇒ <code>object</code>
+    * [.clearQueue(options)](#vscp_dot_ws_dot_Client_and_clearQueue) ⇒ <code>object</code>
+    * [.sendEvent(options)](#vscp_dot_ws_dot_Client_and_sendEvent) ⇒ <code>object</code>
+    * [.setFilter(options)](#vscp_dot_ws_dot_Client_and_setFilter) ⇒ <code>object</code>
+    * [.createVar(options)](#vscp_dot_ws_dot_Client_and_createVar) ⇒ <code>object</code>
+    * [.readVar(options)](#vscp_dot_ws_dot_Client_and_readVar) ⇒ <code>object</code>
+    * [.writeVar(options)](#vscp_dot_ws_dot_Client_and_writeVar) ⇒ <code>object</code>
+    * [.resetVar(options)](#vscp_dot_ws_dot_Client_and_resetVar) ⇒ <code>object</code>
+    * [.removeVar(options)](#vscp_dot_ws_dot_Client_and_removeVar) ⇒ <code>object</code>
+    * [.lengthVar(options)](#vscp_dot_ws_dot_Client_and_lengthVar) ⇒ <code>object</code>
+    * [.lastChangeVar(options)](#vscp_dot_ws_dot_Client_and_lastChangeVar) ⇒ <code>object</code>
+    * [.listVar(options)](#vscp_dot_ws_dot_Client_and_listVar) ⇒ <code>object</code>
+    * [.readTable(options)](#vscp_dot_ws_dot_Client_and_readTable) ⇒ <code>object</code>
 
 <a id="new_vscp_dot_ws_dot_Client_new"></a>
 
@@ -8706,10 +8728,11 @@ This function is called for any websocket message (VSCP server response message)
 
 <a id="vscp_dot_ws_dot_Client_and_connect"></a>
 
-##### client.connect(options)
+##### client.connect(options) ⇒ <code>object</code>
 Connect to a VSCP server with the given URL.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8724,16 +8747,24 @@ Connect to a VSCP server with the given URL.
 
 <a id="vscp_dot_ws_dot_Client_and_disconnect"></a>
 
-##### client.disconnect()
+##### client.disconnect(options) ⇒ <code>object</code>
 Disconnect from a VSCP server.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| [options.onSuccess] | <code>function</code> | Function which is called on a successful disconnection. |
+
 <a id="vscp_dot_ws_dot_Client_and_start"></a>
 
-##### client.start(options)
+##### client.start(options) ⇒ <code>object</code>
 Start receiving events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8743,10 +8774,11 @@ Start receiving events.
 
 <a id="vscp_dot_ws_dot_Client_and_stop"></a>
 
-##### client.stop(options)
+##### client.stop(options) ⇒ <code>object</code>
 Stop receiving events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8756,10 +8788,11 @@ Stop receiving events.
 
 <a id="vscp_dot_ws_dot_Client_and_clearQueue"></a>
 
-##### client.clearQueue(options)
+##### client.clearQueue(options) ⇒ <code>object</code>
 Clear the VSCP event queue on the server side.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8769,10 +8802,11 @@ Clear the VSCP event queue on the server side.
 
 <a id="vscp_dot_ws_dot_Client_and_sendEvent"></a>
 
-##### client.sendEvent(options)
+##### client.sendEvent(options) ⇒ <code>object</code>
 Send a VSCP event to the VSCP server.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8783,31 +8817,33 @@ Send a VSCP event to the VSCP server.
 
 <a id="vscp_dot_ws_dot_Client_and_setFilter"></a>
 
-##### client.setFilter(options)
+##### client.setFilter(options) ⇒ <code>object</code>
 Set a filter in the VSCP server for VSCP events.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>object</code> | Options |
-| [options.filterPriority] | <code>number</code> | Priority filter |
-| [options.filterClass] | <code>number</code> | Class filter |
-| [options.filterType] | <code>number</code> | Type filter |
-| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter |
-| [options.maskPriority] | <code>number</code> | Priority mask |
-| [options.maskClass] | <code>number</code> | Class mask |
-| [options.maskType] | <code>number</code> | Type mask |
-| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask |
+| [options.filterPriority] | <code>number</code> | Priority filter (default: 0) |
+| [options.filterClass] | <code>number</code> | Class filter (default: 0) |
+| [options.filterType] | <code>number</code> | Type filter (default: 0) |
+| [options.filterGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID filter (default: 0) |
+| [options.maskPriority] | <code>number</code> | Priority mask (default: 0) |
+| [options.maskClass] | <code>number</code> | Class mask (default: 0xffff) |
+| [options.maskType] | <code>number</code> | Type mask (default: 0xffff) |
+| [options.maskGuid] | <code>Array.&lt;number&gt;</code> \| <code>string</code> | GUID mask (default: 0) |
 | [options.onSuccess] | <code>function</code> | Function which is called on a successful operation |
 | [options.onError] | <code>function</code> | Function which is called on a failed operation |
 
 <a id="vscp_dot_ws_dot_Client_and_createVar"></a>
 
-##### client.createVar(options)
+##### client.createVar(options) ⇒ <code>object</code>
 Create a a VSCP remote variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8823,10 +8859,11 @@ Create a a VSCP remote variable.
 
 <a id="vscp_dot_ws_dot_Client_and_readVar"></a>
 
-##### client.readVar(options)
+##### client.readVar(options) ⇒ <code>object</code>
 Read a value from a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8837,10 +8874,11 @@ Read a value from a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_writeVar"></a>
 
-##### client.writeVar(options)
+##### client.writeVar(options) ⇒ <code>object</code>
 Write a value to a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8853,10 +8891,11 @@ Write a value to a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_resetVar"></a>
 
-##### client.resetVar(options)
+##### client.resetVar(options) ⇒ <code>object</code>
 Reset a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8867,10 +8906,11 @@ Reset a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_removeVar"></a>
 
-##### client.removeVar(options)
+##### client.removeVar(options) ⇒ <code>object</code>
 Remove a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8881,10 +8921,11 @@ Remove a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_lengthVar"></a>
 
-##### client.lengthVar(options)
+##### client.lengthVar(options) ⇒ <code>object</code>
 Get a VSCP server variable length.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8895,10 +8936,11 @@ Get a VSCP server variable length.
 
 <a id="vscp_dot_ws_dot_Client_and_lastChangeVar"></a>
 
-##### client.lastChangeVar(options)
+##### client.lastChangeVar(options) ⇒ <code>object</code>
 Get last change of a VSCP server variable.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8909,10 +8951,11 @@ Get last change of a VSCP server variable.
 
 <a id="vscp_dot_ws_dot_Client_and_listVar"></a>
 
-##### client.listVar(options)
+##### client.listVar(options) ⇒ <code>object</code>
 List all VSCP server variables.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -8924,11 +8967,12 @@ List all VSCP server variables.
 
 <a id="vscp_dot_ws_dot_Client_and_readTable"></a>
 
-##### client.readTable(options)
+##### client.readTable(options) ⇒ <code>object</code>
 Get data from a table.
 If "begin" and "end" are omitted, the whole table is returned.
 
 **Kind**: instance method of [<code>Client</code>](#vscp_dot_ws_dot_Client)  
+**Returns**: <code>object</code> - Promise  
 
 | Param | Type | Description |
 | --- | --- | --- |

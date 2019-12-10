@@ -5,8 +5,8 @@ Namespace for all functionality of the VSCP provided libraries.
 
 **Kind**: global namespace  
 
-* [vscp](#vscp) : `object`
-    * [.Event](#vscp_dot_Event)
+* [vscp](#vscp_dot_Event) : `object`
+    * [.Event](#vscp_dot_events)
         * [new vscp.Event(options)](#new_vscp_dot_Event_new)
         * [.vscpHead](#vscp_dot_Event_plus_vscpHead) : `number`
         * [.vscpClass](#vscp_dot_Event_plus_vscpClass) : `number`
@@ -1394,7 +1394,8 @@ Register value
 <a id="vscp_dot_mdf_dot_Register_plus_dirty"></a>
 
 ##### register.dirty : `number`
-Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+Marks the register value dirty, which means the user changed it.
+It can be used to detect which registers have to be written to the node.
 
 **Kind**: instance property of [`Register`](#vscp.mdf.Register)  
 <a id="vscp_dot_mdf_dot_Register_plus_userData"></a>
@@ -1503,7 +1504,8 @@ Abstraction default value
 <a id="vscp_dot_mdf_dot_Abstraction_plus_dirty"></a>
 
 ##### abstraction.dirty : `number`
-Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+Marks the abstraction value dirty, which means the user changed it.
+It can be used to detect which abstractions have to be written to the node.
 
 **Kind**: instance property of [`Abstraction`](#vscp.mdf.Abstraction)  
 <a id="vscp_dot_mdf_dot_Abstraction_plus_userData"></a>
@@ -2449,7 +2451,9 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
+The VSCP client class handles the basic REST api of the VSCP daemon.
+The function interface uses jquery ajax call in the background and will
+return a Promise.
 
 
 | Param | Type | Description |
@@ -2715,7 +2719,8 @@ VSCP service supporting functions
 <a id="new_vscp_dot_service_dot_Container_new"></a>
 
 ##### new vscp.service.Container(options)
-The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+The container is used to store javascript objects in a daemon variable as string.
+It supports one or more objects in a single variable!
 
 
 | Param | Type | Description |
@@ -2764,7 +2769,8 @@ Create a container at the daemon.
 <a id="vscp_dot_service_dot_Container_plus_write"></a>
 
 ##### container.write(options)
-Write the container to a daemon variable.The container must exist at the daemon!
+Write the container to a daemon variable.
+The container must exist at the daemon!
 
 **Kind**: instance method of [`Container`](#vscp.service.Container)  
 
@@ -2796,7 +2802,8 @@ VSCP response timeout in ms
 <a id="vscp_dot_service_dot_whoIsThere"></a>
 
 #### service.whoIsThere(options)
-Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+Request a response from all nodes on the communication bus and returns
+their GUID and MDF URL.
 
 **Kind**: static method of [`service`](#vscp.service)  
 
@@ -5543,7 +5550,8 @@ Register value
 <a id="vscp_dot_mdf_dot_Register_plus_dirty"></a>
 
 ##### register.dirty : `number`
-Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+Marks the register value dirty, which means the user changed it.
+It can be used to detect which registers have to be written to the node.
 
 **Kind**: instance property of [`Register`](#vscp.mdf.Register)  
 <a id="vscp_dot_mdf_dot_Register_plus_userData"></a>
@@ -5652,7 +5660,8 @@ Abstraction default value
 <a id="vscp_dot_mdf_dot_Abstraction_plus_dirty"></a>
 
 ##### abstraction.dirty : `number`
-Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+Marks the abstraction value dirty, which means the user changed it.
+It can be used to detect which abstractions have to be written to the node.
 
 **Kind**: instance property of [`Abstraction`](#vscp.mdf.Abstraction)  
 <a id="vscp_dot_mdf_dot_Abstraction_plus_userData"></a>
@@ -6598,7 +6607,9 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
+The VSCP client class handles the basic REST api of the VSCP daemon.
+The function interface uses jquery ajax call in the background and will
+return a Promise.
 
 
 | Param | Type | Description |
@@ -6864,7 +6875,8 @@ VSCP service supporting functions
 <a id="new_vscp_dot_service_dot_Container_new"></a>
 
 ##### new vscp.service.Container(options)
-The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+The container is used to store javascript objects in a daemon variable as string.
+It supports one or more objects in a single variable!
 
 
 | Param | Type | Description |
@@ -6913,7 +6925,8 @@ Create a container at the daemon.
 <a id="vscp_dot_service_dot_Container_plus_write"></a>
 
 ##### container.write(options)
-Write the container to a daemon variable.The container must exist at the daemon!
+Write the container to a daemon variable.
+The container must exist at the daemon!
 
 **Kind**: instance method of [`Container`](#vscp.service.Container)  
 
@@ -6945,7 +6958,8 @@ VSCP response timeout in ms
 <a id="vscp_dot_service_dot_whoIsThere"></a>
 
 #### service.whoIsThere(options)
-Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+Request a response from all nodes on the communication bus and returns
+their GUID and MDF URL.
 
 **Kind**: static method of [`service`](#vscp.service)  
 
@@ -9692,7 +9706,8 @@ Register value
 <a id="vscp_dot_mdf_dot_Register_plus_dirty"></a>
 
 ##### register.dirty : `number`
-Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+Marks the register value dirty, which means the user changed it.
+It can be used to detect which registers have to be written to the node.
 
 **Kind**: instance property of [`Register`](#vscp.mdf.Register)  
 <a id="vscp_dot_mdf_dot_Register_plus_userData"></a>
@@ -9801,7 +9816,8 @@ Abstraction default value
 <a id="vscp_dot_mdf_dot_Abstraction_plus_dirty"></a>
 
 ##### abstraction.dirty : `number`
-Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+Marks the abstraction value dirty, which means the user changed it.
+It can be used to detect which abstractions have to be written to the node.
 
 **Kind**: instance property of [`Abstraction`](#vscp.mdf.Abstraction)  
 <a id="vscp_dot_mdf_dot_Abstraction_plus_userData"></a>
@@ -10747,7 +10763,9 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
+The VSCP client class handles the basic REST api of the VSCP daemon.
+The function interface uses jquery ajax call in the background and will
+return a Promise.
 
 
 | Param | Type | Description |
@@ -11013,7 +11031,8 @@ VSCP service supporting functions
 <a id="new_vscp_dot_service_dot_Container_new"></a>
 
 ##### new vscp.service.Container(options)
-The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+The container is used to store javascript objects in a daemon variable as string.
+It supports one or more objects in a single variable!
 
 
 | Param | Type | Description |
@@ -11062,7 +11081,8 @@ Create a container at the daemon.
 <a id="vscp_dot_service_dot_Container_plus_write"></a>
 
 ##### container.write(options)
-Write the container to a daemon variable.The container must exist at the daemon!
+Write the container to a daemon variable.
+The container must exist at the daemon!
 
 **Kind**: instance method of [`Container`](#vscp.service.Container)  
 
@@ -11094,7 +11114,8 @@ VSCP response timeout in ms
 <a id="vscp_dot_service_dot_whoIsThere"></a>
 
 #### service.whoIsThere(options)
-Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+Request a response from all nodes on the communication bus and returns
+their GUID and MDF URL.
 
 **Kind**: static method of [`service`](#vscp.service)  
 
@@ -13841,7 +13862,8 @@ Register value
 <a id="vscp_dot_mdf_dot_Register_plus_dirty"></a>
 
 ##### register.dirty : `number`
-Marks the register value dirty, which means the user changed it.It can be used to detect which registers have to be written to the node.
+Marks the register value dirty, which means the user changed it.
+It can be used to detect which registers have to be written to the node.
 
 **Kind**: instance property of [`Register`](#vscp.mdf.Register)  
 <a id="vscp_dot_mdf_dot_Register_plus_userData"></a>
@@ -13950,7 +13972,8 @@ Abstraction default value
 <a id="vscp_dot_mdf_dot_Abstraction_plus_dirty"></a>
 
 ##### abstraction.dirty : `number`
-Marks the abstraction value dirty, which means the user changed it.It can be used to detect which abstractions have to be written to the node.
+Marks the abstraction value dirty, which means the user changed it.
+It can be used to detect which abstractions have to be written to the node.
 
 **Kind**: instance property of [`Abstraction`](#vscp.mdf.Abstraction)  
 <a id="vscp_dot_mdf_dot_Abstraction_plus_userData"></a>
@@ -14896,7 +14919,9 @@ VSCP REST api functions
 <a id="new_vscp_dot_rest_dot_Client_new"></a>
 
 ##### new vscp.rest.Client(config)
-The VSCP client class handles the basic REST api of the VSCP daemon.The function interface uses jquery ajax call in the background and willreturn a Promise.
+The VSCP client class handles the basic REST api of the VSCP daemon.
+The function interface uses jquery ajax call in the background and will
+return a Promise.
 
 
 | Param | Type | Description |
@@ -15162,7 +15187,8 @@ VSCP service supporting functions
 <a id="new_vscp_dot_service_dot_Container_new"></a>
 
 ##### new vscp.service.Container(options)
-The container is used to store javascript objects in a daemon variable as string.It supports one or more objects in a single variable!
+The container is used to store javascript objects in a daemon variable as string.
+It supports one or more objects in a single variable!
 
 
 | Param | Type | Description |
@@ -15211,7 +15237,8 @@ Create a container at the daemon.
 <a id="vscp_dot_service_dot_Container_plus_write"></a>
 
 ##### container.write(options)
-Write the container to a daemon variable.The container must exist at the daemon!
+Write the container to a daemon variable.
+The container must exist at the daemon!
 
 **Kind**: instance method of [`Container`](#vscp.service.Container)  
 
@@ -15243,7 +15270,8 @@ VSCP response timeout in ms
 <a id="vscp_dot_service_dot_whoIsThere"></a>
 
 #### service.whoIsThere(options)
-Request a response from all nodes on the communication bus and returnstheir GUID and MDF URL.
+Request a response from all nodes on the communication bus and returns
+their GUID and MDF URL.
 
 **Kind**: static method of [`service`](#vscp.service)  
 
@@ -16594,3 +16622,4 @@ Encode the value if its stored in base64.
 | type | `number` | Variable type numerical code |
 | value | `string` | Value |
 
+[filename](./bottom_copyright.md ':include')

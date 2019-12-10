@@ -7,3 +7,8 @@
  * [Event](api.md#vscpevents)
  * [REST interface](api.md#vscp_dot_rest)
  * [Websocket interface](api.md#vscp_dot_ws)
+
+* Other documentation
+ * [VSCP documentation portal](http://docs.vscp.org)
+
+ 

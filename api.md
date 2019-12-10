@@ -281,7 +281,7 @@ Namespace for all functionality of the VSCP provided libraries.
     * [.decodeValueIfBase64(type, value)](#vscp_dot_decodeValueIfBase64) ⇒ `string`
     * [.encodeValueIfBase64(type, value)](#vscp_dot_encodeValueIfBase64) ⇒ `string`
 
-<a id="vscp_dot_Event"></a>
+<a id="vscpevents"></a>
 
 ### vscp.Event
 **Kind**: static class of [`vscp`](#vscp)  

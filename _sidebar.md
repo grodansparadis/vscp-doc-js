@@ -9,6 +9,6 @@
  * [Websocket interface](api.md#vscp_dot_ws)
 
 * Other documentation
- * [VSCP documentation portal](http://docs.vscp.org)
+ * [VSCP documentation portal](https://docs.vscp.org)
 
  
